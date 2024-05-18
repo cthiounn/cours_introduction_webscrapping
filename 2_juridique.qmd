@@ -1,0 +1,37 @@
+# Cours d'introduction au Webscrapping
+
+## Le Webscrapping et le juridique
+
+Le Webscrapping est une activité à la limite de la légalité et de l'illégalité.
+Toute automatisation, non autorisée, sur une infrastructure informatique (comprendre ici site Internet par exemple) est passible de cinq ans d'emprisonnement et de 150 000 € d'amende en droit français d'après l'Article 323-3 du Code pénal.
+Toutefois, si vous respectez quelques bonnes pratiques de bon sens,
+
+## Pourquoi le Webscrapping est interdit ?
+
+Le Webscrapping se heurte à plusieurs risques juridiques. Le premier tient à la compromission de l'infrastructure informatique "ciblée".
+Si vous faites du Webscrapping sur un site de manière lourde, vous pouvez soit ralentir le site, au détriment d'autres internautes, ou soit pire le faire tomber.
+Ces conséquences sont appelée deni de service (DOS) ou deni de service distribué (DDOS) et sont des attaques informatiques condamnables.
+Un deuxième risque tient à la réutilisation des données. Certains sites proposent et diffusent sur Internet des informations, que vous pouvez consulter gratuitement.
+Cependant, l'agrégation ou la republication d'une agrégation de ces informations, même publique, peut poser un problème de propriété intellectuelle, selon la présence ou l'absence de license informatique de réutilisation.
+
+## Quelques exemples d'analogie pour bien comprendre
+
+Voici quelques exemples transposées dans le réel (avec des imperfections) pour faire sentir ces problèmes :
+
+1. Vous participez à un concours de la plus belle décoration extérieure de votre habitation. Vous avez passé nuits et jours à paufiner votre décoration pour qu'elle plaise le plus, et surtout pour gagner le concours.
+Votre décoration fait sensation, l'admiration de la population est grandissante à tel point que des photographies tournent sur les réseaux sociaux.
+Bref, vous avez fait un gros buzz. Un jour en rentrant des courses, vous constatez avec frayeur qu'une centaine de personnes sont présentes devant votre résidence pour en photographier votre décoration. Néanmoins, vous ne pouvez plus accéder à votre résidence. Pire, la porte de votre résidence est détériorée...
+Pas cool, non ?
+
+2. Vous oeuvrez pour une association caritative. Pendant une journée de solidarité, vous vous mettez aux fourneaux pour vendre des cookies et de la limonade pour récolter des fonds, en fixant des prix raisonnables. Vous "vendez" les cookies à 2€ l'unité et le verre de limonade à 2€.
+Une personne maline vous achète un grand stock de vos cookies et bouteilles de limonades. Vous apprendrez par la suite qu'elle a revendu ces cookies et vers de limonade en pack de 5€.
+Génie ou bandit?
+
+## Le Webscrapping de manière "gentleman"
+
+Dans le Webscrapping, il y a le "bon" et le "mauvais" Webscrapping. Le "bon" Webscrapping consisterait à exactement simuler votre bon comportement.
+
+1. Si possible prevenir le site en question et demander s'ils peuvent publier les données agrégées ou mettre à disposition une API (si une API est disponible, utiliser en premier lieu l'API)
+2. Mettre des temps d'attente respectueux : de l'ordre de la milliseconde c'est non, 1-5 secondes par requête est déjà plus raisonnable, voire plus pour des ressources volumineuses.
+3. Webscrapper que de besoin, si possible en "heures creuses"
+4. Respecter les limitations et ne pas chercher à les contourner, certains sites n'autorise qu'un certain nombre de requête à l'heure par utilisateur.
