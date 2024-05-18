@@ -158,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#comprendre-les-technologies-dinternet" id="toc-comprendre-les-technologies-dinternet" class="nav-link" data-scroll-target="#comprendre-les-technologies-dinternet">Comprendre les technologies d’Internet</a></li>
   <li><a href="#naviguer-sur-le-web" id="toc-naviguer-sur-le-web" class="nav-link" data-scroll-target="#naviguer-sur-le-web">Naviguer sur le Web</a></li>
-  <li><a href="#le-protocole-https" id="toc-le-protocole-https" class="nav-link" data-scroll-target="#le-protocole-https">Le protocole HTTP(S)</a></li>
+  <li><a href="#le-protocole-https-et-api" id="toc-le-protocole-https-et-api" class="nav-link" data-scroll-target="#le-protocole-https-et-api">Le protocole HTTP(S) et API</a></li>
   <li><a href="#la-page-html" id="toc-la-page-html" class="nav-link" data-scroll-target="#la-page-html">La page HTML</a></li>
   <li><a href="#au-delà-de-html-css-et-javascript" id="toc-au-delà-de-html-css-et-javascript" class="nav-link" data-scroll-target="#au-delà-de-html-css-et-javascript">Au delà de HTML : CSS et Javascript</a></li>
   </ul></li>
@@ -195,8 +195,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Le serveur lui répond avec une nouvelle page HTML. (et ainsi de suite…)</li>
 </ol>
 </section>
-<section id="le-protocole-https" class="level2">
-<h2 class="anchored" data-anchor-id="le-protocole-https">Le protocole HTTP(S)</h2>
+<section id="le-protocole-https-et-api" class="level2">
+<h2 class="anchored" data-anchor-id="le-protocole-https-et-api">Le protocole HTTP(S) et API</h2>
 <p>Pour interagir avec un serveur HTTP, il y a un certain nombres de commandes que nous pouvons lui soumettre, aussi appelée verbe HTTP. Voici les plus fréquents :</p>
 <ul>
 <li>GET (=récupérer une information, en général une page HTML ou un fichier)</li>
@@ -209,6 +209,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Pour le Webscrapping, nous allons principalement soumettre des requêtes GET et POST (tout comme dans la navigation Web classique)</p>
 <p>Le protocole HTTPS (SSL en plus de HTTP) est juste l’ajout d’un chiffrement de toutes les communications, notamment obligatoire si vous soumettez un mot de passe ou une information sensible. Sans le chiffrement, tout est public et visible à qui se donne la peine de vouloir espionner. Voyez le chiffrement comme les vitres teintées d’un moyen de locomotion entre deux sites sensibles, dans un bon film d’espionnage !</p>
+<p>Les différents sites sont navigables à travers des pages HTML (section suivante) ou renvoient des informations par des API, service renvoyant de la donnée à qui sait la manipuler.</p>
 </section>
 <section id="la-page-html" class="level2">
 <h2 class="anchored" data-anchor-id="la-page-html">La page HTML</h2>
@@ -245,6 +246,7 @@ ul.task-list li input[type="checkbox"] {
 </a></section><a>
 </a><section id="au-delà-de-html-css-et-javascript" class="level2"><a>
 <h2 class="anchored" data-anchor-id="au-delà-de-html-css-et-javascript">Au delà de HTML : CSS et Javascript</h2>
+<p>La librairie CSS permet d’habiller le site de couleur et de mieux agencer l’information. Le CSS n’est pas utile pour le Webscrapping mais seulement agréable à l’oeil des internautes. Cependant, les scripts Javascript permettent d’ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori. Le chargement de données a posteriori par des Javascript va complexifier les méthodes utilisées pour le Webscrapping.</p>
 </a>
 
 </section>
