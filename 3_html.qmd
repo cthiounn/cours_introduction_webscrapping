@@ -18,7 +18,7 @@ Décortiquons ce qui s'est passé (en omettant des parties techniques comme DNS,
 (3) Lambda clique sur un lien (e.g. <a href="/concours/"> Ma page Concours</a>), le navigateur comprends qu'il doit refaire une requête HTTP "GET /concours/"
 (4) Le serveur lui répond avec une nouvelle page HTML. (et ainsi de suite...)
 
-## Le protocole HTTP(S)
+## Le protocole HTTP(S) et API
 
 Pour interagir avec un serveur HTTP, il y a un certain nombres de commandes que nous pouvons lui soumettre, aussi appelée verbe HTTP. Voici les plus fréquents :
 
@@ -36,6 +36,8 @@ Le protocole HTTPS (SSL en plus de HTTP) est juste l'ajout d'un chiffrement de t
 Sans le chiffrement, tout est public et visible à qui se donne la peine de vouloir espionner.
 Voyez le chiffrement comme les vitres teintées d'un moyen de locomotion entre deux sites sensibles, dans un bon film d'espionnage !
 
+Les différents sites sont navigables à travers des pages HTML (section suivante) ou renvoient des informations par des API, service renvoyant de la donnée à qui sait la manipuler.
+  
 ## La page HTML
 
 Pour la navigation Web classique, l'information renvoyée par le serveur est structurée : il y a un titre principal, un contenu hierarchisé
@@ -56,3 +58,7 @@ Le serveur renvoie un ensemble de caractères toujours structurée de la même f
 Cette structuration permet de questionner la page (est-ce qu'il y a des liens HTTP présents sur la page ? si oui, renvoie les moi) et récupérer les informations associées.
 
 ## Au delà de HTML : CSS et Javascript
+
+La librairie CSS permet d'habiller le site de couleur et de mieux agencer l'information. Le CSS n'est pas utile pour le Webscrapping mais seulement agréable à l'oeil des internautes.
+Cependant, les scripts Javascript permettent d'ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori.
+Le chargement de données a posteriori par des Javascript va complexifier les méthodes utilisées pour le Webscrapping.
