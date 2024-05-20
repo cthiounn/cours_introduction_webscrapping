@@ -191,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 )</li>
-<li>Lambda clique sur un lien (e.g.&nbsp;<a href="./concours/"> Ma page Concours</a>), le navigateur comprends qu’il doit refaire une requête HTTP “GET /concours/”</li>
+<li>Lambda clique sur un lien (e.g.&nbsp;&lt;a href=“/concours/”&gt; Ma page Concours), le navigateur comprends qu’il doit refaire une requête HTTP “GET /concours/”</li>
 <li>Le serveur lui répond avec une nouvelle page HTML. (et ainsi de suite…)</li>
 </ol>
 </section>
@@ -215,39 +215,23 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="la-page-html">La page HTML</h2>
 <p>Pour la navigation Web classique, l’information renvoyée par le serveur est structurée : il y a un titre principal, un contenu hierarchisé Le serveur renvoie un ensemble de caractères toujours structurée de la même façon de manière macro :</p>
 <ul>
-<li><p>balise</p>
-
-
-<p>pour délimiter tout le périmètre</p></li>
-<li><p>à l’intérieur, redecoupage en balise</p>
-
-
-<p>||</p>
-
-</li>
+<li><p>balise &lt;html&gt; &lt;/html&gt; pour délimiter tout le périmètre</p></li>
+<li><p>à l’intérieur, redecoupage en balise &lt;head&gt;&lt;/head&gt; || &lt;body&gt;&lt;/body&gt;</p></li>
 <li><p>les données intéressantes sont généralement dans le body (corps du contenu)</p></li>
-<li><p>dans le corps du contenu</p>
-
-<p>, utilisation d’un vocabulaire de balise</p></li>
-<li><p>
-</p><p>: paragraphe</p></li>
-<li><h1>
-</h1><h2 class="anchored">
-<p>… : titre</p></h2></li>
-<li><p><a> : lien HTTP</a></p></li><a>
-<li><div>
-<p>: bloc de contenu</p></div></li>
-<li><button>
-<p>: bouton</p></button></li>
-<li><form>
-<p>: formulaire</p></form></li>
-</a></ul><a>
+<li><p>dans le corps du contenu &lt;body&gt;, utilisation d’un vocabulaire de balise</p></li>
+<li><p>&lt;p&gt; : paragraphe</p></li>
+<li><p>&lt;h1&gt; &lt;h2&gt; … : titre</p></li>
+<li><p>&lt;a&gt; : lien HTTP</p></li>
+<li><p>&lt;div&gt; : bloc de contenu</p></li>
+<li><p>&lt;button&gt; : bouton</p></li>
+<li><p>&lt;form&gt; : formulaire</p></li>
+</ul>
 <p>Cette structuration permet de questionner la page (est-ce qu’il y a des liens HTTP présents sur la page ? si oui, renvoie les moi) et récupérer les informations associées.</p>
-</a></section><a>
-</a><section id="au-delà-de-html-css-et-javascript" class="level2"><a>
+</section>
+<section id="au-delà-de-html-css-et-javascript" class="level2">
 <h2 class="anchored" data-anchor-id="au-delà-de-html-css-et-javascript">Au delà de HTML : CSS et Javascript</h2>
 <p>La librairie CSS permet d’habiller le site de couleur et de mieux agencer l’information. Le CSS n’est pas utile pour le Webscrapping mais seulement agréable à l’oeil des internautes. Cependant, les scripts Javascript permettent d’ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori. Le chargement de données a posteriori par des Javascript va complexifier les méthodes utilisées pour le Webscrapping.</p>
-</a>
+
 
 </section>
 </section>
@@ -815,8 +799,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right"><a>
-</a><p><a>Ce site a été créé avec </a><a href="https://quarto.org/">Quarto</a></p>
+    <div class="nav-footer-right">
+<p>Ce site a été créé avec <a href="https://quarto.org/">Quarto</a></p>
 </div>
   </div>
 </footer>
