@@ -1,0 +1,49 @@
+---
+title: "Requêter une API"
+author: "cthiounn"
+date: "2024-05-20"
+format: html
+---
+
+## Qu'est-ce qu'une API ?
+
+Une API (application programming interface) est la mise à disposition d'une manière d'accéder aux informations de manière automatisée.
+Plutôt que de présenter l'information sous forme de page web, sous forme de fichiers aux différents formats, l'information est servie "brute" sur votre demande, de manière personnalisée.
+Pour accéder à l'information voulue, il est nécessaire de savoir requêter l'API. Pour cela, les (bonnes) API sont souvent accompagnées de documentation.
+
+Exemple : 
+
+[Documentation pour interroger le répertoire des entreprises](https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/item-info.jag?name=Sirene&version=V3.11&provider=insee)
+
+Parfois, pour des raisons de sécurité, l'API peut vous demander de générer un jeton d'authentification, pour pouvoir la requêter.
+
+
+## Exemple de requêtage d'API
+
+Recherchons une adresse sur l'API suivante https://adresse.data.gouv.fr/api-doc/adresse :
+
+La documentation montre un exemple avec l'utilitaire curl ("équivalent de requests" en ligne de commande) :
+
+```
+curl "https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port"
+```
+
+ce qui donnerait en Python :
+
+```{python}
+import requests
+requete="8 bd du port".replace(" ","+")
+requete_final=f"https://api-adresse.data.gouv.fr/search/?q={requete}"
+page=requests.get(requete_final)
+page.text
+```
+
+Ici le résultat renvoie les résultats en json, qu'il faut parser :
+
+
+```{python}
+import json
+dictionnaire_resultat=json.loads(page.text)
+for feature in dictionnaire_resultat["features"]:
+    print(feature)
+```

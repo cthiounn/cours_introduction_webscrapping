@@ -1,0 +1,59 @@
+---
+title: "Webscrapping dans le cas d'un site dynamique"
+author: "cthiounn"
+date: "2024-05-20"
+format: html
+---
+
+## Les sites "dynamiques"
+
+Si vous avez suivi les premiers pas du Webscrapping avec `requests` et `BeautifulSoup` sur vos sites préférés, vous avez probablement eu le souci de ne pas disposer du code HTML de la page, alors que vous avez requêté correctement le site.
+Cela apparaît avec le chargement des sites *a posteriori*. En effet, les sites utilisant les dernières librairies de Javascript vous envoient une première page, assez vide. Puis, dans cette première page, un script s'execute pour bâtir le contenu que vous souhaitez accéder.
+Avec l'utilisation de deux dernières librairies citées, il est difficile de récupérer l'information *a posteriori*
+
+De même, certains sites spécialisent leur affichage en fonction des navigateurs et des systèmes d'exploitation des visiteurs, par la carte d'identité de votre navigateur qui en dit long sur vous (User-Agent).
+Ces sites peuvent bloquer tout robot, webcrawler comme webscrapper, considéré comme indésirable.
+
+## Simuler son propre comportement
+
+Quand vous faîtes tout manuellement, tout marche. Quand vous l'automatisez, rien ne marche.
+Conséquence fatale, faut-il se résoudre à tout faire manuellement ?
+Non, car il existe des librairies de simulation automatique, comme Selenium.
+
+L'idée est simple : Selenium va ouvrir un navigateur vierge comme vous le ferez, puis va faire exactement toutes les actions que vous faîtes habituellement manuellement et que vous aurez pris le temps de spécifier.
+
+## Premier pas avec Selenium
+
+Tout d'abord, nous allons installer Selenium, ainsi qu'une librairie qui permet d'installer les pilotes pour votre navigateur préféré !
+
+```{python}
+!pip install selenium webdriver-manager
+```
+
+Ensuite, nous sommes parés pour visiter notre site préféré :
+
+
+```{python}
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service as EdgeService
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+
+navigateur_pilote_auto = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
+
+url = 'https://datalab.sspcloud.fr/'
+navigateur_pilote_auto.get(url)
+```
+
+Nous souhaitons cliquer sur le bouton de login :
+
+```{python}
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+wait = WebDriverWait(navigateur_pilote_auto, 30)
+login_button=navigateur_pilote_auto.find_elements(By.TAG_NAME, "button")[0]
+wait.until(EC.element_to_be_clickable(login_button)).send_keys(Keys.ENTER)
+```

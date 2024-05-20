@@ -1,4 +1,9 @@
-# Cours d'introduction au Webscrapping
+---
+title: "Bases pour le Webscrapping"
+author: "cthiounn"
+date: "2024-05-20"
+format: html
+---
 
 ## Comprendre les technologies d'Internet
 

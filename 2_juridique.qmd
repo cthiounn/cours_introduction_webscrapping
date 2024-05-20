@@ -1,10 +1,15 @@
-# Cours d'introduction au Webscrapping
+---
+title: "Environnement juridique du Webscrapping"
+author: "cthiounn"
+date: "2024-05-20"
+format: html
+---
 
 ## Le Webscrapping et le juridique
 
 Le Webscrapping est une activité à la limite de la légalité et de l'illégalité.
 Toute automatisation, non autorisée, sur une infrastructure informatique (comprendre ici site Internet par exemple) est passible de cinq ans d'emprisonnement et de 150 000 € d'amende en droit français d'après l'Article 323-3 du Code pénal.
-Toutefois, si vous respectez quelques bonnes pratiques de bon sens,
+Toutefois, si vous respectez quelques bonnes pratiques de bon sens, votre Webscrapping pourrait être tolérable.
 
 ## Pourquoi le Webscrapping est interdit ?
 
@@ -34,4 +39,4 @@ Dans le Webscrapping, il y a le "bon" et le "mauvais" Webscrapping. Le "bon" Web
 1. Si possible prevenir le site en question et demander s'ils peuvent publier les données agrégées ou mettre à disposition une API (si une API est disponible, utiliser en premier lieu l'API)
 2. Mettre des temps d'attente respectueux : de l'ordre de la milliseconde c'est non, 1-5 secondes par requête est déjà plus raisonnable, voire plus pour des ressources volumineuses.
 3. Webscrapper que de besoin, si possible en "heures creuses"
-4. Respecter les limitations et ne pas chercher à les contourner, certains sites n'autorise qu'un certain nombre de requête à l'heure par utilisateur.
+4. Respecter les limitations et ne pas chercher à les contourner, certains sites n'autorisent qu'un certain nombre de requête à l'heure par utilisateur.

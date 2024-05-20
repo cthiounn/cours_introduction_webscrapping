@@ -8,8 +8,6 @@ execute:
 jupyter: python3
 ---
 
-# Cours d'introduction au Webscrapping
-
 ## Etapes du Webscrapping
 
 1. Identifier le site à webscrapper
@@ -23,6 +21,7 @@ Dans la suite, nous utiliserons le langage de programmation Python
 
 Il existe diverses manières de faire du webscrapping, notamment en fonction des langages de programmes.
 En Python, nous utilisons des librairies (ensemble de code à réutiliser permettant de faire de nombreuses opérations). Plusieurs librairies sont disponibles, cependant nous utilisons les plus usitées, pour des raisons pragmatiques.
+
 * Pour récupérer la page à webscrapper (étape 2), nous allons utiliser la librarie `requests`
 * Pour analyser et extraire les informations souhaitées (étape 3), nous allons utiliser la libraire `beautifulsoup`
 
