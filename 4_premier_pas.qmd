@@ -1,0 +1,75 @@
+---
+title: "Mon premier Webscrapping"
+author: "cthiounn"
+date: "2024-05-20"
+format: html
+execute:
+  enabled: false
+jupyter: python3
+---
+
+# Cours d'introduction au Webscrapping
+
+## Etapes du Webscrapping
+
+1. Identifier le site à webscrapper
+2. Récupérer la page à webscrapper
+3. Analyser et extraire les informations pertinentes sur la page
+
+Dans ce cours d'introduction, nous partons d'un site déjà identifié pour ne pas faire du webcrawling.
+Dans la suite, nous utiliserons le langage de programmation Python
+
+## Python et le Webscrapping
+
+Il existe diverses manières de faire du webscrapping, notamment en fonction des langages de programmes.
+En Python, nous utilisons des librairies (ensemble de code à réutiliser permettant de faire de nombreuses opérations). Plusieurs librairies sont disponibles, cependant nous utilisons les plus usitées, pour des raisons pragmatiques.
+* Pour récupérer la page à webscrapper (étape 2), nous allons utiliser la librarie `requests`
+* Pour analyser et extraire les informations souhaitées (étape 3), nous allons utiliser la libraire `beautifulsoup`
+
+## Récupérer une page
+
+Nous utilisons la librairie [`requests`](https://fr.python-requests.org/en/latest/)
+
+```{python}
+import requests
+mon_site="https://dares.travail-emploi.gouv.fr"
+page=requests.get(mon_site)
+```
+
+Dans l'objet page, nous pouvons récupérer le contenu HTML de la page avec :
+
+```{python}
+page_html=page.content
+print(page_html)
+```
+
+## Récupérer une information sur la page
+
+Maintenant que nous avons la page HTML dans l'objet page_html, nous pouvons naviguer dans l'arbre HTML. Souvenez-vous la structure HTML est une structure imbriquée de balises.
+Nous pouvons nous la représenter sous forme d'arbre avec la racine \<html>, ses enfants \<head> et \<body> et ses sous-enfants.
+Pour naviguer facilement et rechercher les informations et balises qui nous intéressent, nous allons utiliser la librairie beautifulsoup.
+Admettons qu'on veuille récupérer tous les liens présents sur la page, texte et destination de chaque lien.
+
+Pour l'installer en Python, si vous ne l'avez pas déjà fait, vous pouvez utiliser le gestionnaire pip :
+
+```{python}
+!pip install beautifulsoup4
+```
+
+Pour fouiller la page à la recherche de lien :
+
+```{python}
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(page_html, 'html.parser')
+
+liste_de_lien=soup.find_all('a')
+```
+
+Une fois qu'on a la liste des liens, nous pouvons opérer une boucle ou une fonction d'ensemble (map) pour les afficher :
+
+```{python}
+for lien in liste_de_lien:
+    text=lien.text.strip()
+    if text:
+        print(f"le lien '{text}' pointe vers {lien.get("href")}")
+```

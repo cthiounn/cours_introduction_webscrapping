@@ -15,7 +15,7 @@ Décortiquons ce qui s'est passé (en omettant des parties techniques comme DNS,
 
 (1) En tapant le nom du site, Lambda dit à son navigateur qu'il souhaite accèder au site (admettons www.insee.fr/) . Le navigateur utilise le langage HTTP au serveur de l'Insee pour demander la page d'accueil, le navigateur envoie la demande "GET /"
 (2) Le serveur de l'Insee répond avec la page HTML d'accueil. Le navigateur affiche à l'utilisateur Lambda la page HTML (qui est juste une suite de caractères comprennant des informations entre des balises standardisées <html><header></header><body></body></html>)
-(3) Lambda clique sur un lien (e.g. <a href="/concours/"> Ma page Concours</a>), le navigateur comprends qu'il doit refaire une requête HTTP "GET /concours/"
+(3) Lambda clique sur un lien (e.g. \<a href="/concours/"> Ma page Concours</a>), le navigateur comprends qu'il doit refaire une requête HTTP "GET /concours/"
 (4) Le serveur lui répond avec une nouvelle page HTML. (et ainsi de suite...)
 
 ## Le protocole HTTP(S) et API
@@ -37,23 +37,23 @@ Sans le chiffrement, tout est public et visible à qui se donne la peine de voul
 Voyez le chiffrement comme les vitres teintées d'un moyen de locomotion entre deux sites sensibles, dans un bon film d'espionnage !
 
 Les différents sites sont navigables à travers des pages HTML (section suivante) ou renvoient des informations par des API, service renvoyant de la donnée à qui sait la manipuler.
-  
+
 ## La page HTML
 
 Pour la navigation Web classique, l'information renvoyée par le serveur est structurée : il y a un titre principal, un contenu hierarchisé
 Le serveur renvoie un ensemble de caractères toujours structurée de la même façon de manière macro :
 
-* balise <html> </html> pour délimiter tout le périmètre
-* à l'intérieur, redecoupage en balise <head></head> || <body></body>
+* balise \<html> \</html> pour délimiter tout le périmètre
+* à l'intérieur, redecoupage en balise \<head>\</head> || \<body>\</body>
 * les données intéressantes sont généralement dans le body (corps du contenu)
-* dans le corps du contenu <body>, utilisation d'un vocabulaire de balise 
+* dans le corps du contenu \<body>, utilisation d'un vocabulaire de balise 
 
-* <p> : paragraphe
-* <h1> <h2> ... : titre 
-* <a> : lien HTTP 
-* <div> : bloc de contenu 
-* <button> : bouton
-* <form> : formulaire
+* \<p> : paragraphe
+* \<h1> \<h2> ... : titre 
+* \<a> : lien HTTP 
+* \<div> : bloc de contenu 
+* \<button> : bouton
+* \<form> : formulaire
 
 Cette structuration permet de questionner la page (est-ce qu'il y a des liens HTTP présents sur la page ? si oui, renvoie les moi) et récupérer les informations associées.
 
