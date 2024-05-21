@@ -14,12 +14,14 @@ Toutefois, si vous respectez quelques bonnes pratiques de bon sens, votre Webscr
 ## Pourquoi le Webscrapping est interdit ?
 
 Le Webscrapping se heurte à plusieurs risques juridiques : 
+
 * Le premier tient à la compromission de l'infrastructure informatique "ciblée". Si vous faites du Webscrapping sur un site de manière lourde, vous pouvez soit ralentir le site, au détriment d'autres internautes, ou soit pire le faire tomber.Ces conséquences sont appelée deni de service ([DOS](https://fr.wikipedia.org/wiki/Attaque_par_d%C3%A9ni_de_service)) ou deni de service distribué ([DDOS](https://fr.wikipedia.org/wiki/Attaque_par_d%C3%A9ni_de_service#D%C3%A9ni_de_service_distribu%C3%A9_ou_effet_de_levier)) et sont des attaques informatiques condamnables.
+
 * Un deuxième risque tient à la réutilisation des données. Certains sites proposent et diffusent sur Internet des informations, que vous pouvez consulter gratuitement. Cependant, l'agrégation ou la republication d'une agrégation de ces informations, même publique, peut poser un problème de propriété intellectuelle, selon la présence ou l'absence de license informatique de réutilisation.
 
 ## Quelques exemples d'analogie pour bien comprendre
 
-Voici quelques exemples transposées dans le réel (avec des imperfections) pour faire sentir ces problèmes :
+Voici quelques exemples transposées dans le réel (avec des imperfections) pour comprendre ces problèmes :
 
 1. Vous participez à un concours de la plus belle décoration extérieure de votre habitation. Vous avez passé nuits et jours à paufiner votre décoration pour qu'elle plaise le plus, et surtout pour gagner le concours.
 Votre décoration fait sensation, l'admiration de la population est grandissante à tel point que des photographies tournent sur les réseaux sociaux.

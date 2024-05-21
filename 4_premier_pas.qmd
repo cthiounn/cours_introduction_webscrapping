@@ -1,5 +1,5 @@
 ---
-title: "Mon premier Webscrapping"
+title: "Mon premier Webscraping"
 author: "cthiounn"
 date: "2024-05-20"
 format: html
@@ -8,21 +8,21 @@ execute:
 jupyter: python3
 ---
 
-## Etapes du Webscrapping
+## Etapes du Webscraping
 
-1. Identifier le site à webscrapper
-2. Récupérer la page à webscrapper
+1. Identifier le site à webscraper
+2. Récupérer la page à webscraper
 3. Analyser et extraire les informations pertinentes sur la page
 
 Dans ce cours d'introduction, nous partons d'un site déjà identifié pour ne pas faire du webcrawling.
 Dans la suite, nous utiliserons le langage de programmation Python
 
-## Python et le Webscrapping
+## Python et le Webscraping
 
 Il existe diverses manières de faire du webscrapping, notamment en fonction des langages de programmes.
 En Python, nous utilisons des librairies (ensemble de code à réutiliser permettant de faire de nombreuses opérations). Plusieurs librairies sont disponibles, cependant nous utilisons les plus usitées, pour des raisons pragmatiques.
 
-* Pour récupérer la page à webscrapper (étape 2), nous allons utiliser la librarie `requests`
+* Pour récupérer la page à webscraper (étape 2), nous allons utiliser la librarie `requests`
 * Pour analyser et extraire les informations souhaitées (étape 3), nous allons utiliser la librairie `beautifulsoup`
 
 ## Récupérer une page
@@ -93,7 +93,7 @@ Le navigateur affiche l'arborescence HTML :
 
 ----
 
-Pour récupérer l'information, il faut soit récupérer les balises h2 et trouver la bonne (avec l'attribut data-anchor-id="python-et-le-webscrapping"), soit récupérer la section d'identifiant "python-et-le-webscrapping", puis récupérer le h2 fils.
+Pour récupérer l'information, il faut soit récupérer les balises h2 et trouver la bonne (avec l'attribut data-anchor-id="python-et-le-webscraping"), soit récupérer la section d'identifiant "python-et-le-webscraping", puis récupérer le h2 fils.
 
 Deuxième solution :
 
@@ -105,6 +105,6 @@ page=requests.get(mon_site)
 page_html=page.content
 soup = BeautifulSoup(page_html, 'html.parser')
 
-section_souhaitee=soup.find("section", {"id": "python-et-le-webscrapping"})
+section_souhaitee=soup.find("section", {"id": "python-et-le-webscraping"})
 titre_souhaite=section_souhaitee.find("h2")
 ```

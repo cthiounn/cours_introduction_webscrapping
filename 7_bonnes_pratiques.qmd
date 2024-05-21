@@ -1,0 +1,21 @@
+---
+title: "Les bonnes pratiques pour du Webscraping gentleman"
+author: "cthiounn"
+date: "2024-05-20"
+format: html
+execute:
+  enabled: false
+---
+
+## Webscraper avec élégance
+
+Nous avons vu les limites juridiques et les risques encourues dans la partie juridique. Quelques conseils qui tiennent de la règle d'or de réciprocité et du principe du *Lean* :
+
+0. Demander et prevenir en amont
+1. Webscraper que de besoin
+2. Webscraper à des horaires creuses
+3. Webscraper comme un humain, en mettant des temps d'attente similaire aux actions manuelles
+4. Respecter le droit intellectuel et citer la source si vous pouvez rediffuser
+5. Ne pas paralléliser le Webscraping, notamment avec un système de proxy
+6. Utiliser les API si elles existent
+7. Vérifier et respecter le fichier robots.txt (e.g. [https://www.google.fr/robots.txt](https://www.google.fr/robots.txt))
