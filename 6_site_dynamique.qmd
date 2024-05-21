@@ -3,6 +3,8 @@ title: "Webscrapping dans le cas d'un site dynamique"
 author: "cthiounn"
 date: "2024-05-20"
 format: html
+execute:
+  enabled: false
 ---
 
 ## Les sites "dynamiques"

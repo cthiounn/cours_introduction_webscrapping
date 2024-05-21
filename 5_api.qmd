@@ -3,6 +3,8 @@ title: "Requêter une API"
 author: "cthiounn"
 date: "2024-05-20"
 format: html
+execute:
+  enabled: false
 ---
 
 ## Qu'est-ce qu'une API ?
