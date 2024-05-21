@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>La documentation montre un exemple avec l’utilitaire curl (“équivalent de requests” en ligne de commande) :</p>
 <pre><code>curl "https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port"</code></pre>
 <p>ce qui donnerait en Python :</p>
-<div id="62e41702" class="cell">
+<div id="dcfaa51a" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>requete<span class="op">=</span><span class="st">"8 bd du port"</span>.replace(<span class="st">" "</span>,<span class="st">"+"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>requete_final<span class="op">=</span><span class="ss">f"https://api-adresse.data.gouv.fr/search/?q=</span><span class="sc">{</span>requete<span class="sc">}</span><span class="ss">"</span></span>
@@ -256,7 +256,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>page.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ici le résultat renvoie les résultats en json, qu’il faut parser :</p>
-<div id="22f66546" class="cell">
+<div id="fbeab3ad" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dictionnaire_resultat<span class="op">=</span>json.loads(page.text)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> feature <span class="kw">in</span> dictionnaire_resultat[<span class="st">"features"</span>]:</span>

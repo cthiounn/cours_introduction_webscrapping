@@ -102,29 +102,29 @@
   {
     "objectID": "2_juridique.html",
     "href": "2_juridique.html",
-    "title": "Environnement juridique du Webscrapping",
+    "title": "Environnement juridique du Webscraping",
     "section": "",
-    "text": "Le Webscrapping est une activité à la limite de la légalité et de l’illégalité. Toute automatisation, non autorisée, sur une infrastructure informatique (comprendre ici site Internet par exemple) est passible de cinq ans d’emprisonnement et de 150 000 € d’amende en droit français d’après l’Article 323-3 du Code pénal. Toutefois, si vous respectez quelques bonnes pratiques de bon sens, votre Webscrapping pourrait être considéré comme tolérable.",
+    "text": "Le Webscraping est une activité à la limite de la légalité et de l’illégalité. Toute automatisation, non autorisée, sur une infrastructure informatique (comprendre ici site Internet par exemple) est passible de cinq ans d’emprisonnement et de 150 000 € d’amende en droit français d’après l’Article 323-3 du Code pénal. Toutefois, si vous respectez quelques bonnes pratiques de bon sens, votre Webscraping pourrait être considéré comme tolérable.",
     "crumbs": [
       "Le Webscraping et le juridique"
     ]
   },
   {
-    "objectID": "2_juridique.html#le-webscrapping-et-le-juridique",
-    "href": "2_juridique.html#le-webscrapping-et-le-juridique",
-    "title": "Environnement juridique du Webscrapping",
+    "objectID": "2_juridique.html#le-webscraping-et-le-juridique",
+    "href": "2_juridique.html#le-webscraping-et-le-juridique",
+    "title": "Environnement juridique du Webscraping",
     "section": "",
-    "text": "Le Webscrapping est une activité à la limite de la légalité et de l’illégalité. Toute automatisation, non autorisée, sur une infrastructure informatique (comprendre ici site Internet par exemple) est passible de cinq ans d’emprisonnement et de 150 000 € d’amende en droit français d’après l’Article 323-3 du Code pénal. Toutefois, si vous respectez quelques bonnes pratiques de bon sens, votre Webscrapping pourrait être considéré comme tolérable.",
+    "text": "Le Webscraping est une activité à la limite de la légalité et de l’illégalité. Toute automatisation, non autorisée, sur une infrastructure informatique (comprendre ici site Internet par exemple) est passible de cinq ans d’emprisonnement et de 150 000 € d’amende en droit français d’après l’Article 323-3 du Code pénal. Toutefois, si vous respectez quelques bonnes pratiques de bon sens, votre Webscraping pourrait être considéré comme tolérable.",
     "crumbs": [
       "Le Webscraping et le juridique"
     ]
   },
   {
-    "objectID": "2_juridique.html#pourquoi-le-webscrapping-est-interdit",
-    "href": "2_juridique.html#pourquoi-le-webscrapping-est-interdit",
-    "title": "Environnement juridique du Webscrapping",
-    "section": "Pourquoi le Webscrapping est interdit ?",
-    "text": "Pourquoi le Webscrapping est interdit ?\nLe Webscrapping se heurte à plusieurs risques juridiques :\n\nLe premier tient à la compromission de l’infrastructure informatique “ciblée”. Si vous faites du Webscrapping sur un site de manière lourde, vous pouvez soit ralentir le site, au détriment d’autres internautes, ou soit pire le faire tomber.Ces conséquences sont appelée deni de service (DOS) ou deni de service distribué (DDOS) et sont des attaques informatiques condamnables.\nUn deuxième risque tient à la réutilisation des données. Certains sites proposent et diffusent sur Internet des informations, que vous pouvez consulter gratuitement. Cependant, l’agrégation ou la republication d’une agrégation de ces informations, même publique, peut poser un problème de propriété intellectuelle, selon la présence ou l’absence de license informatique de réutilisation.",
+    "objectID": "2_juridique.html#pourquoi-le-webscraping-est-interdit",
+    "href": "2_juridique.html#pourquoi-le-webscraping-est-interdit",
+    "title": "Environnement juridique du Webscraping",
+    "section": "Pourquoi le Webscraping est interdit ?",
+    "text": "Pourquoi le Webscraping est interdit ?\nLe Webscraping se heurte à plusieurs risques juridiques :\n\nLe premier tient à la compromission de l’infrastructure informatique “ciblée”. Si vous faites du Webscraping sur un site de manière lourde, vous pouvez soit ralentir le site, au détriment d’autres internautes, ou soit pire le faire tomber.Ces conséquences sont appelée deni de service (DOS) ou deni de service distribué (DDOS) et sont des attaques informatiques condamnables.\nUn deuxième risque tient à la réutilisation des données. Certains sites proposent et diffusent sur Internet des informations, que vous pouvez consulter gratuitement. Cependant, l’agrégation ou la republication d’une agrégation de ces informations, même publique, peut poser un problème de propriété intellectuelle, selon la présence ou l’absence de license informatique de réutilisation.",
     "crumbs": [
       "Le Webscraping et le juridique"
     ]
@@ -132,7 +132,7 @@
   {
     "objectID": "2_juridique.html#quelques-exemples-danalogie-pour-bien-comprendre",
     "href": "2_juridique.html#quelques-exemples-danalogie-pour-bien-comprendre",
-    "title": "Environnement juridique du Webscrapping",
+    "title": "Environnement juridique du Webscraping",
     "section": "Quelques exemples d’analogie pour bien comprendre",
     "text": "Quelques exemples d’analogie pour bien comprendre\nVoici quelques exemples transposées dans le réel (avec des imperfections) pour comprendre ces problèmes :\n\nVous participez à un concours de la plus belle décoration extérieure de votre habitation. Vous avez passé nuits et jours à paufiner votre décoration pour qu’elle plaise le plus, et surtout pour gagner le concours. Votre décoration fait sensation, l’admiration de la population est grandissante à tel point que des photographies tournent sur les réseaux sociaux. Bref, vous avez fait un gros buzz. Un jour en rentrant des courses, vous constatez avec frayeur qu’une centaine de personnes sont présentes devant votre résidence pour en photographier votre décoration. Néanmoins, vous ne pouvez plus accéder à votre résidence. Pire, la porte de votre résidence est détériorée… Pas cool, non ?\nVous oeuvrez pour une association caritative. Pendant une journée de solidarité, vous vous mettez aux fourneaux pour vendre des cookies et de la limonade pour récolter des fonds, en fixant des prix raisonnables. Vous “vendez” les cookies à 2€ l’unité et le verre de limonade à 2€. Une personne maline vous achète un grand stock de vos cookies et bouteilles de limonades. Vous apprendrez par la suite qu’elle a revendu ces cookies et vers de limonade en pack de 5€. Génie ou bandit?",
     "crumbs": [
@@ -140,11 +140,11 @@
     ]
   },
   {
-    "objectID": "2_juridique.html#le-webscrapping-de-manière-gentleman",
-    "href": "2_juridique.html#le-webscrapping-de-manière-gentleman",
-    "title": "Environnement juridique du Webscrapping",
-    "section": "Le Webscrapping de manière “gentleman”",
-    "text": "Le Webscrapping de manière “gentleman”\nDans le Webscrapping, il y a le “bon” et le “mauvais” Webscrapping. Le “bon” Webscrapping consisterait à exactement simuler votre bon comportement.\n\nSi possible prevenir le site en question et demander s’ils peuvent publier les données agrégées ou mettre à disposition une API (si une API est disponible, utiliser en premier lieu l’API)\nMettre des temps d’attente respectueux : de l’ordre de la milliseconde c’est non, 1-5 secondes par requête est déjà plus raisonnable, voire plus pour des ressources volumineuses.\nWebscrapper que de besoin, si possible en “heures creuses”\nRespecter les limitations et ne pas chercher à les contourner, certains sites n’autorisent qu’un certain nombre de requête à l’heure par utilisateur.",
+    "objectID": "2_juridique.html#le-webscraping-de-manière-gentleman",
+    "href": "2_juridique.html#le-webscraping-de-manière-gentleman",
+    "title": "Environnement juridique du Webscraping",
+    "section": "Le Webscraping de manière “gentleman”",
+    "text": "Le Webscraping de manière “gentleman”\nDans le Webscraping, il y a le “bon” et le “mauvais” Webscraping. Le “bon” Webscraping consisterait à exactement simuler votre bon comportement.\n\nSi possible prevenir le site en question et demander s’ils peuvent publier les données agrégées ou mettre à disposition une API (si une API est disponible, utiliser en premier lieu l’API)\nMettre des temps d’attente respectueux : de l’ordre de la milliseconde c’est non, 1-5 secondes par requête est déjà plus raisonnable, voire plus pour des ressources volumineuses.\nWebscrapper que de besoin, si possible en “heures creuses”\nRespecter les limitations et ne pas chercher à les contourner, certains sites n’autorisent qu’un certain nombre de requête à l’heure par utilisateur.",
     "crumbs": [
       "Le Webscraping et le juridique"
     ]
@@ -152,39 +152,39 @@
   {
     "objectID": "1_intro.html",
     "href": "1_intro.html",
-    "title": "Introduction au Webscrapping",
+    "title": "Introduction au Webscraping",
     "section": "",
-    "text": "Le Webscrapping, ou moissonnage de données, est l’automatisation de la récupération de données à partir des technologies du Web. Il s’agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes. Plutôt que d’effectuer ses opérations manuellement, les langages de programmations permettent de s’affranchir des tâches fastidieuses.",
+    "text": "Le Webscraping, ou moissonnage de données, est l’automatisation de la récupération de données à partir des technologies du Web. Il s’agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes. Plutôt que d’effectuer ses opérations manuellement, les langages de programmations permettent de s’affranchir des tâches fastidieuses.",
     "crumbs": [
       "Introduction au Webscraping"
     ]
   },
   {
-    "objectID": "1_intro.html#quest-ce-que-le-webscrapping",
-    "href": "1_intro.html#quest-ce-que-le-webscrapping",
-    "title": "Introduction au Webscrapping",
+    "objectID": "1_intro.html#quest-ce-que-le-webscraping",
+    "href": "1_intro.html#quest-ce-que-le-webscraping",
+    "title": "Introduction au Webscraping",
     "section": "",
-    "text": "Le Webscrapping, ou moissonnage de données, est l’automatisation de la récupération de données à partir des technologies du Web. Il s’agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes. Plutôt que d’effectuer ses opérations manuellement, les langages de programmations permettent de s’affranchir des tâches fastidieuses.",
+    "text": "Le Webscraping, ou moissonnage de données, est l’automatisation de la récupération de données à partir des technologies du Web. Il s’agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes. Plutôt que d’effectuer ses opérations manuellement, les langages de programmations permettent de s’affranchir des tâches fastidieuses.",
     "crumbs": [
       "Introduction au Webscraping"
     ]
   },
   {
-    "objectID": "1_intro.html#pourquoi-le-webscrapping",
-    "href": "1_intro.html#pourquoi-le-webscrapping",
-    "title": "Introduction au Webscrapping",
-    "section": "Pourquoi le Webscrapping ?",
-    "text": "Pourquoi le Webscrapping ?\nSouvent, le Webscrapping répond à un besoin de disposer de données soit indisponibles par ailleurs soit de rechercher les données les plus récentes. Selon le champ d’étude, ces données récupérées ne seront pas forcément exhaustives mais pourront constituer un échantillon intéressant à analyser et à exploiter.",
+    "objectID": "1_intro.html#pourquoi-le-webscraping",
+    "href": "1_intro.html#pourquoi-le-webscraping",
+    "title": "Introduction au Webscraping",
+    "section": "Pourquoi le Webscraping ?",
+    "text": "Pourquoi le Webscraping ?\nSouvent, le Webscraping répond à un besoin de disposer de données soit indisponibles par ailleurs soit de rechercher les données les plus récentes. Selon le champ d’étude, ces données récupérées ne seront pas forcément exhaustives mais pourront constituer un échantillon intéressant à analyser et à exploiter.",
     "crumbs": [
       "Introduction au Webscraping"
     ]
   },
   {
-    "objectID": "1_intro.html#comment-faire-du-webscrapping",
-    "href": "1_intro.html#comment-faire-du-webscrapping",
-    "title": "Introduction au Webscrapping",
-    "section": "Comment faire du Webscrapping ?",
-    "text": "Comment faire du Webscrapping ?\nDans ce cours introductif, vous apprendrez comment faire du Webscrapping en bonne intelligence, à en comprendre les bases et à vous constituer un exemple intéressant dans votre portfolio. A la fin de ce cours, vous saurez faire du Webscrapping à un niveau basique, souvent suffisant, et à comprendre les tenants et aboutissants.",
+    "objectID": "1_intro.html#comment-faire-du-webscraping",
+    "href": "1_intro.html#comment-faire-du-webscraping",
+    "title": "Introduction au Webscraping",
+    "section": "Comment faire du Webscraping ?",
+    "text": "Comment faire du Webscraping ?\nDans ce cours introductif, vous apprendrez comment faire du Webscraping en bonne intelligence, à en comprendre les bases et à vous constituer un exemple intéressant dans votre portfolio. A la fin de ce cours, vous saurez faire du Webscraping à un niveau basique, souvent suffisant, et à comprendre les tenants et aboutissants.",
     "crumbs": [
       "Introduction au Webscraping"
     ]
@@ -242,9 +242,9 @@
   {
     "objectID": "3_html.html",
     "href": "3_html.html",
-    "title": "Bases pour le Webscrapping",
+    "title": "Bases pour le Webscraping",
     "section": "",
-    "text": "Pour faire du Webscrapping, il est primordiable de comprendre les bases du Web. Il s’agit de comprendre les manières d’interagir avec les sites et API, avec notamment le protocole/langage HTTP. et de connaître les formats de données (HTML, XML, formats de fichiers, etc)",
+    "text": "Pour faire du Webscraping, il est primordiable de comprendre les bases du Web. Il s’agit de comprendre les manières d’interagir avec les sites et API, avec notamment le protocole/langage HTTP. et de connaître les formats de données (HTML, XML, formats de fichiers, etc)",
     "crumbs": [
       "Internet et le web"
     ]
@@ -252,9 +252,9 @@
   {
     "objectID": "3_html.html#comprendre-les-technologies-dinternet",
     "href": "3_html.html#comprendre-les-technologies-dinternet",
-    "title": "Bases pour le Webscrapping",
+    "title": "Bases pour le Webscraping",
     "section": "",
-    "text": "Pour faire du Webscrapping, il est primordiable de comprendre les bases du Web. Il s’agit de comprendre les manières d’interagir avec les sites et API, avec notamment le protocole/langage HTTP. et de connaître les formats de données (HTML, XML, formats de fichiers, etc)",
+    "text": "Pour faire du Webscraping, il est primordiable de comprendre les bases du Web. Il s’agit de comprendre les manières d’interagir avec les sites et API, avec notamment le protocole/langage HTTP. et de connaître les formats de données (HTML, XML, formats de fichiers, etc)",
     "crumbs": [
       "Internet et le web"
     ]
@@ -262,7 +262,7 @@
   {
     "objectID": "3_html.html#naviguer-sur-le-web",
     "href": "3_html.html#naviguer-sur-le-web",
-    "title": "Bases pour le Webscrapping",
+    "title": "Bases pour le Webscraping",
     "section": "Naviguer sur le Web",
     "text": "Naviguer sur le Web\nPour naviguer sur le Web, notre internaute Lambda utilise son navigateur Web préférée (Edge, Chrome, Mozilla, Opéra, etc.) en tapant le nom du site dans la barre de navigation (1). Le navigateur affiche la page d’accueil (2). Lambda clique sur un lien (3) et le navigateur lui affiche la nouvelle page (4).\nDécortiquons ce qui s’est passé (en omettant des parties techniques comme DNS, les IP et le routage des informations) :\n\nEn tapant le nom du site, Lambda dit à son navigateur qu’il souhaite accèder au site (admettons www.insee.fr/) . Le navigateur utilise le langage HTTP au serveur de l’Insee pour demander la page d’accueil, le navigateur envoie la demande “GET /”\nLe serveur de l’Insee répond avec la page HTML d’accueil. Le navigateur affiche à l’utilisateur Lambda la page HTML (qui est juste une suite de caractères comprennant des informations entre des balises standardisées\n\n\n\n\n\n\n)\nLambda clique sur un lien (e.g. &lt;a href=“/concours/”&gt; Ma page Concours), le navigateur comprends qu’il doit refaire une requête HTTP “GET /concours/”\nLe serveur lui répond avec une nouvelle page HTML. (et ainsi de suite…)",
     "crumbs": [
@@ -272,9 +272,9 @@
   {
     "objectID": "3_html.html#le-protocole-https-et-api",
     "href": "3_html.html#le-protocole-https-et-api",
-    "title": "Bases pour le Webscrapping",
+    "title": "Bases pour le Webscraping",
     "section": "Le protocole HTTP(S) et API",
-    "text": "Le protocole HTTP(S) et API\nPour interagir avec un site Web (serveur HTTP), il y a un certain nombre de commandes que nous pouvons lui soumettre, aussi appelée verbe HTTP. Voici les plus fréquents :\n\nGET (=récupérer une information, en général une page HTML ou un fichier)\nPOST (=soumettre de la donnée et récupérer éventuellement une information, obligatoirement le cas dans un formulaire sensible)\n\nDans le cas des API, si vous avez les droits sur l’API :\n\nPUT (=mettre à jour une information)\nDELETE (=supprimer une information)\n\nPour le Webscrapping, nous allons principalement soumettre des requêtes GET et POST (tout comme dans la navigation Web classique)\nLe protocole HTTPS (SSL en plus de HTTP) est juste l’ajout d’un chiffrement de toutes les communications, notamment obligatoire si vous soumettez un mot de passe ou une information sensible. Sans le chiffrement, tout est public et visible à qui se donne la peine de vouloir espionner. Voyez le chiffrement comme les vitres teintées d’un moyen de locomotion entre deux sites sensibles, dans un bon film d’espionnage !\nLes différents sites sont navigables à travers des pages HTML (section suivante) ou renvoient des informations par des API, service renvoyant de la donnée à qui sait la manipuler.",
+    "text": "Le protocole HTTP(S) et API\nPour interagir avec un site Web (serveur HTTP), il y a un certain nombre de commandes que nous pouvons lui soumettre, aussi appelée verbe HTTP. Voici les plus fréquents :\n\nGET (=récupérer une information, en général une page HTML ou un fichier)\nPOST (=soumettre de la donnée et récupérer éventuellement une information, obligatoirement le cas dans un formulaire sensible)\n\nDans le cas des API, si vous avez les droits sur l’API :\n\nPUT (=mettre à jour une information)\nDELETE (=supprimer une information)\n\nPour le Webscraping, nous allons principalement soumettre des requêtes GET et POST (tout comme dans la navigation Web classique)\nLe protocole HTTPS (SSL en plus de HTTP) est juste l’ajout d’un chiffrement de toutes les communications, notamment obligatoire si vous soumettez un mot de passe ou une information sensible. Sans le chiffrement, tout est public et visible à qui se donne la peine de vouloir espionner. Voyez le chiffrement comme les vitres teintées d’un moyen de locomotion entre deux sites sensibles, dans un bon film d’espionnage !\nLes différents sites sont navigables à travers des pages HTML (section suivante) ou renvoient des informations par des API, service renvoyant de la donnée à qui sait la manipuler.",
     "crumbs": [
       "Internet et le web"
     ]
@@ -282,7 +282,7 @@
   {
     "objectID": "3_html.html#la-page-html",
     "href": "3_html.html#la-page-html",
-    "title": "Bases pour le Webscrapping",
+    "title": "Bases pour le Webscraping",
     "section": "La page HTML",
     "text": "La page HTML\nPour la navigation Web classique, l’information renvoyée par le serveur est structurée au format HTML : il y a notamment un titre principal et un contenu hierarchisé. Le serveur renvoie un ensemble de caractères toujours structurée de la même façon de manière macro :\n\nbalise &lt;html&gt; &lt;/html&gt; pour délimiter tout le périmètre\nà l’intérieur, redecoupage en balise &lt;head&gt;&lt;/head&gt; || &lt;body&gt;&lt;/body&gt;\nles données intéressantes sont généralement dans le body (corps du contenu)\ndans le corps du contenu &lt;body&gt;, utilisation d’un vocabulaire de balise\n\nExemples de balises les plus fréquentes :\n\n&lt;p&gt; : paragraphe\n&lt;h1&gt; &lt;h2&gt; … : titre\n&lt;a&gt; : lien HTTP\n&lt;div&gt; : bloc de contenu (pas de signification sémantique, utilisé pour les scripts ou le CSS)\n&lt;section&gt; : ensemble de contenu (signification sémantique, comme un chapitre d’un livre)\n&lt;button&gt; : bouton\n&lt;form&gt; : formulaire\n\nCette structuration permet de questionner la page (est-ce qu’il y a des liens HTTP présents sur la page ? si oui, renvoie les moi) et récupérer les informations associées.",
     "crumbs": [
@@ -292,9 +292,9 @@
   {
     "objectID": "3_html.html#au-delà-de-html-css-et-javascript",
     "href": "3_html.html#au-delà-de-html-css-et-javascript",
-    "title": "Bases pour le Webscrapping",
+    "title": "Bases pour le Webscraping",
     "section": "Au delà de HTML : CSS et Javascript",
-    "text": "Au delà de HTML : CSS et Javascript\nLa librairie CSS permet d’habiller le site de couleur et de mieux agencer l’information. Le CSS n’est pas utile pour le Webscrapping mais seulement agréable à l’oeil des internautes. Cependant, les scripts Javascript permettent d’ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori. Le chargement de données a posteriori par des Javascript va complexifier les méthodes utilisées pour le Webscrapping.",
+    "text": "Au delà de HTML : CSS et Javascript\nLa librairie CSS permet d’habiller le site de couleur et de mieux agencer l’information. Le CSS n’est pas utile pour le Webscraping mais seulement agréable à l’oeil des internautes. Cependant, les scripts Javascript permettent d’ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori. Le chargement de données a posteriori par des Javascript va complexifier les méthodes utilisées pour le Webscraping.",
     "crumbs": [
       "Internet et le web"
     ]
