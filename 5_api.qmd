@@ -9,7 +9,7 @@ execute:
 
 ## Qu'est-ce qu'une API ?
 
-Une API (application programming interface) est la mise à disposition d'une manière d'accéder aux informations de manière automatisée.
+Une [API (application programming interface)](https://fr.wikipedia.org/wiki/Interface_de_programmation) est la mise à disposition d'une manière d'accéder aux informations de manière automatisée.
 Plutôt que de présenter l'information sous forme de page web, sous forme de fichiers aux différents formats, l'information est servie "brute" sur votre demande, de manière personnalisée.
 Pour accéder à l'information voulue, il est nécessaire de savoir requêter l'API. Pour cela, les (bonnes) API sont souvent accompagnées de documentation.
 
@@ -22,7 +22,7 @@ Parfois, pour des raisons de sécurité, l'API peut vous demander de générer u
 
 ## Exemple de requêtage d'API
 
-Recherchons une adresse sur l'API suivante https://adresse.data.gouv.fr/api-doc/adresse :
+Recherchons une adresse sur l'API suivante api-adresse.data.gouv.fr (Documentation : [https://adresse.data.gouv.fr/api-doc/adresse](https://adresse.data.gouv.fr/api-doc/adresse)) :
 
 La documentation montre un exemple avec l'utilitaire curl ("équivalent de requests" en ligne de commande) :
 

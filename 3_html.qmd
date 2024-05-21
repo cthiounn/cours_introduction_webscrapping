@@ -8,8 +8,8 @@ format: html
 ## Comprendre les technologies d'Internet
 
 Pour faire du Webscrapping, il est primordiable de comprendre les bases du Web.
-Il s'agit de comprendre les manières d'interagir avec les sites et API (le protocole/langage HTTP en grande partie)
-et de connaître les formats de données (HTML, XML, formats de fichiers, etc)
+Il s'agit de comprendre les manières d'interagir avec les sites et API, avec notamment le [protocole/langage HTTP](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
+et de connaître les formats de données ([HTML](https://fr.wikipedia.org/wiki/Hypertext_Markup_Language), XML, formats de fichiers, etc)
 
 ## Naviguer sur le Web
 
@@ -25,19 +25,19 @@ Décortiquons ce qui s'est passé (en omettant des parties techniques comme DNS,
 
 ## Le protocole HTTP(S) et API
 
-Pour interagir avec un serveur HTTP, il y a un certain nombres de commandes que nous pouvons lui soumettre, aussi appelée verbe HTTP. Voici les plus fréquents :
+Pour interagir avec un site Web (serveur HTTP), il y a un certain nombre de commandes que nous pouvons lui soumettre, aussi appelée [verbe HTTP](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol#M%C3%A9thodes). Voici les plus fréquents :
 
-* GET (=récupérer une information, en général une page HTML ou un fichier)
-* POST (=soumettre de la donnée et récupérer éventuellement une information, obligatoirement le cas dans un formulaire sensible)
+* **GET** (=récupérer une information, en général une page HTML ou un fichier)
+* **POST** (=soumettre de la donnée et récupérer éventuellement une information, obligatoirement le cas dans un formulaire sensible)
 
 Dans le cas des API, si vous avez les droits sur l'API :
 
-* PUT (=mettre à jour une information)
-* DELETE (=supprimer une information)
+* **PUT** (=mettre à jour une information)
+* **DELETE** (=supprimer une information)
 
 Pour le Webscrapping, nous allons principalement soumettre des requêtes GET et POST (tout comme dans la navigation Web classique)
 
-Le protocole HTTPS (SSL en plus de HTTP) est juste l'ajout d'un chiffrement de toutes les communications, notamment obligatoire si vous soumettez un mot de passe ou une information sensible.
+Le [protocole HTTPS](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure) (SSL en plus de HTTP) est juste l'ajout d'un chiffrement de toutes les communications, notamment obligatoire si vous soumettez un mot de passe ou une information sensible.
 Sans le chiffrement, tout est public et visible à qui se donne la peine de vouloir espionner.
 Voyez le chiffrement comme les vitres teintées d'un moyen de locomotion entre deux sites sensibles, dans un bon film d'espionnage !
 
@@ -45,7 +45,7 @@ Les différents sites sont navigables à travers des pages HTML (section suivant
 
 ## La page HTML
 
-Pour la navigation Web classique, l'information renvoyée par le serveur est structurée : il y a un titre principal, un contenu hierarchisé
+Pour la navigation Web classique, l'information renvoyée par le serveur est structurée au format [HTML](https://fr.wikipedia.org/wiki/Hypertext_Markup_Language) : il y a notamment un titre principal et un contenu hierarchisé.
 Le serveur renvoie un ensemble de caractères toujours structurée de la même façon de manière macro :
 
 * balise \<html> \</html> pour délimiter tout le périmètre
@@ -53,10 +53,13 @@ Le serveur renvoie un ensemble de caractères toujours structurée de la même f
 * les données intéressantes sont généralement dans le body (corps du contenu)
 * dans le corps du contenu \<body>, utilisation d'un vocabulaire de balise 
 
+Exemples de balises les plus fréquentes :
+
 * \<p> : paragraphe
 * \<h1> \<h2> ... : titre 
 * \<a> : lien HTTP 
-* \<div> : bloc de contenu 
+* \<div> : bloc de contenu (pas de signification sémantique, utilisé pour les scripts ou le CSS)
+* \<section> : ensemble de contenu (signification sémantique, comme un chapitre d'un livre)
 * \<button> : bouton
 * \<form> : formulaire
 

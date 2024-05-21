@@ -20,13 +20,13 @@ Ces sites peuvent bloquer tout robot, webcrawler comme webscrapper, considéré 
 
 Quand vous faîtes tout manuellement, tout marche. Quand vous l'automatisez, rien ne marche.
 Conséquence fatale, faut-il se résoudre à tout faire manuellement ?
-Non, car il existe des librairies de simulation automatique, comme Selenium.
+Non, car il existe des librairies de simulation automatique, comme [`Selenium`](https://www.selenium.dev/).
 
-L'idée est simple : Selenium va ouvrir un navigateur vierge comme vous le ferez, puis va faire exactement toutes les actions que vous faîtes habituellement manuellement et que vous aurez pris le temps de spécifier.
+L'idée est simple : `Selenium` va ouvrir un navigateur vierge comme vous le ferez, puis va faire exactement toutes les actions que vous faîtes habituellement manuellement et que vous aurez pris le temps de spécifier.
 
-## Premier pas avec Selenium
+## Premier pas avec `Selenium`
 
-Tout d'abord, nous allons installer Selenium, ainsi qu'une librairie qui permet d'installer les pilotes pour votre navigateur préféré !
+Tout d'abord, nous allons installer `Selenium`, ainsi qu'une librairie qui permet d'installer les pilotes pour votre navigateur préféré !
 
 ```{python}
 !pip install selenium webdriver-manager

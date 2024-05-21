@@ -23,7 +23,7 @@ Il existe diverses manières de faire du webscrapping, notamment en fonction des
 En Python, nous utilisons des librairies (ensemble de code à réutiliser permettant de faire de nombreuses opérations). Plusieurs librairies sont disponibles, cependant nous utilisons les plus usitées, pour des raisons pragmatiques.
 
 * Pour récupérer la page à webscrapper (étape 2), nous allons utiliser la librarie `requests`
-* Pour analyser et extraire les informations souhaitées (étape 3), nous allons utiliser la libraire `beautifulsoup`
+* Pour analyser et extraire les informations souhaitées (étape 3), nous allons utiliser la librairie `beautifulsoup`
 
 ## Récupérer une page
 
@@ -71,4 +71,40 @@ for lien in liste_de_lien:
     text=lien.text.strip()
     if text:
         print(f"le lien '{text}' pointe vers {lien.get("href")}")
+```
+
+## Inspecter la page avec le navigateur
+
+Pour récupérer la balise où se trouve l'information que vous recherchez, vous pouvez cliquer sur le bouton droite dans votre navigateur à l'endroit souhaité.
+
+Par exemple, ici nous voulons récupérer le titre surligné :
+
+----
+
+![*Menu du clic droite du navigateur Edge*](./img/inspecter.png)
+
+----
+
+Le navigateur affiche l'arborescence HTML :
+
+----
+
+![*Arborescence HTML affichée par le navigateur Edge*](./img/inspecter2.png)
+
+----
+
+Pour récupérer l'information, il faut soit récupérer les balises h2 et trouver la bonne (avec l'attribut data-anchor-id="python-et-le-webscrapping"), soit récupérer la section d'identifiant "python-et-le-webscrapping", puis récupérer le h2 fils.
+
+Deuxième solution :
+
+```{python}
+from bs4 import BeautifulSoup
+import requests
+mon_site="https://cthiounn.github.io/cours_introduction_webscrapping/4_premier_pas.html"
+page=requests.get(mon_site)
+page_html=page.content
+soup = BeautifulSoup(page_html, 'html.parser')
+
+section_souhaitee=soup.find("section", {"id": "python-et-le-webscrapping"})
+titre_souhaite=section_souhaitee.find("h2")
 ```
