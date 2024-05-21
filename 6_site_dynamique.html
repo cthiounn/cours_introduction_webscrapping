@@ -9,7 +9,7 @@
 <meta name="author" content="cthiounn">
 <meta name="dcterms.date" content="2024-05-20">
 
-<title>Cours introduction au webscrapping - Webscrapping dans le cas d’un site dynamique</title>
+<title>Cours introduction au Webscraping - Webscrapping dans le cas d’un site dynamique</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./6_site_dynamique.html">Webscrapping avec simulation dynamique</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./6_site_dynamique.html">Webscraping avec simulation dynamique</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -131,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Cours introduction au webscrapping</a> 
+      <a href="./">Cours introduction au Webscraping</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -147,13 +147,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction au webscrapping</span></a>
+ <span class="menu-text">Introduction au Webscraping</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2_juridique.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Le webscrapping et le juridique</span></a>
+ <span class="menu-text">Le Webscraping et le juridique</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -177,7 +177,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./6_site_dynamique.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Webscrapping avec simulation dynamique</span></a>
+ <span class="menu-text">Webscraping avec simulation dynamique</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7_bonnes_pratiques.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quelques bonnes pratiques pour le Webscraping</span></a>
   </div>
 </li>
     </ul>
@@ -243,11 +249,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="premier-pas-avec-selenium" class="level2">
 <h2 class="anchored" data-anchor-id="premier-pas-avec-selenium">Premier pas avec <code>Selenium</code></h2>
 <p>Tout d’abord, nous allons installer <code>Selenium</code>, ainsi qu’une librairie qui permet d’installer les pilotes pour votre navigateur préféré !</p>
-<div id="e00c7556" class="cell">
+<div id="25c97163" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install selenium webdriver<span class="op">-</span>manager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ensuite, nous sommes parés pour visiter notre site préféré :</p>
-<div id="2a5b6c3c" class="cell">
+<div id="150f7e32" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium <span class="im">import</span> webdriver</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.edge.service <span class="im">import</span> Service <span class="im">as</span> EdgeService</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> webdriver_manager.microsoft <span class="im">import</span> EdgeChromiumDriverManager</span>
@@ -258,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>navigateur_pilote_auto.get(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Nous souhaitons cliquer sur le bouton de login :</p>
-<div id="42de442a" class="cell">
+<div id="576bbb57" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.keys <span class="im">import</span> Keys</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.by <span class="im">import</span> By</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.support.select <span class="im">import</span> Select</span>

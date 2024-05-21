@@ -6,7 +6,7 @@
     "section": "",
     "text": "Si vous avez suivi les premiers pas du Webscrapping avec requests et BeautifulSoup sur vos sites préférés, vous avez probablement eu le souci de ne pas disposer du code HTML de la page, alors que vous avez requêté correctement le site. Cela apparaît avec le chargement des sites a posteriori. En effet, les sites utilisant les dernières librairies de Javascript vous envoient une première page, assez vide. Puis, dans cette première page, un script s’execute pour bâtir le contenu que vous souhaitez accéder. Avec l’utilisation de deux dernières librairies citées, il est difficile de récupérer l’information a posteriori\nDe même, certains sites spécialisent leur affichage en fonction des navigateurs et des systèmes d’exploitation des visiteurs, par la carte d’identité de votre navigateur qui en dit long sur vous (User-Agent). Ces sites peuvent bloquer tout robot, webcrawler comme webscrapper, considéré comme indésirable.",
     "crumbs": [
-      "Webscrapping avec simulation dynamique"
+      "Webscraping avec simulation dynamique"
     ]
   },
   {
@@ -16,7 +16,7 @@
     "section": "",
     "text": "Si vous avez suivi les premiers pas du Webscrapping avec requests et BeautifulSoup sur vos sites préférés, vous avez probablement eu le souci de ne pas disposer du code HTML de la page, alors que vous avez requêté correctement le site. Cela apparaît avec le chargement des sites a posteriori. En effet, les sites utilisant les dernières librairies de Javascript vous envoient une première page, assez vide. Puis, dans cette première page, un script s’execute pour bâtir le contenu que vous souhaitez accéder. Avec l’utilisation de deux dernières librairies citées, il est difficile de récupérer l’information a posteriori\nDe même, certains sites spécialisent leur affichage en fonction des navigateurs et des systèmes d’exploitation des visiteurs, par la carte d’identité de votre navigateur qui en dit long sur vous (User-Agent). Ces sites peuvent bloquer tout robot, webcrawler comme webscrapper, considéré comme indésirable.",
     "crumbs": [
-      "Webscrapping avec simulation dynamique"
+      "Webscraping avec simulation dynamique"
     ]
   },
   {
@@ -26,7 +26,7 @@
     "section": "Simuler son propre comportement",
     "text": "Simuler son propre comportement\nQuand vous faîtes tout manuellement, tout marche. Quand vous l’automatisez, rien ne marche. Conséquence fatale, faut-il se résoudre à tout faire manuellement ? Non, car il existe des librairies de simulation automatique, comme Selenium.\nL’idée est simple : Selenium va ouvrir un navigateur vierge comme vous le ferez, puis va faire exactement toutes les actions que vous faîtes habituellement manuellement et que vous aurez pris le temps de spécifier.",
     "crumbs": [
-      "Webscrapping avec simulation dynamique"
+      "Webscraping avec simulation dynamique"
     ]
   },
   {
@@ -36,35 +36,35 @@
     "section": "Premier pas avec Selenium",
     "text": "Premier pas avec Selenium\nTout d’abord, nous allons installer Selenium, ainsi qu’une librairie qui permet d’installer les pilotes pour votre navigateur préféré !\n\n!pip install selenium webdriver-manager\n\nEnsuite, nous sommes parés pour visiter notre site préféré :\n\nfrom selenium import webdriver\nfrom selenium.webdriver.edge.service import Service as EdgeService\nfrom webdriver_manager.microsoft import EdgeChromiumDriverManager\n\nnavigateur_pilote_auto = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))\n\nurl = 'https://datalab.sspcloud.fr/'\nnavigateur_pilote_auto.get(url)\n\nNous souhaitons cliquer sur le bouton de login :\n\nfrom selenium.webdriver.common.keys import Keys\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.support.select import Select\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.webdriver.support.ui import WebDriverWait\n\nwait = WebDriverWait(navigateur_pilote_auto, 30)\nlogin_button=navigateur_pilote_auto.find_elements(By.TAG_NAME, \"button\")[0]\nwait.until(EC.element_to_be_clickable(login_button)).send_keys(Keys.ENTER)",
     "crumbs": [
-      "Webscrapping avec simulation dynamique"
+      "Webscraping avec simulation dynamique"
     ]
   },
   {
     "objectID": "4_premier_pas.html",
     "href": "4_premier_pas.html",
-    "title": "Mon premier Webscrapping",
+    "title": "Mon premier Webscraping",
     "section": "",
-    "text": "Identifier le site à webscrapper\nRécupérer la page à webscrapper\nAnalyser et extraire les informations pertinentes sur la page\n\nDans ce cours d’introduction, nous partons d’un site déjà identifié pour ne pas faire du webcrawling. Dans la suite, nous utiliserons le langage de programmation Python",
+    "text": "Identifier le site à webscraper\nRécupérer la page à webscraper\nAnalyser et extraire les informations pertinentes sur la page\n\nDans ce cours d’introduction, nous partons d’un site déjà identifié pour ne pas faire du webcrawling. Dans la suite, nous utiliserons le langage de programmation Python",
     "crumbs": [
       "Premiers pas avec BeautifulSoup"
     ]
   },
   {
-    "objectID": "4_premier_pas.html#etapes-du-webscrapping",
-    "href": "4_premier_pas.html#etapes-du-webscrapping",
-    "title": "Mon premier Webscrapping",
+    "objectID": "4_premier_pas.html#etapes-du-webscraping",
+    "href": "4_premier_pas.html#etapes-du-webscraping",
+    "title": "Mon premier Webscraping",
     "section": "",
-    "text": "Identifier le site à webscrapper\nRécupérer la page à webscrapper\nAnalyser et extraire les informations pertinentes sur la page\n\nDans ce cours d’introduction, nous partons d’un site déjà identifié pour ne pas faire du webcrawling. Dans la suite, nous utiliserons le langage de programmation Python",
+    "text": "Identifier le site à webscraper\nRécupérer la page à webscraper\nAnalyser et extraire les informations pertinentes sur la page\n\nDans ce cours d’introduction, nous partons d’un site déjà identifié pour ne pas faire du webcrawling. Dans la suite, nous utiliserons le langage de programmation Python",
     "crumbs": [
       "Premiers pas avec BeautifulSoup"
     ]
   },
   {
-    "objectID": "4_premier_pas.html#python-et-le-webscrapping",
-    "href": "4_premier_pas.html#python-et-le-webscrapping",
-    "title": "Mon premier Webscrapping",
-    "section": "Python et le Webscrapping",
-    "text": "Python et le Webscrapping\nIl existe diverses manières de faire du webscrapping, notamment en fonction des langages de programmes. En Python, nous utilisons des librairies (ensemble de code à réutiliser permettant de faire de nombreuses opérations). Plusieurs librairies sont disponibles, cependant nous utilisons les plus usitées, pour des raisons pragmatiques.\n\nPour récupérer la page à webscrapper (étape 2), nous allons utiliser la librarie requests\nPour analyser et extraire les informations souhaitées (étape 3), nous allons utiliser la librairie beautifulsoup",
+    "objectID": "4_premier_pas.html#python-et-le-webscraping",
+    "href": "4_premier_pas.html#python-et-le-webscraping",
+    "title": "Mon premier Webscraping",
+    "section": "Python et le Webscraping",
+    "text": "Python et le Webscraping\nIl existe diverses manières de faire du webscrapping, notamment en fonction des langages de programmes. En Python, nous utilisons des librairies (ensemble de code à réutiliser permettant de faire de nombreuses opérations). Plusieurs librairies sont disponibles, cependant nous utilisons les plus usitées, pour des raisons pragmatiques.\n\nPour récupérer la page à webscraper (étape 2), nous allons utiliser la librarie requests\nPour analyser et extraire les informations souhaitées (étape 3), nous allons utiliser la librairie beautifulsoup",
     "crumbs": [
       "Premiers pas avec BeautifulSoup"
     ]
@@ -72,7 +72,7 @@
   {
     "objectID": "4_premier_pas.html#récupérer-une-page",
     "href": "4_premier_pas.html#récupérer-une-page",
-    "title": "Mon premier Webscrapping",
+    "title": "Mon premier Webscraping",
     "section": "Récupérer une page",
     "text": "Récupérer une page\nNous utilisons la librairie requests\n\nimport requests\nmon_site=\"https://dares.travail-emploi.gouv.fr\"\npage=requests.get(mon_site)\n\nDans l’objet page, nous pouvons récupérer le contenu HTML de la page avec :\n\npage_html=page.content\nprint(page_html)",
     "crumbs": [
@@ -82,7 +82,7 @@
   {
     "objectID": "4_premier_pas.html#récupérer-une-information-sur-la-page",
     "href": "4_premier_pas.html#récupérer-une-information-sur-la-page",
-    "title": "Mon premier Webscrapping",
+    "title": "Mon premier Webscraping",
     "section": "Récupérer une information sur la page",
     "text": "Récupérer une information sur la page\nMaintenant que nous avons la page HTML dans l’objet page_html, nous pouvons naviguer dans l’arbre HTML. Souvenez-vous la structure HTML est une structure imbriquée de balises. Nous pouvons nous la représenter sous forme d’arbre avec la racine &lt;html&gt;, ses enfants &lt;head&gt; et &lt;body&gt; et ses sous-enfants. Pour naviguer facilement et rechercher les informations et balises qui nous intéressent, nous allons utiliser la librairie beautifulsoup. Admettons qu’on veuille récupérer tous les liens présents sur la page, texte et destination de chaque lien.\nPour l’installer en Python, si vous ne l’avez pas déjà fait, vous pouvez utiliser le gestionnaire pip :\n\n!pip install beautifulsoup4\n\nPour fouiller la page à la recherche de lien :\n\nfrom bs4 import BeautifulSoup\nsoup = BeautifulSoup(page_html, 'html.parser')\n\nliste_de_lien=soup.find_all('a')\n\nUne fois qu’on a la liste des liens, nous pouvons opérer une boucle ou une fonction d’ensemble (map) pour les afficher :\n\nfor lien in liste_de_lien:\n    text=lien.text.strip()\n    if text:\n        print(f\"le lien '{text}' pointe vers {lien.get(\"href\")}\")",
     "crumbs": [
@@ -92,11 +92,101 @@
   {
     "objectID": "4_premier_pas.html#inspecter-la-page-avec-le-navigateur",
     "href": "4_premier_pas.html#inspecter-la-page-avec-le-navigateur",
-    "title": "Mon premier Webscrapping",
+    "title": "Mon premier Webscraping",
     "section": "Inspecter la page avec le navigateur",
-    "text": "Inspecter la page avec le navigateur\nPour récupérer la balise où se trouve l’information que vous recherchez, vous pouvez cliquer sur le bouton droite dans votre navigateur à l’endroit souhaité.\nPar exemple, ici nous voulons récupérer le titre surligné :\n\n\n\n\nMenu du clic droite du navigateur Edge\n\n\n\nLe navigateur affiche l’arborescence HTML :\n\n\n\n\nArborescence HTML affichée par le navigateur Edge\n\n\n\nPour récupérer l’information, il faut soit récupérer les balises h2 et trouver la bonne (avec l’attribut data-anchor-id=“python-et-le-webscrapping”), soit récupérer la section d’identifiant “python-et-le-webscrapping”, puis récupérer le h2 fils.\nDeuxième solution :\n\nfrom bs4 import BeautifulSoup\nimport requests\nmon_site=\"https://cthiounn.github.io/cours_introduction_webscrapping/4_premier_pas.html\"\npage=requests.get(mon_site)\npage_html=page.content\nsoup = BeautifulSoup(page_html, 'html.parser')\n\nsection_souhaitee=soup.find(\"section\", {\"id\": \"python-et-le-webscrapping\"})\ntitre_souhaite=section_souhaitee.find(\"h2\")",
+    "text": "Inspecter la page avec le navigateur\nPour récupérer la balise où se trouve l’information que vous recherchez, vous pouvez cliquer sur le bouton droite dans votre navigateur à l’endroit souhaité.\nPar exemple, ici nous voulons récupérer le titre surligné :\n\n\n\n\nMenu du clic droite du navigateur Edge\n\n\n\nLe navigateur affiche l’arborescence HTML :\n\n\n\n\nArborescence HTML affichée par le navigateur Edge\n\n\n\nPour récupérer l’information, il faut soit récupérer les balises h2 et trouver la bonne (avec l’attribut data-anchor-id=“python-et-le-webscraping”), soit récupérer la section d’identifiant “python-et-le-webscraping”, puis récupérer le h2 fils.\nDeuxième solution :\n\nfrom bs4 import BeautifulSoup\nimport requests\nmon_site=\"https://cthiounn.github.io/cours_introduction_webscrapping/4_premier_pas.html\"\npage=requests.get(mon_site)\npage_html=page.content\nsoup = BeautifulSoup(page_html, 'html.parser')\n\nsection_souhaitee=soup.find(\"section\", {\"id\": \"python-et-le-webscraping\"})\ntitre_souhaite=section_souhaitee.find(\"h2\")",
     "crumbs": [
       "Premiers pas avec BeautifulSoup"
+    ]
+  },
+  {
+    "objectID": "2_juridique.html",
+    "href": "2_juridique.html",
+    "title": "Environnement juridique du Webscrapping",
+    "section": "",
+    "text": "Le Webscrapping est une activité à la limite de la légalité et de l’illégalité. Toute automatisation, non autorisée, sur une infrastructure informatique (comprendre ici site Internet par exemple) est passible de cinq ans d’emprisonnement et de 150 000 € d’amende en droit français d’après l’Article 323-3 du Code pénal. Toutefois, si vous respectez quelques bonnes pratiques de bon sens, votre Webscrapping pourrait être considéré comme tolérable.",
+    "crumbs": [
+      "Le Webscraping et le juridique"
+    ]
+  },
+  {
+    "objectID": "2_juridique.html#le-webscrapping-et-le-juridique",
+    "href": "2_juridique.html#le-webscrapping-et-le-juridique",
+    "title": "Environnement juridique du Webscrapping",
+    "section": "",
+    "text": "Le Webscrapping est une activité à la limite de la légalité et de l’illégalité. Toute automatisation, non autorisée, sur une infrastructure informatique (comprendre ici site Internet par exemple) est passible de cinq ans d’emprisonnement et de 150 000 € d’amende en droit français d’après l’Article 323-3 du Code pénal. Toutefois, si vous respectez quelques bonnes pratiques de bon sens, votre Webscrapping pourrait être considéré comme tolérable.",
+    "crumbs": [
+      "Le Webscraping et le juridique"
+    ]
+  },
+  {
+    "objectID": "2_juridique.html#pourquoi-le-webscrapping-est-interdit",
+    "href": "2_juridique.html#pourquoi-le-webscrapping-est-interdit",
+    "title": "Environnement juridique du Webscrapping",
+    "section": "Pourquoi le Webscrapping est interdit ?",
+    "text": "Pourquoi le Webscrapping est interdit ?\nLe Webscrapping se heurte à plusieurs risques juridiques :\n\nLe premier tient à la compromission de l’infrastructure informatique “ciblée”. Si vous faites du Webscrapping sur un site de manière lourde, vous pouvez soit ralentir le site, au détriment d’autres internautes, ou soit pire le faire tomber.Ces conséquences sont appelée deni de service (DOS) ou deni de service distribué (DDOS) et sont des attaques informatiques condamnables.\nUn deuxième risque tient à la réutilisation des données. Certains sites proposent et diffusent sur Internet des informations, que vous pouvez consulter gratuitement. Cependant, l’agrégation ou la republication d’une agrégation de ces informations, même publique, peut poser un problème de propriété intellectuelle, selon la présence ou l’absence de license informatique de réutilisation.",
+    "crumbs": [
+      "Le Webscraping et le juridique"
+    ]
+  },
+  {
+    "objectID": "2_juridique.html#quelques-exemples-danalogie-pour-bien-comprendre",
+    "href": "2_juridique.html#quelques-exemples-danalogie-pour-bien-comprendre",
+    "title": "Environnement juridique du Webscrapping",
+    "section": "Quelques exemples d’analogie pour bien comprendre",
+    "text": "Quelques exemples d’analogie pour bien comprendre\nVoici quelques exemples transposées dans le réel (avec des imperfections) pour comprendre ces problèmes :\n\nVous participez à un concours de la plus belle décoration extérieure de votre habitation. Vous avez passé nuits et jours à paufiner votre décoration pour qu’elle plaise le plus, et surtout pour gagner le concours. Votre décoration fait sensation, l’admiration de la population est grandissante à tel point que des photographies tournent sur les réseaux sociaux. Bref, vous avez fait un gros buzz. Un jour en rentrant des courses, vous constatez avec frayeur qu’une centaine de personnes sont présentes devant votre résidence pour en photographier votre décoration. Néanmoins, vous ne pouvez plus accéder à votre résidence. Pire, la porte de votre résidence est détériorée… Pas cool, non ?\nVous oeuvrez pour une association caritative. Pendant une journée de solidarité, vous vous mettez aux fourneaux pour vendre des cookies et de la limonade pour récolter des fonds, en fixant des prix raisonnables. Vous “vendez” les cookies à 2€ l’unité et le verre de limonade à 2€. Une personne maline vous achète un grand stock de vos cookies et bouteilles de limonades. Vous apprendrez par la suite qu’elle a revendu ces cookies et vers de limonade en pack de 5€. Génie ou bandit?",
+    "crumbs": [
+      "Le Webscraping et le juridique"
+    ]
+  },
+  {
+    "objectID": "2_juridique.html#le-webscrapping-de-manière-gentleman",
+    "href": "2_juridique.html#le-webscrapping-de-manière-gentleman",
+    "title": "Environnement juridique du Webscrapping",
+    "section": "Le Webscrapping de manière “gentleman”",
+    "text": "Le Webscrapping de manière “gentleman”\nDans le Webscrapping, il y a le “bon” et le “mauvais” Webscrapping. Le “bon” Webscrapping consisterait à exactement simuler votre bon comportement.\n\nSi possible prevenir le site en question et demander s’ils peuvent publier les données agrégées ou mettre à disposition une API (si une API est disponible, utiliser en premier lieu l’API)\nMettre des temps d’attente respectueux : de l’ordre de la milliseconde c’est non, 1-5 secondes par requête est déjà plus raisonnable, voire plus pour des ressources volumineuses.\nWebscrapper que de besoin, si possible en “heures creuses”\nRespecter les limitations et ne pas chercher à les contourner, certains sites n’autorisent qu’un certain nombre de requête à l’heure par utilisateur.",
+    "crumbs": [
+      "Le Webscraping et le juridique"
+    ]
+  },
+  {
+    "objectID": "1_intro.html",
+    "href": "1_intro.html",
+    "title": "Introduction au Webscrapping",
+    "section": "",
+    "text": "Le Webscrapping, ou moissonnage de données, est l’automatisation de la récupération de données à partir des technologies du Web. Il s’agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes. Plutôt que d’effectuer ses opérations manuellement, les langages de programmations permettent de s’affranchir des tâches fastidieuses.",
+    "crumbs": [
+      "Introduction au Webscraping"
+    ]
+  },
+  {
+    "objectID": "1_intro.html#quest-ce-que-le-webscrapping",
+    "href": "1_intro.html#quest-ce-que-le-webscrapping",
+    "title": "Introduction au Webscrapping",
+    "section": "",
+    "text": "Le Webscrapping, ou moissonnage de données, est l’automatisation de la récupération de données à partir des technologies du Web. Il s’agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes. Plutôt que d’effectuer ses opérations manuellement, les langages de programmations permettent de s’affranchir des tâches fastidieuses.",
+    "crumbs": [
+      "Introduction au Webscraping"
+    ]
+  },
+  {
+    "objectID": "1_intro.html#pourquoi-le-webscrapping",
+    "href": "1_intro.html#pourquoi-le-webscrapping",
+    "title": "Introduction au Webscrapping",
+    "section": "Pourquoi le Webscrapping ?",
+    "text": "Pourquoi le Webscrapping ?\nSouvent, le Webscrapping répond à un besoin de disposer de données soit indisponibles par ailleurs soit de rechercher les données les plus récentes. Selon le champ d’étude, ces données récupérées ne seront pas forcément exhaustives mais pourront constituer un échantillon intéressant à analyser et à exploiter.",
+    "crumbs": [
+      "Introduction au Webscraping"
+    ]
+  },
+  {
+    "objectID": "1_intro.html#comment-faire-du-webscrapping",
+    "href": "1_intro.html#comment-faire-du-webscrapping",
+    "title": "Introduction au Webscrapping",
+    "section": "Comment faire du Webscrapping ?",
+    "text": "Comment faire du Webscrapping ?\nDans ce cours introductif, vous apprendrez comment faire du Webscrapping en bonne intelligence, à en comprendre les bases et à vous constituer un exemple intéressant dans votre portfolio. A la fin de ce cours, vous saurez faire du Webscrapping à un niveau basique, souvent suffisant, et à comprendre les tenants et aboutissants.",
+    "crumbs": [
+      "Introduction au Webscraping"
     ]
   },
   {
@@ -130,93 +220,23 @@
     ]
   },
   {
-    "objectID": "1_intro.html",
-    "href": "1_intro.html",
-    "title": "Introduction au Webscrapping",
+    "objectID": "7_bonnes_pratiques.html",
+    "href": "7_bonnes_pratiques.html",
+    "title": "Les bonnes pratiques pour du Webscraping gentleman",
     "section": "",
-    "text": "Le Webscrapping, ou moissonnage de données, est l’automatisation de la récupération de données à partir des technologies du Web. Il s’agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes. Plutôt que d’effectuer ses opérations manuellement, les langages de programmations permettent de s’affranchir des tâches fastidieuses.",
+    "text": "Nous avons vu les limites juridiques et les risques encourues dans la partie juridique. Quelques conseils qui tiennent de la règle d’or de réciprocité et du principe du Lean :\n\nDemander et prevenir en amont\nWebscraper que de besoin\nWebscraper à des horaires creuses\nWebscraper comme un humain, en mettant des temps d’attente similaire aux actions manuelles\nRespecter le droit intellectuel et citer la source si vous pouvez rediffuser\nNe pas paralléliser le Webscraping, notamment avec un système de proxy\nUtiliser les API si elles existent\nVérifier et respecter le fichier robots.txt (e.g. https://www.google.fr/robots.txt)",
     "crumbs": [
-      "Introduction au webscrapping"
+      "Quelques bonnes pratiques pour le Webscraping"
     ]
   },
   {
-    "objectID": "1_intro.html#quest-ce-que-le-webscrapping",
-    "href": "1_intro.html#quest-ce-que-le-webscrapping",
-    "title": "Introduction au Webscrapping",
+    "objectID": "7_bonnes_pratiques.html#webscraper-avec-élégance",
+    "href": "7_bonnes_pratiques.html#webscraper-avec-élégance",
+    "title": "Les bonnes pratiques pour du Webscraping gentleman",
     "section": "",
-    "text": "Le Webscrapping, ou moissonnage de données, est l’automatisation de la récupération de données à partir des technologies du Web. Il s’agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes. Plutôt que d’effectuer ses opérations manuellement, les langages de programmations permettent de s’affranchir des tâches fastidieuses.",
+    "text": "Nous avons vu les limites juridiques et les risques encourues dans la partie juridique. Quelques conseils qui tiennent de la règle d’or de réciprocité et du principe du Lean :\n\nDemander et prevenir en amont\nWebscraper que de besoin\nWebscraper à des horaires creuses\nWebscraper comme un humain, en mettant des temps d’attente similaire aux actions manuelles\nRespecter le droit intellectuel et citer la source si vous pouvez rediffuser\nNe pas paralléliser le Webscraping, notamment avec un système de proxy\nUtiliser les API si elles existent\nVérifier et respecter le fichier robots.txt (e.g. https://www.google.fr/robots.txt)",
     "crumbs": [
-      "Introduction au webscrapping"
-    ]
-  },
-  {
-    "objectID": "1_intro.html#pourquoi-le-webscrapping",
-    "href": "1_intro.html#pourquoi-le-webscrapping",
-    "title": "Introduction au Webscrapping",
-    "section": "Pourquoi le Webscrapping ?",
-    "text": "Pourquoi le Webscrapping ?\nSouvent, le Webscrapping répond à un besoin de disposer de données soit indisponibles par ailleurs soit de rechercher les données les plus récentes. Selon le champ d’étude, ces données récupérées ne seront pas forcément exhaustives mais pourront constituer un échantillon intéressant à analyser et à exploiter.",
-    "crumbs": [
-      "Introduction au webscrapping"
-    ]
-  },
-  {
-    "objectID": "1_intro.html#comment-faire-du-webscrapping",
-    "href": "1_intro.html#comment-faire-du-webscrapping",
-    "title": "Introduction au Webscrapping",
-    "section": "Comment faire du Webscrapping ?",
-    "text": "Comment faire du Webscrapping ?\nDans ce cours introductif, vous apprendrez comment faire du Webscrapping en bonne intelligence, à en comprendre les bases et à vous constituer un exemple intéressant dans votre portfolio. A la fin de ce cours, vous saurez faire du Webscrapping à un niveau basique, souvent suffisant, et à comprendre les tenants et aboutissants.",
-    "crumbs": [
-      "Introduction au webscrapping"
-    ]
-  },
-  {
-    "objectID": "2_juridique.html",
-    "href": "2_juridique.html",
-    "title": "Environnement juridique du Webscrapping",
-    "section": "",
-    "text": "Le Webscrapping est une activité à la limite de la légalité et de l’illégalité. Toute automatisation, non autorisée, sur une infrastructure informatique (comprendre ici site Internet par exemple) est passible de cinq ans d’emprisonnement et de 150 000 € d’amende en droit français d’après l’Article 323-3 du Code pénal. Toutefois, si vous respectez quelques bonnes pratiques de bon sens, votre Webscrapping pourrait être considéré comme tolérable.",
-    "crumbs": [
-      "Le webscrapping et le juridique"
-    ]
-  },
-  {
-    "objectID": "2_juridique.html#le-webscrapping-et-le-juridique",
-    "href": "2_juridique.html#le-webscrapping-et-le-juridique",
-    "title": "Environnement juridique du Webscrapping",
-    "section": "",
-    "text": "Le Webscrapping est une activité à la limite de la légalité et de l’illégalité. Toute automatisation, non autorisée, sur une infrastructure informatique (comprendre ici site Internet par exemple) est passible de cinq ans d’emprisonnement et de 150 000 € d’amende en droit français d’après l’Article 323-3 du Code pénal. Toutefois, si vous respectez quelques bonnes pratiques de bon sens, votre Webscrapping pourrait être considéré comme tolérable.",
-    "crumbs": [
-      "Le webscrapping et le juridique"
-    ]
-  },
-  {
-    "objectID": "2_juridique.html#pourquoi-le-webscrapping-est-interdit",
-    "href": "2_juridique.html#pourquoi-le-webscrapping-est-interdit",
-    "title": "Environnement juridique du Webscrapping",
-    "section": "Pourquoi le Webscrapping est interdit ?",
-    "text": "Pourquoi le Webscrapping est interdit ?\nLe Webscrapping se heurte à plusieurs risques juridiques : * Le premier tient à la compromission de l’infrastructure informatique “ciblée”. Si vous faites du Webscrapping sur un site de manière lourde, vous pouvez soit ralentir le site, au détriment d’autres internautes, ou soit pire le faire tomber.Ces conséquences sont appelée deni de service (DOS) ou deni de service distribué (DDOS) et sont des attaques informatiques condamnables. * Un deuxième risque tient à la réutilisation des données. Certains sites proposent et diffusent sur Internet des informations, que vous pouvez consulter gratuitement. Cependant, l’agrégation ou la republication d’une agrégation de ces informations, même publique, peut poser un problème de propriété intellectuelle, selon la présence ou l’absence de license informatique de réutilisation.",
-    "crumbs": [
-      "Le webscrapping et le juridique"
-    ]
-  },
-  {
-    "objectID": "2_juridique.html#quelques-exemples-danalogie-pour-bien-comprendre",
-    "href": "2_juridique.html#quelques-exemples-danalogie-pour-bien-comprendre",
-    "title": "Environnement juridique du Webscrapping",
-    "section": "Quelques exemples d’analogie pour bien comprendre",
-    "text": "Quelques exemples d’analogie pour bien comprendre\nVoici quelques exemples transposées dans le réel (avec des imperfections) pour faire sentir ces problèmes :\n\nVous participez à un concours de la plus belle décoration extérieure de votre habitation. Vous avez passé nuits et jours à paufiner votre décoration pour qu’elle plaise le plus, et surtout pour gagner le concours. Votre décoration fait sensation, l’admiration de la population est grandissante à tel point que des photographies tournent sur les réseaux sociaux. Bref, vous avez fait un gros buzz. Un jour en rentrant des courses, vous constatez avec frayeur qu’une centaine de personnes sont présentes devant votre résidence pour en photographier votre décoration. Néanmoins, vous ne pouvez plus accéder à votre résidence. Pire, la porte de votre résidence est détériorée… Pas cool, non ?\nVous oeuvrez pour une association caritative. Pendant une journée de solidarité, vous vous mettez aux fourneaux pour vendre des cookies et de la limonade pour récolter des fonds, en fixant des prix raisonnables. Vous “vendez” les cookies à 2€ l’unité et le verre de limonade à 2€. Une personne maline vous achète un grand stock de vos cookies et bouteilles de limonades. Vous apprendrez par la suite qu’elle a revendu ces cookies et vers de limonade en pack de 5€. Génie ou bandit?",
-    "crumbs": [
-      "Le webscrapping et le juridique"
-    ]
-  },
-  {
-    "objectID": "2_juridique.html#le-webscrapping-de-manière-gentleman",
-    "href": "2_juridique.html#le-webscrapping-de-manière-gentleman",
-    "title": "Environnement juridique du Webscrapping",
-    "section": "Le Webscrapping de manière “gentleman”",
-    "text": "Le Webscrapping de manière “gentleman”\nDans le Webscrapping, il y a le “bon” et le “mauvais” Webscrapping. Le “bon” Webscrapping consisterait à exactement simuler votre bon comportement.\n\nSi possible prevenir le site en question et demander s’ils peuvent publier les données agrégées ou mettre à disposition une API (si une API est disponible, utiliser en premier lieu l’API)\nMettre des temps d’attente respectueux : de l’ordre de la milliseconde c’est non, 1-5 secondes par requête est déjà plus raisonnable, voire plus pour des ressources volumineuses.\nWebscrapper que de besoin, si possible en “heures creuses”\nRespecter les limitations et ne pas chercher à les contourner, certains sites n’autorisent qu’un certain nombre de requête à l’heure par utilisateur.",
-    "crumbs": [
-      "Le webscrapping et le juridique"
+      "Quelques bonnes pratiques pour le Webscraping"
     ]
   },
   {
