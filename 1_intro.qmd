@@ -1,23 +1,23 @@
 ---
-title: "Introduction au Webscrapping"
+title: "Introduction au Webscraping"
 author: "cthiounn"
 date: "2024-05-20"
 format: html
 ---
 
-## Qu'est-ce que le Webscrapping ?
+## Qu'est-ce que le Webscraping ?
 
-Le Webscrapping, ou moissonnage de données, est l'automatisation de la récupération de données à partir des technologies du Web.
+Le Webscraping, ou moissonnage de données, est l'automatisation de la récupération de données à partir des technologies du Web.
 Il s'agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes.
 Plutôt que d'effectuer ses opérations manuellement, les langages de programmations permettent de s'affranchir des tâches fastidieuses.
 
-## Pourquoi le Webscrapping ?
+## Pourquoi le Webscraping ?
 
-Souvent, le Webscrapping répond à un besoin de disposer de données soit indisponibles par ailleurs soit de rechercher les données les plus récentes.
+Souvent, le Webscraping répond à un besoin de disposer de données soit indisponibles par ailleurs soit de rechercher les données les plus récentes.
 Selon le champ d'étude, ces données récupérées ne seront pas forcément exhaustives mais pourront constituer un échantillon intéressant à analyser et à exploiter.
 
 
-## Comment faire du Webscrapping ?
+## Comment faire du Webscraping ?
 
-Dans ce cours introductif, vous apprendrez comment faire du Webscrapping en bonne intelligence, à en comprendre les bases et à vous constituer un exemple intéressant dans votre portfolio.
-A la fin de ce cours, vous saurez faire du Webscrapping à un niveau basique, souvent suffisant, et à comprendre les tenants et aboutissants.
+Dans ce cours introductif, vous apprendrez comment faire du Webscraping en bonne intelligence, à en comprendre les bases et à vous constituer un exemple intéressant dans votre portfolio.
+A la fin de ce cours, vous saurez faire du Webscraping à un niveau basique, souvent suffisant, et à comprendre les tenants et aboutissants.

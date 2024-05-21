@@ -1,5 +1,5 @@
 ---
-title: "Bases pour le Webscrapping"
+title: "Bases pour le Webscraping"
 author: "cthiounn"
 date: "2024-05-20"
 format: html
@@ -7,7 +7,7 @@ format: html
 
 ## Comprendre les technologies d'Internet
 
-Pour faire du Webscrapping, il est primordiable de comprendre les bases du Web.
+Pour faire du Webscraping, il est primordiable de comprendre les bases du Web.
 Il s'agit de comprendre les manières d'interagir avec les sites et API, avec notamment le [protocole/langage HTTP](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
 et de connaître les formats de données ([HTML](https://fr.wikipedia.org/wiki/Hypertext_Markup_Language), XML, formats de fichiers, etc)
 
@@ -35,7 +35,7 @@ Dans le cas des API, si vous avez les droits sur l'API :
 * **PUT** (=mettre à jour une information)
 * **DELETE** (=supprimer une information)
 
-Pour le Webscrapping, nous allons principalement soumettre des requêtes GET et POST (tout comme dans la navigation Web classique)
+Pour le Webscraping, nous allons principalement soumettre des requêtes GET et POST (tout comme dans la navigation Web classique)
 
 Le [protocole HTTPS](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure) (SSL en plus de HTTP) est juste l'ajout d'un chiffrement de toutes les communications, notamment obligatoire si vous soumettez un mot de passe ou une information sensible.
 Sans le chiffrement, tout est public et visible à qui se donne la peine de vouloir espionner.
@@ -67,6 +67,6 @@ Cette structuration permet de questionner la page (est-ce qu'il y a des liens HT
 
 ## Au delà de HTML : CSS et Javascript
 
-La librairie CSS permet d'habiller le site de couleur et de mieux agencer l'information. Le CSS n'est pas utile pour le Webscrapping mais seulement agréable à l'oeil des internautes.
+La librairie CSS permet d'habiller le site de couleur et de mieux agencer l'information. Le CSS n'est pas utile pour le Webscraping mais seulement agréable à l'oeil des internautes.
 Cependant, les scripts Javascript permettent d'ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori.
-Le chargement de données a posteriori par des Javascript va complexifier les méthodes utilisées pour le Webscrapping.
+Le chargement de données a posteriori par des Javascript va complexifier les méthodes utilisées pour le Webscraping.
