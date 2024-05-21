@@ -231,18 +231,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="quest-ce-quune-api" class="level2">
 <h2 class="anchored" data-anchor-id="quest-ce-quune-api">Qu’est-ce qu’une API ?</h2>
-<p>Une API (application programming interface) est la mise à disposition d’une manière d’accéder aux informations de manière automatisée. Plutôt que de présenter l’information sous forme de page web, sous forme de fichiers aux différents formats, l’information est servie “brute” sur votre demande, de manière personnalisée. Pour accéder à l’information voulue, il est nécessaire de savoir requêter l’API. Pour cela, les (bonnes) API sont souvent accompagnées de documentation.</p>
+<p>Une <a href="https://fr.wikipedia.org/wiki/Interface_de_programmation">API (application programming interface)</a> est la mise à disposition d’une manière d’accéder aux informations de manière automatisée. Plutôt que de présenter l’information sous forme de page web, sous forme de fichiers aux différents formats, l’information est servie “brute” sur votre demande, de manière personnalisée. Pour accéder à l’information voulue, il est nécessaire de savoir requêter l’API. Pour cela, les (bonnes) API sont souvent accompagnées de documentation.</p>
 <p>Exemple :</p>
 <p><a href="https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/item-info.jag?name=Sirene&amp;version=V3.11&amp;provider=insee">Documentation pour interroger le répertoire des entreprises</a></p>
 <p>Parfois, pour des raisons de sécurité, l’API peut vous demander de générer un jeton d’authentification, pour pouvoir la requêter.</p>
 </section>
 <section id="exemple-de-requêtage-dapi" class="level2">
 <h2 class="anchored" data-anchor-id="exemple-de-requêtage-dapi">Exemple de requêtage d’API</h2>
-<p>Recherchons une adresse sur l’API suivante https://adresse.data.gouv.fr/api-doc/adresse :</p>
+<p>Recherchons une adresse sur l’API suivante api-adresse.data.gouv.fr (Documentation : <a href="https://adresse.data.gouv.fr/api-doc/adresse">https://adresse.data.gouv.fr/api-doc/adresse</a>) :</p>
 <p>La documentation montre un exemple avec l’utilitaire curl (“équivalent de requests” en ligne de commande) :</p>
 <pre><code>curl "https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port"</code></pre>
 <p>ce qui donnerait en Python :</p>
-<div id="563d38d2" class="cell">
+<div id="3908a415" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>requete<span class="op">=</span><span class="st">"8 bd du port"</span>.replace(<span class="st">" "</span>,<span class="st">"+"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>requete_final<span class="op">=</span><span class="ss">f"https://api-adresse.data.gouv.fr/search/?q=</span><span class="sc">{</span>requete<span class="sc">}</span><span class="ss">"</span></span>
@@ -250,7 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>page.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ici le résultat renvoie les résultats en json, qu’il faut parser :</p>
-<div id="6ad0faaa" class="cell">
+<div id="eb5daad5" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dictionnaire_resultat<span class="op">=</span>json.loads(page.text)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> feature <span class="kw">in</span> dictionnaire_resultat[<span class="st">"features"</span>]:</span>

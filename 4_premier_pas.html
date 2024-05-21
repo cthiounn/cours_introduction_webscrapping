@@ -194,6 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#python-et-le-webscrapping" id="toc-python-et-le-webscrapping" class="nav-link" data-scroll-target="#python-et-le-webscrapping">Python et le Webscrapping</a></li>
   <li><a href="#récupérer-une-page" id="toc-récupérer-une-page" class="nav-link" data-scroll-target="#récupérer-une-page">Récupérer une page</a></li>
   <li><a href="#récupérer-une-information-sur-la-page" id="toc-récupérer-une-information-sur-la-page" class="nav-link" data-scroll-target="#récupérer-une-information-sur-la-page">Récupérer une information sur la page</a></li>
+  <li><a href="#inspecter-la-page-avec-le-navigateur" id="toc-inspecter-la-page-avec-le-navigateur" class="nav-link" data-scroll-target="#inspecter-la-page-avec-le-navigateur">Inspecter la page avec le navigateur</a></li>
   </ul>
 </nav>
     </div>
@@ -245,19 +246,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Il existe diverses manières de faire du webscrapping, notamment en fonction des langages de programmes. En Python, nous utilisons des librairies (ensemble de code à réutiliser permettant de faire de nombreuses opérations). Plusieurs librairies sont disponibles, cependant nous utilisons les plus usitées, pour des raisons pragmatiques.</p>
 <ul>
 <li>Pour récupérer la page à webscrapper (étape 2), nous allons utiliser la librarie <code>requests</code></li>
-<li>Pour analyser et extraire les informations souhaitées (étape 3), nous allons utiliser la libraire <code>beautifulsoup</code></li>
+<li>Pour analyser et extraire les informations souhaitées (étape 3), nous allons utiliser la librairie <code>beautifulsoup</code></li>
 </ul>
 </section>
 <section id="récupérer-une-page" class="level2">
 <h2 class="anchored" data-anchor-id="récupérer-une-page">Récupérer une page</h2>
 <p>Nous utilisons la librairie <a href="https://fr.python-requests.org/en/latest/"><code>requests</code></a></p>
-<div id="abe43895" class="cell">
+<div id="68bf19fc" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mon_site<span class="op">=</span><span class="st">"https://dares.travail-emploi.gouv.fr"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>page<span class="op">=</span>requests.get(mon_site)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Dans l’objet page, nous pouvons récupérer le contenu HTML de la page avec :</p>
-<div id="4bf4b148" class="cell">
+<div id="7802e745" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>page_html<span class="op">=</span>page.content</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(page_html)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -266,22 +267,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="récupérer-une-information-sur-la-page">Récupérer une information sur la page</h2>
 <p>Maintenant que nous avons la page HTML dans l’objet page_html, nous pouvons naviguer dans l’arbre HTML. Souvenez-vous la structure HTML est une structure imbriquée de balises. Nous pouvons nous la représenter sous forme d’arbre avec la racine &lt;html&gt;, ses enfants &lt;head&gt; et &lt;body&gt; et ses sous-enfants. Pour naviguer facilement et rechercher les informations et balises qui nous intéressent, nous allons utiliser la librairie beautifulsoup. Admettons qu’on veuille récupérer tous les liens présents sur la page, texte et destination de chaque lien.</p>
 <p>Pour l’installer en Python, si vous ne l’avez pas déjà fait, vous pouvez utiliser le gestionnaire pip :</p>
-<div id="86fadcd8" class="cell">
+<div id="12dfc1f1" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install beautifulsoup4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Pour fouiller la page à la recherche de lien :</p>
-<div id="dbd6ff79" class="cell">
+<div id="219c9eb0" class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(page_html, <span class="st">'html.parser'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>liste_de_lien<span class="op">=</span>soup.find_all(<span class="st">'a'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Une fois qu’on a la liste des liens, nous pouvons opérer une boucle ou une fonction d’ensemble (map) pour les afficher :</p>
-<div id="454dfbfe" class="cell">
+<div id="7440ec3e" class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lien <span class="kw">in</span> liste_de_lien:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    text<span class="op">=</span>lien.text.strip()</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> text:</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"le lien '</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">' pointe vers </span><span class="sc">{</span>lien<span class="sc">.</span>get(<span class="st">"href"</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="inspecter-la-page-avec-le-navigateur" class="level2">
+<h2 class="anchored" data-anchor-id="inspecter-la-page-avec-le-navigateur">Inspecter la page avec le navigateur</h2>
+<p>Pour récupérer la balise où se trouve l’information que vous recherchez, vous pouvez cliquer sur le bouton droite dans votre navigateur à l’endroit souhaité.</p>
+<p>Par exemple, ici nous voulons récupérer le titre surligné :</p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/inspecter.png" class="img-fluid figure-img"></p>
+<figcaption><em>Menu du clic droite du navigateur Edge</em></figcaption>
+</figure>
+</div>
+<hr>
+<p>Le navigateur affiche l’arborescence HTML :</p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/inspecter2.png" class="img-fluid figure-img"></p>
+<figcaption><em>Arborescence HTML affichée par le navigateur Edge</em></figcaption>
+</figure>
+</div>
+<hr>
+<p>Pour récupérer l’information, il faut soit récupérer les balises h2 et trouver la bonne (avec l’attribut data-anchor-id=“python-et-le-webscrapping”), soit récupérer la section d’identifiant “python-et-le-webscrapping”, puis récupérer le h2 fils.</p>
+<p>Deuxième solution :</p>
+<div id="e2e87973" class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>mon_site<span class="op">=</span><span class="st">"https://cthiounn.github.io/cours_introduction_webscrapping/4_premier_pas.html"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>page<span class="op">=</span>requests.get(mon_site)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>page_html<span class="op">=</span>page.content</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(page_html, <span class="st">'html.parser'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>section_souhaitee<span class="op">=</span>soup.find(<span class="st">"section"</span>, {<span class="st">"id"</span>: <span class="st">"python-et-le-webscrapping"</span>})</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>titre_souhaite<span class="op">=</span>section_souhaitee.find(<span class="st">"h2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

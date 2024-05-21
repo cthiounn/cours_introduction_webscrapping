@@ -192,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#les-sites-dynamiques" id="toc-les-sites-dynamiques" class="nav-link active" data-scroll-target="#les-sites-dynamiques">Les sites “dynamiques”</a></li>
   <li><a href="#simuler-son-propre-comportement" id="toc-simuler-son-propre-comportement" class="nav-link" data-scroll-target="#simuler-son-propre-comportement">Simuler son propre comportement</a></li>
-  <li><a href="#premier-pas-avec-selenium" id="toc-premier-pas-avec-selenium" class="nav-link" data-scroll-target="#premier-pas-avec-selenium">Premier pas avec Selenium</a></li>
+  <li><a href="#premier-pas-avec-selenium" id="toc-premier-pas-avec-selenium" class="nav-link" data-scroll-target="#premier-pas-avec-selenium">Premier pas avec <code>Selenium</code></a></li>
   </ul>
 </nav>
     </div>
@@ -237,17 +237,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="simuler-son-propre-comportement" class="level2">
 <h2 class="anchored" data-anchor-id="simuler-son-propre-comportement">Simuler son propre comportement</h2>
-<p>Quand vous faîtes tout manuellement, tout marche. Quand vous l’automatisez, rien ne marche. Conséquence fatale, faut-il se résoudre à tout faire manuellement ? Non, car il existe des librairies de simulation automatique, comme Selenium.</p>
-<p>L’idée est simple : Selenium va ouvrir un navigateur vierge comme vous le ferez, puis va faire exactement toutes les actions que vous faîtes habituellement manuellement et que vous aurez pris le temps de spécifier.</p>
+<p>Quand vous faîtes tout manuellement, tout marche. Quand vous l’automatisez, rien ne marche. Conséquence fatale, faut-il se résoudre à tout faire manuellement ? Non, car il existe des librairies de simulation automatique, comme <a href="https://www.selenium.dev/"><code>Selenium</code></a>.</p>
+<p>L’idée est simple : <code>Selenium</code> va ouvrir un navigateur vierge comme vous le ferez, puis va faire exactement toutes les actions que vous faîtes habituellement manuellement et que vous aurez pris le temps de spécifier.</p>
 </section>
 <section id="premier-pas-avec-selenium" class="level2">
-<h2 class="anchored" data-anchor-id="premier-pas-avec-selenium">Premier pas avec Selenium</h2>
-<p>Tout d’abord, nous allons installer Selenium, ainsi qu’une librairie qui permet d’installer les pilotes pour votre navigateur préféré !</p>
-<div id="8a94b795" class="cell">
+<h2 class="anchored" data-anchor-id="premier-pas-avec-selenium">Premier pas avec <code>Selenium</code></h2>
+<p>Tout d’abord, nous allons installer <code>Selenium</code>, ainsi qu’une librairie qui permet d’installer les pilotes pour votre navigateur préféré !</p>
+<div id="e00c7556" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install selenium webdriver<span class="op">-</span>manager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ensuite, nous sommes parés pour visiter notre site préféré :</p>
-<div id="d2a87408" class="cell">
+<div id="2a5b6c3c" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium <span class="im">import</span> webdriver</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.edge.service <span class="im">import</span> Service <span class="im">as</span> EdgeService</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> webdriver_manager.microsoft <span class="im">import</span> EdgeChromiumDriverManager</span>
@@ -258,7 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>navigateur_pilote_auto.get(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Nous souhaitons cliquer sur le bouton de login :</p>
-<div id="6a7589fa" class="cell">
+<div id="42de442a" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.keys <span class="im">import</span> Keys</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.by <span class="im">import</span> By</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.support.select <span class="im">import</span> Select</span>
