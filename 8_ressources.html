@@ -9,7 +9,7 @@
 <meta name="author" content="cthiounn">
 <meta name="dcterms.date" content="2024-06-06">
 
-<title>Cours introduction au Webscraping - Bases pour le Webscraping</title>
+<title>Cours introduction au Webscraping - Pour aller plus loin</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3_html.html">Internet et le web</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./8_ressources.html">Pour aller plus loin</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -124,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3_html.html" class="sidebar-item-text sidebar-link active">
+  <a href="./3_html.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Internet et le web</span></a>
   </div>
 </li>
@@ -154,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./8_ressources.html" class="sidebar-item-text sidebar-link">
+  <a href="./8_ressources.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Pour aller plus loin</span></a>
   </div>
 </li>
@@ -168,12 +168,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#comprendre-les-technologies-dinternet" id="toc-comprendre-les-technologies-dinternet" class="nav-link active" data-scroll-target="#comprendre-les-technologies-dinternet">Comprendre les technologies d’Internet</a></li>
-  <li><a href="#naviguer-sur-le-web" id="toc-naviguer-sur-le-web" class="nav-link" data-scroll-target="#naviguer-sur-le-web">Naviguer sur le Web</a></li>
-  <li><a href="#les-urluri-en-pratique" id="toc-les-urluri-en-pratique" class="nav-link" data-scroll-target="#les-urluri-en-pratique">Les URL/URI en pratique</a></li>
-  <li><a href="#le-protocole-https-et-api" id="toc-le-protocole-https-et-api" class="nav-link" data-scroll-target="#le-protocole-https-et-api">Le protocole HTTP(S) et API</a></li>
-  <li><a href="#la-page-html" id="toc-la-page-html" class="nav-link" data-scroll-target="#la-page-html">La page HTML</a></li>
-  <li><a href="#au-delà-de-html-css-et-javascript" id="toc-au-delà-de-html-css-et-javascript" class="nav-link" data-scroll-target="#au-delà-de-html-css-et-javascript">Au delà de HTML : CSS et JavaScript</a></li>
+  <li><a href="#dautres-ressources-pour-aller-plus-loin" id="toc-dautres-ressources-pour-aller-plus-loin" class="nav-link active" data-scroll-target="#dautres-ressources-pour-aller-plus-loin">D’autres ressources pour aller plus loin</a></li>
   </ul>
 </nav>
     </div>
@@ -182,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bases pour le Webscraping</h1>
+<h1 class="title">Pour aller plus loin</h1>
 </div>
 
 
@@ -211,96 +206,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="comprendre-les-technologies-dinternet" class="level2">
-<h2 class="anchored" data-anchor-id="comprendre-les-technologies-dinternet">Comprendre les technologies d’Internet</h2>
-<p>Pour faire du Webscraping, il est primordiable de comprendre les bases du Web. Il s’agit de comprendre les manières d’interagir avec les sites et API, avec notamment le <a href="https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol">protocole/langage HTTP</a>. et de connaître les formats de données (<a href="https://fr.wikipedia.org/wiki/Hypertext_Markup_Language">HTML</a>, XML, formats de fichiers, etc)</p>
-</section>
-<section id="naviguer-sur-le-web" class="level2">
-<h2 class="anchored" data-anchor-id="naviguer-sur-le-web">Naviguer sur le Web</h2>
-<p>Pour naviguer sur le Web, notre internaute Lambda utilise son navigateur Web préférée (Edge, Chrome, Mozilla, Opéra, etc.) en tapant le nom du site dans la barre de navigation (1). Le navigateur affiche la page d’accueil (2). Lambda clique sur un lien (3) et le navigateur lui affiche la nouvelle page (4).</p>
-<p>Décortiquons ce qui s’est passé (en omettant des parties techniques comme DNS, les IP et le routage des informations) :</p>
-<ol type="1">
-<li>En tapant le nom du site, Lambda dit à son navigateur qu’il souhaite accèder au site (admettons www.insee.fr/) . Le navigateur utilise le langage HTTP au serveur de l’Insee pour demander la page d’accueil, le navigateur envoie la demande “GET /”</li>
-<li>Le serveur de l’Insee répond avec la page HTML d’accueil. Le navigateur affiche à l’utilisateur Lambda la page HTML (qui est juste une suite de caractères comprennant des informations entre des balises standardisées
-
-<header>
-</header>
-
-
-
-)</li>
-<li>Lambda clique sur un lien (e.g.&nbsp;&lt;a href=“/concours/”&gt; Ma page Concours), le navigateur comprends qu’il doit refaire une requête HTTP “GET /concours/”</li>
-<li>Le serveur lui répond avec une nouvelle page HTML. (et ainsi de suite…)</li>
-</ol>
-</section>
-<section id="les-urluri-en-pratique" class="level2">
-<h2 class="anchored" data-anchor-id="les-urluri-en-pratique">Les URL/URI en pratique</h2>
-<p>Les <a href="https://fr.wikipedia.org/wiki/Uniform_Resource_Locator">URL</a> et les <a href="https://fr.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a> sont des chaînes de caractères permettant notamment la navigation We (grosso modo ce que vous voyez dans votre barre de navigation en haut de votre navigateur préféré) mais aussi tout échange par Internet, de fichiers et autres informations. Il est important de les observer, de connaître la règle de base suivante :</p>
-<blockquote class="blockquote">
-<p>URI = protocole + :// + [utilisateur @] + “nom de domaine” + [ : port] + requête souhaitée</p>
-</blockquote>
-<p>Exemple :</p>
-<blockquote class="blockquote">
-<p>https://www.insee.fr/</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>protocole : https</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“nom de domaine” : www.insee.fr</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>utilisateur : pas d’utilisateur</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>port : 443 (implicite, port par défaut du procole HTTPS)</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>requête souhaitée : <code>/</code></p>
-</blockquote>
-<p>Bien souvent, quand vous tapez dans votre navigateur un site, vous faîtes preuve de concision en tapant seulement www.insee.fr. Dès lors, le navigateur est configuré pour naviguer en HTTPS (et mettre le port par défaut, 443 pour HTTPS et 80 pour HTTP) et donc autocomplète le protocole et va par défaut demander la racine <code>/</code></p>
-<p>Pour en savoir plus (ressource en anglais) : <a href="https://www.rfc-editor.org/rfc/rfc3986#section-3">Documentation RFC3968</a></p>
-</section>
-<section id="le-protocole-https-et-api" class="level2">
-<h2 class="anchored" data-anchor-id="le-protocole-https-et-api">Le protocole HTTP(S) et API</h2>
-<p>Pour interagir avec un site Web (serveur HTTP), il y a un certain nombre de commandes que nous pouvons lui soumettre, aussi appelée <a href="https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol#M%C3%A9thodes">verbe HTTP</a>. Voici les plus fréquents :</p>
+<section id="dautres-ressources-pour-aller-plus-loin" class="level2">
+<h2 class="anchored" data-anchor-id="dautres-ressources-pour-aller-plus-loin">D’autres ressources pour aller plus loin</h2>
+<p>Quelques ressources pour aller plus loin :</p>
 <ul>
-<li><strong>GET</strong> (=récupérer une information, en général une page HTML ou un fichier)</li>
-<li><strong>POST</strong> (=soumettre de la donnée et récupérer éventuellement une information, obligatoirement le cas dans un formulaire sensible)</li>
+<li>Lino Galiana détaille un chapitre pratique dans son cours de Python : <a href="https://pythonds.linogaliana.fr/content/manipulation/04a_webscraping_TP.html">https://pythonds.linogaliana.fr/content/manipulation/04a_webscraping_TP.html</a></li>
+<li>Le SSP Lab de l’Insee propose une formation au web scraping : <a href="https://inseefrlab.github.io/formation-webscraping/#/index">https://inseefrlab.github.io/formation-webscraping/#/index</a></li>
 </ul>
-<p>Dans le cas des API, si vous avez les droits sur l’API :</p>
-<ul>
-<li><strong>PUT</strong> (=mettre à jour une information)</li>
-<li><strong>DELETE</strong> (=supprimer une information)</li>
-</ul>
-<p>Pour le Webscraping, nous allons principalement soumettre des requêtes GET et POST (tout comme dans la navigation Web classique)</p>
-<p>Le <a href="https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure">protocole HTTPS</a> (SSL en plus de HTTP) est juste l’ajout d’un chiffrement de toutes les communications, notamment obligatoire si vous soumettez un mot de passe ou une information sensible. Sans le chiffrement, tout est public et visible à qui se donne la peine de vouloir espionner. Voyez le chiffrement comme les vitres teintées d’un moyen de locomotion entre deux sites sensibles, dans un bon film d’espionnage !</p>
-<p>Les différents sites sont navigables à travers des pages HTML (section suivante) ou renvoient des informations par des API, service renvoyant de la donnée à qui sait la manipuler.</p>
-</section>
-<section id="la-page-html" class="level2">
-<h2 class="anchored" data-anchor-id="la-page-html">La page HTML</h2>
-<p>Pour la navigation Web classique, l’information renvoyée par le serveur est structurée au format <a href="https://fr.wikipedia.org/wiki/Hypertext_Markup_Language">HTML</a> : il y a notamment un titre principal et un contenu hierarchisé. Le serveur renvoie un ensemble de caractères toujours structurée de la même façon de manière macro :</p>
-<ul>
-<li>balise &lt;html&gt; &lt;/html&gt; pour délimiter tout le périmètre</li>
-<li>à l’intérieur, redecoupage en balise &lt;head&gt;&lt;/head&gt; || &lt;body&gt;&lt;/body&gt;</li>
-<li>les données intéressantes sont généralement dans le body (corps du contenu)</li>
-<li>dans le corps du contenu &lt;body&gt;, utilisation d’un vocabulaire de balise</li>
-</ul>
-<p>Exemples de balises les plus fréquentes :</p>
-<ul>
-<li>&lt;p&gt; : paragraphe</li>
-<li>&lt;h1&gt; &lt;h2&gt; … : titre</li>
-<li>&lt;a&gt; : lien HTTP</li>
-<li>&lt;div&gt; : bloc de contenu (pas de signification sémantique, utilisé pour les scripts ou le CSS)</li>
-<li>&lt;section&gt; : ensemble de contenu (signification sémantique, comme un chapitre d’un livre)</li>
-<li>&lt;button&gt; : bouton</li>
-<li>&lt;form&gt; : formulaire</li>
-</ul>
-<p>Cette structuration permet de questionner la page (est-ce qu’il y a des liens HTTP présents sur la page ? si oui, renvoie les moi) et récupérer les informations associées.</p>
-</section>
-<section id="au-delà-de-html-css-et-javascript" class="level2">
-<h2 class="anchored" data-anchor-id="au-delà-de-html-css-et-javascript">Au delà de HTML : CSS et JavaScript</h2>
-<p>La librairie <a href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade">CSS</a> permet d’habiller le site de couleur et de mieux agencer l’information. Le CSS n’est pas utile pour le Webscraping mais seulement agréable à l’oeil des internautes. Cependant, les scripts <a href="https://fr.wikipedia.org/wiki/JavaScript">JavaScript</a> permettent d’ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori. Le chargement de données a posteriori par des JavaScript va complexifier les méthodes utilisées pour le Webscraping.</p>
 
 
 </section>

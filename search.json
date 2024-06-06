@@ -150,6 +150,36 @@
     ]
   },
   {
+    "objectID": "5_api.html",
+    "href": "5_api.html",
+    "title": "Requêter une API",
+    "section": "",
+    "text": "Une API (application programming interface) est la mise à disposition d’une manière d’accéder aux informations de manière automatisée. Plutôt que de présenter l’information sous forme de page web, sous forme de fichiers aux différents formats, l’information est servie “brute” sur votre demande, de manière personnalisée. Pour accéder à l’information voulue, il est nécessaire de savoir requêter l’API. Pour cela, les (bonnes) API sont souvent accompagnées de documentation.\nExemple :\nDocumentation pour interroger le répertoire des entreprises\nParfois, pour des raisons de sécurité, l’API peut vous demander de générer un jeton d’authentification, pour pouvoir la requêter.",
+    "crumbs": [
+      "Requêter une api"
+    ]
+  },
+  {
+    "objectID": "5_api.html#quest-ce-quune-api",
+    "href": "5_api.html#quest-ce-quune-api",
+    "title": "Requêter une API",
+    "section": "",
+    "text": "Une API (application programming interface) est la mise à disposition d’une manière d’accéder aux informations de manière automatisée. Plutôt que de présenter l’information sous forme de page web, sous forme de fichiers aux différents formats, l’information est servie “brute” sur votre demande, de manière personnalisée. Pour accéder à l’information voulue, il est nécessaire de savoir requêter l’API. Pour cela, les (bonnes) API sont souvent accompagnées de documentation.\nExemple :\nDocumentation pour interroger le répertoire des entreprises\nParfois, pour des raisons de sécurité, l’API peut vous demander de générer un jeton d’authentification, pour pouvoir la requêter.",
+    "crumbs": [
+      "Requêter une api"
+    ]
+  },
+  {
+    "objectID": "5_api.html#exemple-de-requêtage-dapi",
+    "href": "5_api.html#exemple-de-requêtage-dapi",
+    "title": "Requêter une API",
+    "section": "Exemple de requêtage d’API",
+    "text": "Exemple de requêtage d’API\nRecherchons une adresse sur l’API suivante api-adresse.data.gouv.fr (Documentation : https://adresse.data.gouv.fr/api-doc/adresse) :\nLa documentation montre un exemple avec l’utilitaire curl (“équivalent de requests” en ligne de commande) :\ncurl \"https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port\"\nce qui donnerait en Python :\n\nimport requests\nrequete=\"8 bd du port\".replace(\" \",\"+\")\nrequete_final=f\"https://api-adresse.data.gouv.fr/search/?q={requete}\"\npage=requests.get(requete_final)\npage.text\n\nIci le résultat renvoie les résultats en json, qu’il faut parser :\n\nimport json\ndictionnaire_resultat=json.loads(page.text)\nfor feature in dictionnaire_resultat[\"features\"]:\n    print(feature)",
+    "crumbs": [
+      "Requêter une api"
+    ]
+  },
+  {
     "objectID": "1_intro.html",
     "href": "1_intro.html",
     "title": "Introduction au Webscraping",
@@ -190,33 +220,23 @@
     ]
   },
   {
-    "objectID": "5_api.html",
-    "href": "5_api.html",
-    "title": "Requêter une API",
+    "objectID": "8_ressources.html",
+    "href": "8_ressources.html",
+    "title": "Pour aller plus loin",
     "section": "",
-    "text": "Une API (application programming interface) est la mise à disposition d’une manière d’accéder aux informations de manière automatisée. Plutôt que de présenter l’information sous forme de page web, sous forme de fichiers aux différents formats, l’information est servie “brute” sur votre demande, de manière personnalisée. Pour accéder à l’information voulue, il est nécessaire de savoir requêter l’API. Pour cela, les (bonnes) API sont souvent accompagnées de documentation.\nExemple :\nDocumentation pour interroger le répertoire des entreprises\nParfois, pour des raisons de sécurité, l’API peut vous demander de générer un jeton d’authentification, pour pouvoir la requêter.",
+    "text": "Quelques ressources pour aller plus loin :\n\nLino Galiana détaille un chapitre pratique dans son cours de Python : https://pythonds.linogaliana.fr/content/manipulation/04a_webscraping_TP.html\nLe SSP Lab de l’Insee propose une formation au web scraping : https://inseefrlab.github.io/formation-webscraping/#/index",
     "crumbs": [
-      "Requêter une api"
+      "Pour aller plus loin"
     ]
   },
   {
-    "objectID": "5_api.html#quest-ce-quune-api",
-    "href": "5_api.html#quest-ce-quune-api",
-    "title": "Requêter une API",
+    "objectID": "8_ressources.html#dautres-ressources-pour-aller-plus-loin",
+    "href": "8_ressources.html#dautres-ressources-pour-aller-plus-loin",
+    "title": "Pour aller plus loin",
     "section": "",
-    "text": "Une API (application programming interface) est la mise à disposition d’une manière d’accéder aux informations de manière automatisée. Plutôt que de présenter l’information sous forme de page web, sous forme de fichiers aux différents formats, l’information est servie “brute” sur votre demande, de manière personnalisée. Pour accéder à l’information voulue, il est nécessaire de savoir requêter l’API. Pour cela, les (bonnes) API sont souvent accompagnées de documentation.\nExemple :\nDocumentation pour interroger le répertoire des entreprises\nParfois, pour des raisons de sécurité, l’API peut vous demander de générer un jeton d’authentification, pour pouvoir la requêter.",
+    "text": "Quelques ressources pour aller plus loin :\n\nLino Galiana détaille un chapitre pratique dans son cours de Python : https://pythonds.linogaliana.fr/content/manipulation/04a_webscraping_TP.html\nLe SSP Lab de l’Insee propose une formation au web scraping : https://inseefrlab.github.io/formation-webscraping/#/index",
     "crumbs": [
-      "Requêter une api"
-    ]
-  },
-  {
-    "objectID": "5_api.html#exemple-de-requêtage-dapi",
-    "href": "5_api.html#exemple-de-requêtage-dapi",
-    "title": "Requêter une API",
-    "section": "Exemple de requêtage d’API",
-    "text": "Exemple de requêtage d’API\nRecherchons une adresse sur l’API suivante api-adresse.data.gouv.fr (Documentation : https://adresse.data.gouv.fr/api-doc/adresse) :\nLa documentation montre un exemple avec l’utilitaire curl (“équivalent de requests” en ligne de commande) :\ncurl \"https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port\"\nce qui donnerait en Python :\n\nimport requests\nrequete=\"8 bd du port\".replace(\" \",\"+\")\nrequete_final=f\"https://api-adresse.data.gouv.fr/search/?q={requete}\"\npage=requests.get(requete_final)\npage.text\n\nIci le résultat renvoie les résultats en json, qu’il faut parser :\n\nimport json\ndictionnaire_resultat=json.loads(page.text)\nfor feature in dictionnaire_resultat[\"features\"]:\n    print(feature)",
-    "crumbs": [
-      "Requêter une api"
+      "Pour aller plus loin"
     ]
   },
   {
@@ -270,6 +290,16 @@
     ]
   },
   {
+    "objectID": "3_html.html#les-urluri-en-pratique",
+    "href": "3_html.html#les-urluri-en-pratique",
+    "title": "Bases pour le Webscraping",
+    "section": "Les URL/URI en pratique",
+    "text": "Les URL/URI en pratique\nLes URL et les URI sont des chaînes de caractères permettant notamment la navigation We (grosso modo ce que vous voyez dans votre barre de navigation en haut de votre navigateur préféré) mais aussi tout échange par Internet, de fichiers et autres informations. Il est important de les observer, de connaître la règle de base suivante :\n\nURI = protocole + :// + [utilisateur @] + “nom de domaine” + [ : port] + requête souhaitée\n\nExemple :\n\nhttps://www.insee.fr/\n\n\nprotocole : https\n\n\n“nom de domaine” : www.insee.fr\n\n\nutilisateur : pas d’utilisateur\n\n\nport : 443 (implicite, port par défaut du procole HTTPS)\n\n\nrequête souhaitée : /\n\nBien souvent, quand vous tapez dans votre navigateur un site, vous faîtes preuve de concision en tapant seulement www.insee.fr. Dès lors, le navigateur est configuré pour naviguer en HTTPS (et mettre le port par défaut, 443 pour HTTPS et 80 pour HTTP) et donc autocomplète le protocole et va par défaut demander la racine /\nPour en savoir plus (ressource en anglais) : Documentation RFC3968",
+    "crumbs": [
+      "Internet et le web"
+    ]
+  },
+  {
     "objectID": "3_html.html#le-protocole-https-et-api",
     "href": "3_html.html#le-protocole-https-et-api",
     "title": "Bases pour le Webscraping",
@@ -293,8 +323,8 @@
     "objectID": "3_html.html#au-delà-de-html-css-et-javascript",
     "href": "3_html.html#au-delà-de-html-css-et-javascript",
     "title": "Bases pour le Webscraping",
-    "section": "Au delà de HTML : CSS et Javascript",
-    "text": "Au delà de HTML : CSS et Javascript\nLa librairie CSS permet d’habiller le site de couleur et de mieux agencer l’information. Le CSS n’est pas utile pour le Webscraping mais seulement agréable à l’oeil des internautes. Cependant, les scripts Javascript permettent d’ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori. Le chargement de données a posteriori par des Javascript va complexifier les méthodes utilisées pour le Webscraping.",
+    "section": "Au delà de HTML : CSS et JavaScript",
+    "text": "Au delà de HTML : CSS et JavaScript\nLa librairie CSS permet d’habiller le site de couleur et de mieux agencer l’information. Le CSS n’est pas utile pour le Webscraping mais seulement agréable à l’oeil des internautes. Cependant, les scripts JavaScript permettent d’ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori. Le chargement de données a posteriori par des JavaScript va complexifier les méthodes utilisées pour le Webscraping.",
     "crumbs": [
       "Internet et le web"
     ]
