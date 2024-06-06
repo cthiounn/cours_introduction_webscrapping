@@ -29,6 +29,8 @@ website:
         text: Webscraping avec simulation dynamique
       - href: 7_bonnes_pratiques.qmd
         text: Quelques bonnes pratiques pour le Webscraping
+      - href: 8_ressources.qmd
+        text: Pour aller plus loin
         
 format:
   html:

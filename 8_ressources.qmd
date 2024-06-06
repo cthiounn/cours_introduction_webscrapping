@@ -1,0 +1,15 @@
+---
+title: "Pour aller plus loin"
+author: "cthiounn"
+date: "2024-06-06"
+format: html
+execute:
+  enabled: false
+---
+
+## D'autres ressources pour aller plus loin
+
+Quelques ressources pour aller plus loin :
+
+* Lino Galiana détaille un chapitre pratique dans son cours de Python : [https://pythonds.linogaliana.fr/content/manipulation/04a_webscraping_TP.html](https://pythonds.linogaliana.fr/content/manipulation/04a_webscraping_TP.html)
+* Le SSP Lab de l'Insee propose une formation au web scraping  : [https://inseefrlab.github.io/formation-webscraping/#/index](https://inseefrlab.github.io/formation-webscraping/#/index)

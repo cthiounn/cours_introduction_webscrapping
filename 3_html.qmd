@@ -1,7 +1,7 @@
 ---
 title: "Bases pour le Webscraping"
 author: "cthiounn"
-date: "2024-05-20"
+date: "2024-06-06"
 format: html
 ---
 
@@ -22,6 +22,33 @@ Décortiquons ce qui s'est passé (en omettant des parties techniques comme DNS,
 (2) Le serveur de l'Insee répond avec la page HTML d'accueil. Le navigateur affiche à l'utilisateur Lambda la page HTML (qui est juste une suite de caractères comprennant des informations entre des balises standardisées <html><header></header><body></body></html>)
 (3) Lambda clique sur un lien (e.g. \<a href="/concours/"> Ma page Concours</a>), le navigateur comprends qu'il doit refaire une requête HTTP "GET /concours/"
 (4) Le serveur lui répond avec une nouvelle page HTML. (et ainsi de suite...)
+
+## Les URL/URI en pratique
+
+Les [URL](https://fr.wikipedia.org/wiki/Uniform_Resource_Locator) et les [URI](https://fr.wikipedia.org/wiki/Uniform_Resource_Identifier) sont des chaînes de caractères permettant notamment la navigation We (grosso modo ce que vous voyez dans votre barre de navigation en haut de votre navigateur préféré) mais aussi tout échange par Internet, de fichiers et autres informations. Il est important de les observer, de connaître la règle de base suivante :
+
+
+> URI = protocole + :// +  [utilisateur @] + "nom de domaine" +  [ : port] + requête souhaitée
+
+
+Exemple :
+
+> https://www.insee.fr/
+
+> protocole : https
+
+> "nom de domaine" : www.insee.fr
+
+> utilisateur : pas d'utilisateur 
+
+> port : 443 (implicite, port par défaut du procole HTTPS)
+
+> requête souhaitée : `/`
+
+
+Bien souvent, quand vous tapez dans votre navigateur un site, vous faîtes preuve de concision en tapant seulement www.insee.fr. Dès lors, le navigateur est configuré pour naviguer en HTTPS (et mettre le port par défaut, 443 pour HTTPS et 80 pour HTTP) et donc autocomplète le protocole et va par défaut demander la racine `/`
+
+Pour en savoir plus (ressource en anglais) : [Documentation RFC3968](https://www.rfc-editor.org/rfc/rfc3986#section-3)
 
 ## Le protocole HTTP(S) et API
 
@@ -65,8 +92,8 @@ Exemples de balises les plus fréquentes :
 
 Cette structuration permet de questionner la page (est-ce qu'il y a des liens HTTP présents sur la page ? si oui, renvoie les moi) et récupérer les informations associées.
 
-## Au delà de HTML : CSS et Javascript
+## Au delà de HTML : CSS et JavaScript
 
-La librairie CSS permet d'habiller le site de couleur et de mieux agencer l'information. Le CSS n'est pas utile pour le Webscraping mais seulement agréable à l'oeil des internautes.
-Cependant, les scripts Javascript permettent d'ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori.
-Le chargement de données a posteriori par des Javascript va complexifier les méthodes utilisées pour le Webscraping.
+La librairie [CSS](https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade) permet d'habiller le site de couleur et de mieux agencer l'information. Le CSS n'est pas utile pour le Webscraping mais seulement agréable à l'oeil des internautes.
+Cependant, les scripts [JavaScript](https://fr.wikipedia.org/wiki/JavaScript) permettent d'ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori.
+Le chargement de données a posteriori par des JavaScript va complexifier les méthodes utilisées pour le Webscraping.
