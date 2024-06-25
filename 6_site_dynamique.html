@@ -255,11 +255,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="premier-pas-avec-selenium" class="level2">
 <h2 class="anchored" data-anchor-id="premier-pas-avec-selenium">Premier pas avec <code>Selenium</code></h2>
 <p>Tout d’abord, nous allons installer <code>Selenium</code>, ainsi qu’une librairie qui permet d’installer les pilotes pour votre navigateur préféré !</p>
-<div id="9bafa836" class="cell">
+<div id="908a0186" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install selenium webdriver<span class="op">-</span>manager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ensuite, nous sommes parés pour visiter notre site préféré :</p>
-<div id="2f66f565" class="cell">
+<div id="1ddd2118" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium <span class="im">import</span> webdriver</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.edge.service <span class="im">import</span> Service <span class="im">as</span> EdgeService</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> webdriver_manager.microsoft <span class="im">import</span> EdgeChromiumDriverManager</span>
@@ -270,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>navigateur_pilote_auto.get(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Nous souhaitons cliquer sur le bouton de login :</p>
-<div id="a0f2af57" class="cell">
+<div id="05760c27" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.keys <span class="im">import</span> Keys</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.by <span class="im">import</span> By</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.support.select <span class="im">import</span> Select</span>
