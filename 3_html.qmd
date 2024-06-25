@@ -103,40 +103,60 @@ Cette structuration permet de questionner la page (est-ce qu'il y a des liens HT
 | Balise        | Fréquence approximative (%) | Définition                                                                            | Attributs courants                             |
 |---------------|-----------------------------|---------------------------------------------------------------------------------------|------------------------------------------------|
 | `<div>`       | 90%                         | Utilisée pour structurer et diviser les sections du contenu.                          | `id`, `class`, `style`                         |
+| `<meta>`      | 95%                         | Utilisée pour les métadonnées du document.                                            | `name`, `content`, `charset`, `http-equiv`     |
 | `<a>`         | 85%                         | Utilisée pour créer des hyperliens.                                                   | `href`, `target`, `title`                      |
+| `<link>`      | 85%                         | Utilisée pour relier la page à des ressources externes comme des feuilles de style CSS.| `href`, `rel`, `type`                          |
 | `<span>`      | 75%                         | Utilisée pour appliquer du style au texte sans créer de rupture de ligne.             | `id`, `class`, `style`                         |
 | `<img>`       | 70%                         | Utilisée pour inclure des images.                                                     | `src`, `alt`, `width`, `height`                |
 | `<p>`         | 65%                         | Utilisée pour créer des paragraphes de texte.                                         | `id`, `class`, `style`                         |
 | `<li>`        | 60%                         | Utilisée pour les éléments de liste.                                                  | `id`, `class`, `style`                         |
 | `<ul>`        | 55%                         | Utilisée pour créer des listes non ordonnées.                                         | `id`, `class`, `style`                         |
-| `<h1>`        | 50%                         | Utilisée pour les titres principaux.                                                  | `id`, `class`, `style`                         |
-| `<h2>`        | 50%                         | Utilisée pour les sous-titres de niveau 2.                                            | `id`, `class`, `style`                         |
-| `<h3>`        | 45%                         | Utilisée pour les sous-titres de niveau 3.                                            | `id`, `class`, `style`                         |
-| `<h4>`        | 40%                         | Utilisée pour les sous-titres de niveau 4.                                            | `id`, `class`, `style`                         |
-| `<h5>`        | 35%                         | Utilisée pour les sous-titres de niveau 5.                                            | `id`, `class`, `style`                         |
-| `<h6>`        | 30%                         | Utilisée pour les sous-titres de niveau 6.                                            | `id`, `class`, `style`                         |
 | `<input>`     | 55%                         | Utilisée pour les champs de saisie de formulaire.                                     | `type`, `name`, `value`, `placeholder`         |
 | `<form>`      | 50%                         | Utilisée pour les formulaires de saisie de données.                                   | `action`, `method`, `id`, `class`              |
-| `<meta>`      | 95%                         | Utilisée pour les métadonnées du document.                                            | `name`, `content`, `charset`, `http-equiv`     |
+| `<h1>`        | 50%                         | Utilisée pour les titres principaux.                                                  | `id`, `class`, `style`                         |
+| `<h2>`        | 50%                         | Utilisée pour les sous-titres de niveau 2.                                            | `id`, `class`, `style`                         |
+| `<button>`    | 50%                         | Utilisée pour créer des boutons cliquables.                                           | `type`, `name`, `value`, `disabled`            |
 | `<script>`    | 80%                         | Utilisée pour inclure ou référencer des scripts JavaScript.                           | `src`, `type`, `async`, `defer`                |
-| `<link>`      | 85%                         | Utilisée pour relier la page à des ressources externes comme des feuilles de style CSS.| `href`, `rel`, `type`                          |
+| `<h3>`        | 45%                         | Utilisée pour les sous-titres de niveau 3.                                            | `id`, `class`, `style`                         |
+| `<header>`    | 40%                         | Utilisée pour les sections d'en-tête.                                                 | `id`, `class`, `style`                         |
+| `<footer>`    | 40%                         | Utilisée pour le pied de page du document.                                            | `id`, `class`, `style`                         |
+| `<h4>`        | 40%                         | Utilisée pour les sous-titres de niveau 4.                                            | `id`, `class`, `style`                         |
+| `<section>`   | 35%                         | Utilisée pour définir les sections d'un document.                                     | `id`, `class`, `style`                         |
+| `<h5>`        | 35%                         | Utilisée pour les sous-titres de niveau 5.                                            | `id`, `class`, `style`                         |
+| `<h6>`        | 30%                         | Utilisée pour les sous-titres de niveau 6.                                            | `id`, `class`, `style`                         |
 | `<table>`     | 30%                         | Utilisée pour structurer des tableaux.                                                | `id`, `class`, `style`                         |
 | `<tr>`        | 30%                         | Utilisée pour les lignes de tableau.                                                  | `id`, `class`, `style`                         |
 | `<td>`        | 30%                         | Utilisée pour les cellules de tableau.                                                | `id`, `class`, `style`, `colspan`, `rowspan`   |
-| `<header>`    | 40%                         | Utilisée pour les sections d'en-tête.                                                 | `id`, `class`, `style`                         |
-| `<footer>`    | 40%                         | Utilisée pour le pied de page du document.                                            | `id`, `class`, `style`                         |
 | `<nav>`       | 25%                         | Utilisée pour les sections de navigation.                                             | `id`, `class`, `style`                         |
-| `<section>`   | 35%                         | Utilisée pour définir les sections d'un document.                                     | `id`, `class`, `style`                         |
 | `<article>`   | 20%                         | Utilisée pour un contenu indépendant ou auto-suffisant.                               | `id`, `class`, `style`                         |
 | `<aside>`     | 15%                         | Utilisée pour un contenu accessoire ou des barres latérales.                          | `id`, `class`, `style`                         |
 | `<figure>`    | 10%                         | Utilisée pour les contenus graphiques avec légende.                                   | `id`, `class`, `style`                         |
 | `<figcaption>`| 10%                         | Utilisée pour la légende des contenus graphiques.                                     | `id`, `class`, `style`                         |
-| `<audio>`     | 5%                          | Utilisée pour inclure des fichiers audio.                                             | `src`, `controls`, `autoplay`, `loop`          |
 | `<video>`     | 10%                         | Utilisée pour inclure des fichiers vidéo.                                             | `src`, `controls`, `autoplay`, `width`, `height`|
+| `<audio>`     | 5%                          | Utilisée pour inclure des fichiers audio.                                             | `src`, `controls`, `autoplay`, `loop`          |
 | `<canvas>`    | 5%                          | Utilisée pour le dessin graphique en utilisant JavaScript.                            | `id`, `width`, `height`, `style`               |
 | `<details>`   | 3%                          | Utilisée pour les contenus que l'utilisateur peut afficher ou masquer.                | `id`, `class`, `style`, `open`                 |
 | `<summary>`   | 3%                          | Utilisée pour le résumé d'un élément `<details>`.                                     | `id`, `class`, `style`                         |
-| `<button>`    | 50%                         | Utilisée pour créer des boutons cliquables.                                           | `type`, `name`, `value`, `disabled`            |
+| `<main>`      | 5%                          | Utilisée pour le contenu principal d'un document.                                     | `id`, `class`, `style`                         |
+| `<abbr>`      | 2%                          | Utilisée pour abréviations ou acronymes.                                              | `title`                                        |
+| `<address>`   | 2%                          | Utilisée pour des informations de contact.                                            | `id`, `class`, `style`                         |
+| `<area>`      | 2%                          | Utilisée dans les cartes d'images pour définir des zones cliquables.                  | `shape`, `coords`, `href`, `alt`               |
+| `<b>`         | 3%                          | Utilisée pour du texte en gras.                                                       | `id`, `class`, `style`                         |
+| `<base>`      | 2%                          | Utilisée pour spécifier l'URL de base pour toutes les URL relatives dans un document. | `href`, `target`                               |
+| `<bdi>`       | 1%                          | Utilisée pour isoler une partie du texte afin qu'il soit formaté dans une direction différente du texte environnant. | `dir`           |
+| `<bdo>`       | 1%                          | Utilisée pour remplacer la direction du texte.                                        | `dir`                                          |
+| `<blockquote>`| 2%                          | Utilisée pour les longues citations.                                                  | `cite`, `id`, `class`, `style`                 |
+| `<body>`      | 100%                        | Utilisée pour le contenu principal du document HTML.                                  | `id`, `class`, `style`                         |
+| `<br>`        | 95%                         | Utilisée pour un saut de ligne.                                                       | `id`, `class`, `style`                         |
+| `<caption>`   | 10%                         | Utilisée pour définir une légende pour un tableau.                                    | `id`, `class`, `style`                         |
+| `<cite>`      | 5%                          | Utilisée pour citer une source.                                                       | `id`, `class`, `style`                         |
+| `<code>`      | 10%                         | Utilisée pour afficher du texte en style code.                                        | `id`, `class`, `style`                         |
+| `<col>`       | 10%                         | Utilisée pour spécifier des propriétés de colonne dans un tableau.                    | `span`, `id`, `class`, `style`                 |
+| `<colgroup>`  | 5%                          | Utilisée pour regrouper plusieurs colonnes dans un tableau.                           | `span`, `id`, `class`, `style`                 |
+| `<data>`      | 2%                          | Utilisée pour lier un contenu et un contenu machine-lisible.                          | `value`, `id`, `class`, `style`                |
+| `<datalist>`  | 3%                          | Utilisée pour spécifier une liste de données prédéfinies pour un élément `<input>`.   | `id`, `class`, `style`                         |
+| `<dd>`        | 3%                          | Utilisée pour décrire un terme dans une liste de définitions.                         | `id`, `class`, `style`                         |
+| `<del>`       | 2%                          | Utilisée pour marquer du texte supprimé. | |
 
 
 
