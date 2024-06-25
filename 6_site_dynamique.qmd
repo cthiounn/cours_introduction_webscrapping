@@ -1,5 +1,5 @@
 ---
-title: "Webscrapping dans le cas d'un site dynamique"
+title: "Webscraping dans le cas d'un site dynamique"
 author: "cthiounn"
 date: "2024-05-20"
 format: html
@@ -9,7 +9,7 @@ execute:
 
 ## Les sites "dynamiques"
 
-Si vous avez suivi les premiers pas du Webscrapping avec `requests` et `BeautifulSoup` sur vos sites préférés, vous avez probablement eu le souci de ne pas disposer du code HTML de la page, alors que vous avez requêté correctement le site.
+Si vous avez suivi les premiers pas du Webscraping avec `requests` et `BeautifulSoup` sur vos sites préférés, vous avez probablement eu le souci de ne pas disposer du code HTML de la page, alors que vous avez requêté correctement le site.
 Cela apparaît avec le chargement des sites *a posteriori*. En effet, les sites utilisant les dernières librairies de Javascript vous envoient une première page, assez vide. Puis, dans cette première page, un script s'execute pour bâtir le contenu que vous souhaitez accéder.
 Avec l'utilisation de deux dernières librairies citées, il est difficile de récupérer l'information *a posteriori*
 
