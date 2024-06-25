@@ -173,6 +173,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#les-urluri-en-pratique" id="toc-les-urluri-en-pratique" class="nav-link" data-scroll-target="#les-urluri-en-pratique">Les URL/URI en pratique</a></li>
   <li><a href="#le-protocole-https-et-api" id="toc-le-protocole-https-et-api" class="nav-link" data-scroll-target="#le-protocole-https-et-api">Le protocole HTTP(S) et API</a></li>
   <li><a href="#la-page-html" id="toc-la-page-html" class="nav-link" data-scroll-target="#la-page-html">La page HTML</a></li>
+  <li><a href="#anatomie-dune-balise-html" id="toc-anatomie-dune-balise-html" class="nav-link" data-scroll-target="#anatomie-dune-balise-html">Anatomie d’une balise HTML</a></li>
   <li><a href="#au-delà-de-html-css-et-javascript" id="toc-au-delà-de-html-css-et-javascript" class="nav-link" data-scroll-target="#au-delà-de-html-css-et-javascript">Au delà de HTML : CSS et JavaScript</a></li>
   </ul>
 </nav>
@@ -297,6 +298,238 @@ ul.task-list li input[type="checkbox"] {
 <li>&lt;form&gt; : formulaire</li>
 </ul>
 <p>Cette structuration permet de questionner la page (est-ce qu’il y a des liens HTTP présents sur la page ? si oui, renvoie les moi) et récupérer les informations associées.</p>
+</section>
+<section id="anatomie-dune-balise-html" class="level2">
+<h2 class="anchored" data-anchor-id="anatomie-dune-balise-html">Anatomie d’une balise HTML</h2>
+<ul>
+<li>Une balise est de la forme suivante : <type_de_balise attribut1="valeur1" attribut2="valeur2"></type_de_balise></li>
+<li>Une balise ouvrante est suivi de l’information, et enfin d’une balise fermante : <a> mon_texte </a></li>
+<li>S’il n’y a pas d’information, une unique balise peut suffire : <br> [“saut de ligne”]</li>
+<li>La valeur d’un attribut <code>id</code> doit être unique</li>
+<li>La valeur d’un attribut <code>class</code> peut être multiple et non nécessairement unique. Cet attribut est souvent utilisé sur plusieurs élements pour leur appliquer un même style ou comportement.</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 16%">
+<col style="width: 48%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Balise</th>
+<th>Fréquence approximative (%)</th>
+<th>Définition</th>
+<th>Attributs courants</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;div&gt;</code></td>
+<td>90%</td>
+<td>Utilisée pour structurer et diviser les sections du contenu.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;a&gt;</code></td>
+<td>85%</td>
+<td>Utilisée pour créer des hyperliens.</td>
+<td><code>href</code>, <code>target</code>, <code>title</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;span&gt;</code></td>
+<td>75%</td>
+<td>Utilisée pour appliquer du style au texte sans créer de rupture de ligne.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;img&gt;</code></td>
+<td>70%</td>
+<td>Utilisée pour inclure des images.</td>
+<td><code>src</code>, <code>alt</code>, <code>width</code>, <code>height</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;p&gt;</code></td>
+<td>65%</td>
+<td>Utilisée pour créer des paragraphes de texte.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;li&gt;</code></td>
+<td>60%</td>
+<td>Utilisée pour les éléments de liste.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;ul&gt;</code></td>
+<td>55%</td>
+<td>Utilisée pour créer des listes non ordonnées.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;h1&gt;</code></td>
+<td>50%</td>
+<td>Utilisée pour les titres principaux.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;h2&gt;</code></td>
+<td>50%</td>
+<td>Utilisée pour les sous-titres de niveau 2.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;h3&gt;</code></td>
+<td>45%</td>
+<td>Utilisée pour les sous-titres de niveau 3.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;h4&gt;</code></td>
+<td>40%</td>
+<td>Utilisée pour les sous-titres de niveau 4.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;h5&gt;</code></td>
+<td>35%</td>
+<td>Utilisée pour les sous-titres de niveau 5.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;h6&gt;</code></td>
+<td>30%</td>
+<td>Utilisée pour les sous-titres de niveau 6.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;input&gt;</code></td>
+<td>55%</td>
+<td>Utilisée pour les champs de saisie de formulaire.</td>
+<td><code>type</code>, <code>name</code>, <code>value</code>, <code>placeholder</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;form&gt;</code></td>
+<td>50%</td>
+<td>Utilisée pour les formulaires de saisie de données.</td>
+<td><code>action</code>, <code>method</code>, <code>id</code>, <code>class</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;meta&gt;</code></td>
+<td>95%</td>
+<td>Utilisée pour les métadonnées du document.</td>
+<td><code>name</code>, <code>content</code>, <code>charset</code>, <code>http-equiv</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;script&gt;</code></td>
+<td>80%</td>
+<td>Utilisée pour inclure ou référencer des scripts JavaScript.</td>
+<td><code>src</code>, <code>type</code>, <code>async</code>, <code>defer</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;link&gt;</code></td>
+<td>85%</td>
+<td>Utilisée pour relier la page à des ressources externes comme des feuilles de style CSS.</td>
+<td><code>href</code>, <code>rel</code>, <code>type</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;table&gt;</code></td>
+<td>30%</td>
+<td>Utilisée pour structurer des tableaux.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;tr&gt;</code></td>
+<td>30%</td>
+<td>Utilisée pour les lignes de tableau.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;td&gt;</code></td>
+<td>30%</td>
+<td>Utilisée pour les cellules de tableau.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code>, <code>colspan</code>, <code>rowspan</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;header&gt;</code></td>
+<td>40%</td>
+<td>Utilisée pour les sections d’en-tête.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;footer&gt;</code></td>
+<td>40%</td>
+<td>Utilisée pour le pied de page du document.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;nav&gt;</code></td>
+<td>25%</td>
+<td>Utilisée pour les sections de navigation.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;section&gt;</code></td>
+<td>35%</td>
+<td>Utilisée pour définir les sections d’un document.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;article&gt;</code></td>
+<td>20%</td>
+<td>Utilisée pour un contenu indépendant ou auto-suffisant.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;aside&gt;</code></td>
+<td>15%</td>
+<td>Utilisée pour un contenu accessoire ou des barres latérales.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;figure&gt;</code></td>
+<td>10%</td>
+<td>Utilisée pour les contenus graphiques avec légende.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;figcaption&gt;</code></td>
+<td>10%</td>
+<td>Utilisée pour la légende des contenus graphiques.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;audio&gt;</code></td>
+<td>5%</td>
+<td>Utilisée pour inclure des fichiers audio.</td>
+<td><code>src</code>, <code>controls</code>, <code>autoplay</code>, <code>loop</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;video&gt;</code></td>
+<td>10%</td>
+<td>Utilisée pour inclure des fichiers vidéo.</td>
+<td><code>src</code>, <code>controls</code>, <code>autoplay</code>, <code>width</code>, <code>height</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;canvas&gt;</code></td>
+<td>5%</td>
+<td>Utilisée pour le dessin graphique en utilisant JavaScript.</td>
+<td><code>id</code>, <code>width</code>, <code>height</code>, <code>style</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;details&gt;</code></td>
+<td>3%</td>
+<td>Utilisée pour les contenus que l’utilisateur peut afficher ou masquer.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code>, <code>open</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;summary&gt;</code></td>
+<td>3%</td>
+<td>Utilisée pour le résumé d’un élément <code>&lt;details&gt;</code>.</td>
+<td><code>id</code>, <code>class</code>, <code>style</code></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="au-delà-de-html-css-et-javascript" class="level2">
 <h2 class="anchored" data-anchor-id="au-delà-de-html-css-et-javascript">Au delà de HTML : CSS et JavaScript</h2>

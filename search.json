@@ -1,42 +1,132 @@
 [
   {
-    "objectID": "6_site_dynamique.html",
-    "href": "6_site_dynamique.html",
-    "title": "Webscrapping dans le cas d’un site dynamique",
+    "objectID": "3_html.html",
+    "href": "3_html.html",
+    "title": "Bases pour le Webscraping",
     "section": "",
-    "text": "Si vous avez suivi les premiers pas du Webscrapping avec requests et BeautifulSoup sur vos sites préférés, vous avez probablement eu le souci de ne pas disposer du code HTML de la page, alors que vous avez requêté correctement le site. Cela apparaît avec le chargement des sites a posteriori. En effet, les sites utilisant les dernières librairies de Javascript vous envoient une première page, assez vide. Puis, dans cette première page, un script s’execute pour bâtir le contenu que vous souhaitez accéder. Avec l’utilisation de deux dernières librairies citées, il est difficile de récupérer l’information a posteriori\nDe même, certains sites spécialisent leur affichage en fonction des navigateurs et des systèmes d’exploitation des visiteurs, par la carte d’identité de votre navigateur qui en dit long sur vous (User-Agent). Ces sites peuvent bloquer tout robot, webcrawler comme webscrapper, considéré comme indésirable.",
+    "text": "Pour faire du Webscraping, il est primordiable de comprendre les bases du Web. Il s’agit de comprendre les manières d’interagir avec les sites et API, avec notamment le protocole/langage HTTP. et de connaître les formats de données (HTML, XML, formats de fichiers, etc)",
     "crumbs": [
-      "Webscraping avec simulation dynamique"
+      "Internet et le web"
     ]
   },
   {
-    "objectID": "6_site_dynamique.html#les-sites-dynamiques",
-    "href": "6_site_dynamique.html#les-sites-dynamiques",
-    "title": "Webscrapping dans le cas d’un site dynamique",
+    "objectID": "3_html.html#comprendre-les-technologies-dinternet",
+    "href": "3_html.html#comprendre-les-technologies-dinternet",
+    "title": "Bases pour le Webscraping",
     "section": "",
-    "text": "Si vous avez suivi les premiers pas du Webscrapping avec requests et BeautifulSoup sur vos sites préférés, vous avez probablement eu le souci de ne pas disposer du code HTML de la page, alors que vous avez requêté correctement le site. Cela apparaît avec le chargement des sites a posteriori. En effet, les sites utilisant les dernières librairies de Javascript vous envoient une première page, assez vide. Puis, dans cette première page, un script s’execute pour bâtir le contenu que vous souhaitez accéder. Avec l’utilisation de deux dernières librairies citées, il est difficile de récupérer l’information a posteriori\nDe même, certains sites spécialisent leur affichage en fonction des navigateurs et des systèmes d’exploitation des visiteurs, par la carte d’identité de votre navigateur qui en dit long sur vous (User-Agent). Ces sites peuvent bloquer tout robot, webcrawler comme webscrapper, considéré comme indésirable.",
+    "text": "Pour faire du Webscraping, il est primordiable de comprendre les bases du Web. Il s’agit de comprendre les manières d’interagir avec les sites et API, avec notamment le protocole/langage HTTP. et de connaître les formats de données (HTML, XML, formats de fichiers, etc)",
     "crumbs": [
-      "Webscraping avec simulation dynamique"
+      "Internet et le web"
     ]
   },
   {
-    "objectID": "6_site_dynamique.html#simuler-son-propre-comportement",
-    "href": "6_site_dynamique.html#simuler-son-propre-comportement",
-    "title": "Webscrapping dans le cas d’un site dynamique",
-    "section": "Simuler son propre comportement",
-    "text": "Simuler son propre comportement\nQuand vous faîtes tout manuellement, tout marche. Quand vous l’automatisez, rien ne marche. Conséquence fatale, faut-il se résoudre à tout faire manuellement ? Non, car il existe des librairies de simulation automatique, comme Selenium.\nL’idée est simple : Selenium va ouvrir un navigateur vierge comme vous le ferez, puis va faire exactement toutes les actions que vous faîtes habituellement manuellement et que vous aurez pris le temps de spécifier.",
+    "objectID": "3_html.html#naviguer-sur-le-web",
+    "href": "3_html.html#naviguer-sur-le-web",
+    "title": "Bases pour le Webscraping",
+    "section": "Naviguer sur le Web",
+    "text": "Naviguer sur le Web\nPour naviguer sur le Web, notre internaute Lambda utilise son navigateur Web préférée (Edge, Chrome, Mozilla, Opéra, etc.) en tapant le nom du site dans la barre de navigation (1). Le navigateur affiche la page d’accueil (2). Lambda clique sur un lien (3) et le navigateur lui affiche la nouvelle page (4).\nDécortiquons ce qui s’est passé (en omettant des parties techniques comme DNS, les IP et le routage des informations) :\n\nEn tapant le nom du site, Lambda dit à son navigateur qu’il souhaite accèder au site (admettons www.insee.fr/) . Le navigateur utilise le langage HTTP au serveur de l’Insee pour demander la page d’accueil, le navigateur envoie la demande “GET /”\nLe serveur de l’Insee répond avec la page HTML d’accueil. Le navigateur affiche à l’utilisateur Lambda la page HTML (qui est juste une suite de caractères comprennant des informations entre des balises standardisées\n\n\n\n\n\n\n)\nLambda clique sur un lien (e.g. &lt;a href=“/concours/”&gt; Ma page Concours), le navigateur comprends qu’il doit refaire une requête HTTP “GET /concours/”\nLe serveur lui répond avec une nouvelle page HTML. (et ainsi de suite…)",
     "crumbs": [
-      "Webscraping avec simulation dynamique"
+      "Internet et le web"
     ]
   },
   {
-    "objectID": "6_site_dynamique.html#premier-pas-avec-selenium",
-    "href": "6_site_dynamique.html#premier-pas-avec-selenium",
-    "title": "Webscrapping dans le cas d’un site dynamique",
-    "section": "Premier pas avec Selenium",
-    "text": "Premier pas avec Selenium\nTout d’abord, nous allons installer Selenium, ainsi qu’une librairie qui permet d’installer les pilotes pour votre navigateur préféré !\n\n!pip install selenium webdriver-manager\n\nEnsuite, nous sommes parés pour visiter notre site préféré :\n\nfrom selenium import webdriver\nfrom selenium.webdriver.edge.service import Service as EdgeService\nfrom webdriver_manager.microsoft import EdgeChromiumDriverManager\n\nnavigateur_pilote_auto = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))\n\nurl = 'https://datalab.sspcloud.fr/'\nnavigateur_pilote_auto.get(url)\n\nNous souhaitons cliquer sur le bouton de login :\n\nfrom selenium.webdriver.common.keys import Keys\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.support.select import Select\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.webdriver.support.ui import WebDriverWait\n\nwait = WebDriverWait(navigateur_pilote_auto, 30)\nlogin_button=navigateur_pilote_auto.find_elements(By.TAG_NAME, \"button\")[0]\nwait.until(EC.element_to_be_clickable(login_button)).send_keys(Keys.ENTER)",
+    "objectID": "3_html.html#les-urluri-en-pratique",
+    "href": "3_html.html#les-urluri-en-pratique",
+    "title": "Bases pour le Webscraping",
+    "section": "Les URL/URI en pratique",
+    "text": "Les URL/URI en pratique\nLes URL et les URI sont des chaînes de caractères permettant notamment la navigation We (grosso modo ce que vous voyez dans votre barre de navigation en haut de votre navigateur préféré) mais aussi tout échange par Internet, de fichiers et autres informations. Il est important de les observer, de connaître la règle de base suivante :\n\nURI = protocole + :// + [utilisateur @] + “nom de domaine” + [ : port] + requête souhaitée\n\nExemple :\n\nhttps://www.insee.fr/\n\n\nprotocole : https\n\n\n“nom de domaine” : www.insee.fr\n\n\nutilisateur : pas d’utilisateur\n\n\nport : 443 (implicite, port par défaut du procole HTTPS)\n\n\nrequête souhaitée : /\n\nBien souvent, quand vous tapez dans votre navigateur un site, vous faîtes preuve de concision en tapant seulement www.insee.fr. Dès lors, le navigateur est configuré pour naviguer en HTTPS (et mettre le port par défaut, 443 pour HTTPS et 80 pour HTTP) et donc autocomplète le protocole et va par défaut demander la racine /\nPour en savoir plus (ressource en anglais) : Documentation RFC3968",
     "crumbs": [
-      "Webscraping avec simulation dynamique"
+      "Internet et le web"
+    ]
+  },
+  {
+    "objectID": "3_html.html#le-protocole-https-et-api",
+    "href": "3_html.html#le-protocole-https-et-api",
+    "title": "Bases pour le Webscraping",
+    "section": "Le protocole HTTP(S) et API",
+    "text": "Le protocole HTTP(S) et API\nPour interagir avec un site Web (serveur HTTP), il y a un certain nombre de commandes que nous pouvons lui soumettre, aussi appelée verbe HTTP. Voici les plus fréquents :\n\nGET (=récupérer une information, en général une page HTML ou un fichier)\nPOST (=soumettre de la donnée et récupérer éventuellement une information, obligatoirement le cas dans un formulaire sensible)\n\nDans le cas des API, si vous avez les droits sur l’API :\n\nPUT (=mettre à jour une information)\nDELETE (=supprimer une information)\n\nPour le Webscraping, nous allons principalement soumettre des requêtes GET et POST (tout comme dans la navigation Web classique)\nLe protocole HTTPS (SSL en plus de HTTP) est juste l’ajout d’un chiffrement de toutes les communications, notamment obligatoire si vous soumettez un mot de passe ou une information sensible. Sans le chiffrement, tout est public et visible à qui se donne la peine de vouloir espionner. Voyez le chiffrement comme les vitres teintées d’un moyen de locomotion entre deux sites sensibles, dans un bon film d’espionnage !\nLes différents sites sont navigables à travers des pages HTML (section suivante) ou renvoient des informations par des API, service renvoyant de la donnée à qui sait la manipuler.",
+    "crumbs": [
+      "Internet et le web"
+    ]
+  },
+  {
+    "objectID": "3_html.html#la-page-html",
+    "href": "3_html.html#la-page-html",
+    "title": "Bases pour le Webscraping",
+    "section": "La page HTML",
+    "text": "La page HTML\nPour la navigation Web classique, l’information renvoyée par le serveur est structurée au format HTML : il y a notamment un titre principal et un contenu hierarchisé. Le serveur renvoie un ensemble de caractères toujours structurée de la même façon de manière macro :\n\nbalise &lt;html&gt; &lt;/html&gt; pour délimiter tout le périmètre\nà l’intérieur, redecoupage en balise &lt;head&gt;&lt;/head&gt; || &lt;body&gt;&lt;/body&gt;\nles données intéressantes sont généralement dans le body (corps du contenu)\ndans le corps du contenu &lt;body&gt;, utilisation d’un vocabulaire de balise\n\nExemples de balises les plus fréquentes :\n\n&lt;p&gt; : paragraphe\n&lt;h1&gt; &lt;h2&gt; … : titre\n&lt;a&gt; : lien HTTP\n&lt;div&gt; : bloc de contenu (pas de signification sémantique, utilisé pour les scripts ou le CSS)\n&lt;section&gt; : ensemble de contenu (signification sémantique, comme un chapitre d’un livre)\n&lt;button&gt; : bouton\n&lt;form&gt; : formulaire\n\nCette structuration permet de questionner la page (est-ce qu’il y a des liens HTTP présents sur la page ? si oui, renvoie les moi) et récupérer les informations associées.",
+    "crumbs": [
+      "Internet et le web"
+    ]
+  },
+  {
+    "objectID": "3_html.html#anatomie-dune-balise-html",
+    "href": "3_html.html#anatomie-dune-balise-html",
+    "title": "Bases pour le Webscraping",
+    "section": "Anatomie d’une balise HTML",
+    "text": "Anatomie d’une balise HTML\n\nUne balise est de la forme suivante : \nUne balise ouvrante est suivi de l’information, et enfin d’une balise fermante :  mon_texte \nS’il n’y a pas d’information, une unique balise peut suffire :  [“saut de ligne”]\nLa valeur d’un attribut id doit être unique\nLa valeur d’un attribut class peut être multiple et non nécessairement unique. Cet attribut est souvent utilisé sur plusieurs élements pour leur appliquer un même style ou comportement.\n\n\n\n\n\n\n\n\n\n\nBalise\nFréquence approximative (%)\nDéfinition\nAttributs courants\n\n\n\n\n&lt;div&gt;\n90%\nUtilisée pour structurer et diviser les sections du contenu.\nid, class, style\n\n\n&lt;a&gt;\n85%\nUtilisée pour créer des hyperliens.\nhref, target, title\n\n\n&lt;span&gt;\n75%\nUtilisée pour appliquer du style au texte sans créer de rupture de ligne.\nid, class, style\n\n\n&lt;img&gt;\n70%\nUtilisée pour inclure des images.\nsrc, alt, width, height\n\n\n&lt;p&gt;\n65%\nUtilisée pour créer des paragraphes de texte.\nid, class, style\n\n\n&lt;li&gt;\n60%\nUtilisée pour les éléments de liste.\nid, class, style\n\n\n&lt;ul&gt;\n55%\nUtilisée pour créer des listes non ordonnées.\nid, class, style\n\n\n&lt;h1&gt;\n50%\nUtilisée pour les titres principaux.\nid, class, style\n\n\n&lt;h2&gt;\n50%\nUtilisée pour les sous-titres de niveau 2.\nid, class, style\n\n\n&lt;h3&gt;\n45%\nUtilisée pour les sous-titres de niveau 3.\nid, class, style\n\n\n&lt;h4&gt;\n40%\nUtilisée pour les sous-titres de niveau 4.\nid, class, style\n\n\n&lt;h5&gt;\n35%\nUtilisée pour les sous-titres de niveau 5.\nid, class, style\n\n\n&lt;h6&gt;\n30%\nUtilisée pour les sous-titres de niveau 6.\nid, class, style\n\n\n&lt;input&gt;\n55%\nUtilisée pour les champs de saisie de formulaire.\ntype, name, value, placeholder\n\n\n&lt;form&gt;\n50%\nUtilisée pour les formulaires de saisie de données.\naction, method, id, class\n\n\n&lt;meta&gt;\n95%\nUtilisée pour les métadonnées du document.\nname, content, charset, http-equiv\n\n\n&lt;script&gt;\n80%\nUtilisée pour inclure ou référencer des scripts JavaScript.\nsrc, type, async, defer\n\n\n&lt;link&gt;\n85%\nUtilisée pour relier la page à des ressources externes comme des feuilles de style CSS.\nhref, rel, type\n\n\n&lt;table&gt;\n30%\nUtilisée pour structurer des tableaux.\nid, class, style\n\n\n&lt;tr&gt;\n30%\nUtilisée pour les lignes de tableau.\nid, class, style\n\n\n&lt;td&gt;\n30%\nUtilisée pour les cellules de tableau.\nid, class, style, colspan, rowspan\n\n\n&lt;header&gt;\n40%\nUtilisée pour les sections d’en-tête.\nid, class, style\n\n\n&lt;footer&gt;\n40%\nUtilisée pour le pied de page du document.\nid, class, style\n\n\n&lt;nav&gt;\n25%\nUtilisée pour les sections de navigation.\nid, class, style\n\n\n&lt;section&gt;\n35%\nUtilisée pour définir les sections d’un document.\nid, class, style\n\n\n&lt;article&gt;\n20%\nUtilisée pour un contenu indépendant ou auto-suffisant.\nid, class, style\n\n\n&lt;aside&gt;\n15%\nUtilisée pour un contenu accessoire ou des barres latérales.\nid, class, style\n\n\n&lt;figure&gt;\n10%\nUtilisée pour les contenus graphiques avec légende.\nid, class, style\n\n\n&lt;figcaption&gt;\n10%\nUtilisée pour la légende des contenus graphiques.\nid, class, style\n\n\n&lt;audio&gt;\n5%\nUtilisée pour inclure des fichiers audio.\nsrc, controls, autoplay, loop\n\n\n&lt;video&gt;\n10%\nUtilisée pour inclure des fichiers vidéo.\nsrc, controls, autoplay, width, height\n\n\n&lt;canvas&gt;\n5%\nUtilisée pour le dessin graphique en utilisant JavaScript.\nid, width, height, style\n\n\n&lt;details&gt;\n3%\nUtilisée pour les contenus que l’utilisateur peut afficher ou masquer.\nid, class, style, open\n\n\n&lt;summary&gt;\n3%\nUtilisée pour le résumé d’un élément &lt;details&gt;.\nid, class, style",
+    "crumbs": [
+      "Internet et le web"
+    ]
+  },
+  {
+    "objectID": "3_html.html#au-delà-de-html-css-et-javascript",
+    "href": "3_html.html#au-delà-de-html-css-et-javascript",
+    "title": "Bases pour le Webscraping",
+    "section": "Au delà de HTML : CSS et JavaScript",
+    "text": "Au delà de HTML : CSS et JavaScript\nLa librairie CSS permet d’habiller le site de couleur et de mieux agencer l’information. Le CSS n’est pas utile pour le Webscraping mais seulement agréable à l’oeil des internautes. Cependant, les scripts JavaScript permettent d’ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori. Le chargement de données a posteriori par des JavaScript va complexifier les méthodes utilisées pour le Webscraping.",
+    "crumbs": [
+      "Internet et le web"
+    ]
+  },
+  {
+    "objectID": "5_api.html",
+    "href": "5_api.html",
+    "title": "Requêter une API",
+    "section": "",
+    "text": "Une API (application programming interface) est la mise à disposition d’une manière d’accéder aux informations de manière automatisée. Plutôt que de présenter l’information sous forme de page web, sous forme de fichiers aux différents formats, l’information est servie “brute” sur votre demande, de manière personnalisée. Pour accéder à l’information voulue, il est nécessaire de savoir requêter l’API. Pour cela, les (bonnes) API sont souvent accompagnées de documentation.\nExemple :\nDocumentation pour interroger le répertoire des entreprises\nParfois, pour des raisons de sécurité, l’API peut vous demander de générer un jeton d’authentification, pour pouvoir la requêter.",
+    "crumbs": [
+      "Requêter une api"
+    ]
+  },
+  {
+    "objectID": "5_api.html#quest-ce-quune-api",
+    "href": "5_api.html#quest-ce-quune-api",
+    "title": "Requêter une API",
+    "section": "",
+    "text": "Une API (application programming interface) est la mise à disposition d’une manière d’accéder aux informations de manière automatisée. Plutôt que de présenter l’information sous forme de page web, sous forme de fichiers aux différents formats, l’information est servie “brute” sur votre demande, de manière personnalisée. Pour accéder à l’information voulue, il est nécessaire de savoir requêter l’API. Pour cela, les (bonnes) API sont souvent accompagnées de documentation.\nExemple :\nDocumentation pour interroger le répertoire des entreprises\nParfois, pour des raisons de sécurité, l’API peut vous demander de générer un jeton d’authentification, pour pouvoir la requêter.",
+    "crumbs": [
+      "Requêter une api"
+    ]
+  },
+  {
+    "objectID": "5_api.html#exemple-de-requêtage-dapi",
+    "href": "5_api.html#exemple-de-requêtage-dapi",
+    "title": "Requêter une API",
+    "section": "Exemple de requêtage d’API",
+    "text": "Exemple de requêtage d’API\nRecherchons une adresse sur l’API suivante api-adresse.data.gouv.fr (Documentation : https://adresse.data.gouv.fr/api-doc/adresse) :\nLa documentation montre un exemple avec l’utilitaire curl (“équivalent de requests” en ligne de commande) :\ncurl \"https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port\"\nce qui donnerait en Python :\n\nimport requests\nrequete=\"8 bd du port\".replace(\" \",\"+\")\nrequete_final=f\"https://api-adresse.data.gouv.fr/search/?q={requete}\"\npage=requests.get(requete_final)\npage.text\n\nIci le résultat renvoie les résultats en json, qu’il faut parser :\n\nimport json\ndictionnaire_resultat=json.loads(page.text)\nfor feature in dictionnaire_resultat[\"features\"]:\n    print(feature)",
+    "crumbs": [
+      "Requêter une api"
+    ]
+  },
+  {
+    "objectID": "8_ressources.html",
+    "href": "8_ressources.html",
+    "title": "Pour aller plus loin",
+    "section": "",
+    "text": "Quelques ressources pour aller plus loin :\n\nLino Galiana détaille un chapitre pratique dans son cours de Python : https://pythonds.linogaliana.fr/content/manipulation/04a_webscraping_TP.html\nLe SSP Lab de l’Insee propose une formation au web scraping : https://inseefrlab.github.io/formation-webscraping/#/index",
+    "crumbs": [
+      "Pour aller plus loin"
+    ]
+  },
+  {
+    "objectID": "8_ressources.html#dautres-ressources-pour-aller-plus-loin",
+    "href": "8_ressources.html#dautres-ressources-pour-aller-plus-loin",
+    "title": "Pour aller plus loin",
+    "section": "",
+    "text": "Quelques ressources pour aller plus loin :\n\nLino Galiana détaille un chapitre pratique dans son cours de Python : https://pythonds.linogaliana.fr/content/manipulation/04a_webscraping_TP.html\nLe SSP Lab de l’Insee propose une formation au web scraping : https://inseefrlab.github.io/formation-webscraping/#/index",
+    "crumbs": [
+      "Pour aller plus loin"
     ]
   },
   {
@@ -100,6 +190,106 @@
     ]
   },
   {
+    "objectID": "6_site_dynamique.html",
+    "href": "6_site_dynamique.html",
+    "title": "Webscraping dans le cas d’un site dynamique",
+    "section": "",
+    "text": "Si vous avez suivi les premiers pas du Webscraping avec requests et BeautifulSoup sur vos sites préférés, vous avez probablement eu le souci de ne pas disposer du code HTML de la page, alors que vous avez requêté correctement le site. Cela apparaît avec le chargement des sites a posteriori. En effet, les sites utilisant les dernières librairies de Javascript vous envoient une première page, assez vide. Puis, dans cette première page, un script s’execute pour bâtir le contenu que vous souhaitez accéder. Avec l’utilisation de deux dernières librairies citées, il est difficile de récupérer l’information a posteriori\nDe même, certains sites spécialisent leur affichage en fonction des navigateurs et des systèmes d’exploitation des visiteurs, par la carte d’identité de votre navigateur qui en dit long sur vous (User-Agent). Ces sites peuvent bloquer tout robot, webcrawler comme webscrapper, considéré comme indésirable.",
+    "crumbs": [
+      "Webscraping avec simulation dynamique"
+    ]
+  },
+  {
+    "objectID": "6_site_dynamique.html#les-sites-dynamiques",
+    "href": "6_site_dynamique.html#les-sites-dynamiques",
+    "title": "Webscraping dans le cas d’un site dynamique",
+    "section": "",
+    "text": "Si vous avez suivi les premiers pas du Webscraping avec requests et BeautifulSoup sur vos sites préférés, vous avez probablement eu le souci de ne pas disposer du code HTML de la page, alors que vous avez requêté correctement le site. Cela apparaît avec le chargement des sites a posteriori. En effet, les sites utilisant les dernières librairies de Javascript vous envoient une première page, assez vide. Puis, dans cette première page, un script s’execute pour bâtir le contenu que vous souhaitez accéder. Avec l’utilisation de deux dernières librairies citées, il est difficile de récupérer l’information a posteriori\nDe même, certains sites spécialisent leur affichage en fonction des navigateurs et des systèmes d’exploitation des visiteurs, par la carte d’identité de votre navigateur qui en dit long sur vous (User-Agent). Ces sites peuvent bloquer tout robot, webcrawler comme webscrapper, considéré comme indésirable.",
+    "crumbs": [
+      "Webscraping avec simulation dynamique"
+    ]
+  },
+  {
+    "objectID": "6_site_dynamique.html#simuler-son-propre-comportement",
+    "href": "6_site_dynamique.html#simuler-son-propre-comportement",
+    "title": "Webscraping dans le cas d’un site dynamique",
+    "section": "Simuler son propre comportement",
+    "text": "Simuler son propre comportement\nQuand vous faîtes tout manuellement, tout marche. Quand vous l’automatisez, rien ne marche. Conséquence fatale, faut-il se résoudre à tout faire manuellement ? Non, car il existe des librairies de simulation automatique, comme Selenium.\nL’idée est simple : Selenium va ouvrir un navigateur vierge comme vous le ferez, puis va faire exactement toutes les actions que vous faîtes habituellement manuellement et que vous aurez pris le temps de spécifier.",
+    "crumbs": [
+      "Webscraping avec simulation dynamique"
+    ]
+  },
+  {
+    "objectID": "6_site_dynamique.html#premier-pas-avec-selenium",
+    "href": "6_site_dynamique.html#premier-pas-avec-selenium",
+    "title": "Webscraping dans le cas d’un site dynamique",
+    "section": "Premier pas avec Selenium",
+    "text": "Premier pas avec Selenium\nTout d’abord, nous allons installer Selenium, ainsi qu’une librairie qui permet d’installer les pilotes pour votre navigateur préféré !\n\n!pip install selenium webdriver-manager\n\nEnsuite, nous sommes parés pour visiter notre site préféré :\n\nfrom selenium import webdriver\nfrom selenium.webdriver.edge.service import Service as EdgeService\nfrom webdriver_manager.microsoft import EdgeChromiumDriverManager\n\nnavigateur_pilote_auto = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))\n\nurl = 'https://datalab.sspcloud.fr/'\nnavigateur_pilote_auto.get(url)\n\nNous souhaitons cliquer sur le bouton de login :\n\nfrom selenium.webdriver.common.keys import Keys\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.support.select import Select\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.webdriver.support.ui import WebDriverWait\n\nwait = WebDriverWait(navigateur_pilote_auto, 30)\nlogin_button=navigateur_pilote_auto.find_elements(By.TAG_NAME, \"button\")[0]\nwait.until(EC.element_to_be_clickable(login_button)).send_keys(Keys.ENTER)",
+    "crumbs": [
+      "Webscraping avec simulation dynamique"
+    ]
+  },
+  {
+    "objectID": "7_bonnes_pratiques.html",
+    "href": "7_bonnes_pratiques.html",
+    "title": "Les bonnes pratiques pour du Webscraping gentleman",
+    "section": "",
+    "text": "Nous avons vu les limites juridiques et les risques encourues dans la partie juridique. Quelques conseils qui tiennent de la règle d’or de réciprocité et du principe du Lean :\n\nDemander et prevenir en amont\nWebscraper que de besoin\nWebscraper à des horaires creuses\nWebscraper comme un humain, en mettant des temps d’attente similaire aux actions manuelles\nRespecter le droit intellectuel et citer la source si vous pouvez rediffuser\nNe pas paralléliser le Webscraping, notamment avec un système de proxy\nUtiliser les API si elles existent\nVérifier et respecter le fichier robots.txt (e.g. https://www.google.fr/robots.txt)",
+    "crumbs": [
+      "Quelques bonnes pratiques pour le Webscraping"
+    ]
+  },
+  {
+    "objectID": "7_bonnes_pratiques.html#webscraper-avec-élégance",
+    "href": "7_bonnes_pratiques.html#webscraper-avec-élégance",
+    "title": "Les bonnes pratiques pour du Webscraping gentleman",
+    "section": "",
+    "text": "Nous avons vu les limites juridiques et les risques encourues dans la partie juridique. Quelques conseils qui tiennent de la règle d’or de réciprocité et du principe du Lean :\n\nDemander et prevenir en amont\nWebscraper que de besoin\nWebscraper à des horaires creuses\nWebscraper comme un humain, en mettant des temps d’attente similaire aux actions manuelles\nRespecter le droit intellectuel et citer la source si vous pouvez rediffuser\nNe pas paralléliser le Webscraping, notamment avec un système de proxy\nUtiliser les API si elles existent\nVérifier et respecter le fichier robots.txt (e.g. https://www.google.fr/robots.txt)",
+    "crumbs": [
+      "Quelques bonnes pratiques pour le Webscraping"
+    ]
+  },
+  {
+    "objectID": "1_intro.html",
+    "href": "1_intro.html",
+    "title": "Introduction au Webscraping",
+    "section": "",
+    "text": "Le Webscraping, ou moissonnage de données, est l’automatisation de la récupération de données à partir des technologies du Web. Il s’agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes. Plutôt que d’effectuer ses opérations manuellement, les langages de programmations permettent de s’affranchir des tâches fastidieuses.",
+    "crumbs": [
+      "Introduction au Webscraping"
+    ]
+  },
+  {
+    "objectID": "1_intro.html#quest-ce-que-le-webscraping",
+    "href": "1_intro.html#quest-ce-que-le-webscraping",
+    "title": "Introduction au Webscraping",
+    "section": "",
+    "text": "Le Webscraping, ou moissonnage de données, est l’automatisation de la récupération de données à partir des technologies du Web. Il s’agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes. Plutôt que d’effectuer ses opérations manuellement, les langages de programmations permettent de s’affranchir des tâches fastidieuses.",
+    "crumbs": [
+      "Introduction au Webscraping"
+    ]
+  },
+  {
+    "objectID": "1_intro.html#pourquoi-le-webscraping",
+    "href": "1_intro.html#pourquoi-le-webscraping",
+    "title": "Introduction au Webscraping",
+    "section": "Pourquoi le Webscraping ?",
+    "text": "Pourquoi le Webscraping ?\nSouvent, le Webscraping répond à un besoin de disposer de données soit indisponibles par ailleurs soit de rechercher les données les plus récentes. Selon le champ d’étude, ces données récupérées ne seront pas forcément exhaustives mais pourront constituer un échantillon intéressant à analyser et à exploiter.",
+    "crumbs": [
+      "Introduction au Webscraping"
+    ]
+  },
+  {
+    "objectID": "1_intro.html#comment-faire-du-webscraping",
+    "href": "1_intro.html#comment-faire-du-webscraping",
+    "title": "Introduction au Webscraping",
+    "section": "Comment faire du Webscraping ?",
+    "text": "Comment faire du Webscraping ?\nDans ce cours introductif, vous apprendrez comment faire du Webscraping en bonne intelligence, à en comprendre les bases et à vous constituer un exemple intéressant dans votre portfolio. A la fin de ce cours, vous saurez faire du Webscraping à un niveau basique, souvent suffisant, et à comprendre les tenants et aboutissants.",
+    "crumbs": [
+      "Introduction au Webscraping"
+    ]
+  },
+  {
     "objectID": "2_juridique.html",
     "href": "2_juridique.html",
     "title": "Environnement juridique du Webscraping",
@@ -147,186 +337,6 @@
     "text": "Le Webscraping de manière “gentleman”\nDans le Webscraping, il y a le “bon” et le “mauvais” Webscraping. Le “bon” Webscraping consisterait à exactement simuler votre bon comportement.\n\nSi possible prevenir le site en question et demander s’ils peuvent publier les données agrégées ou mettre à disposition une API (si une API est disponible, utiliser en premier lieu l’API)\nMettre des temps d’attente respectueux : de l’ordre de la milliseconde c’est non, 1-5 secondes par requête est déjà plus raisonnable, voire plus pour des ressources volumineuses.\nWebscrapper que de besoin, si possible en “heures creuses”\nRespecter les limitations et ne pas chercher à les contourner, certains sites n’autorisent qu’un certain nombre de requête à l’heure par utilisateur.",
     "crumbs": [
       "Le Webscraping et le juridique"
-    ]
-  },
-  {
-    "objectID": "5_api.html",
-    "href": "5_api.html",
-    "title": "Requêter une API",
-    "section": "",
-    "text": "Une API (application programming interface) est la mise à disposition d’une manière d’accéder aux informations de manière automatisée. Plutôt que de présenter l’information sous forme de page web, sous forme de fichiers aux différents formats, l’information est servie “brute” sur votre demande, de manière personnalisée. Pour accéder à l’information voulue, il est nécessaire de savoir requêter l’API. Pour cela, les (bonnes) API sont souvent accompagnées de documentation.\nExemple :\nDocumentation pour interroger le répertoire des entreprises\nParfois, pour des raisons de sécurité, l’API peut vous demander de générer un jeton d’authentification, pour pouvoir la requêter.",
-    "crumbs": [
-      "Requêter une api"
-    ]
-  },
-  {
-    "objectID": "5_api.html#quest-ce-quune-api",
-    "href": "5_api.html#quest-ce-quune-api",
-    "title": "Requêter une API",
-    "section": "",
-    "text": "Une API (application programming interface) est la mise à disposition d’une manière d’accéder aux informations de manière automatisée. Plutôt que de présenter l’information sous forme de page web, sous forme de fichiers aux différents formats, l’information est servie “brute” sur votre demande, de manière personnalisée. Pour accéder à l’information voulue, il est nécessaire de savoir requêter l’API. Pour cela, les (bonnes) API sont souvent accompagnées de documentation.\nExemple :\nDocumentation pour interroger le répertoire des entreprises\nParfois, pour des raisons de sécurité, l’API peut vous demander de générer un jeton d’authentification, pour pouvoir la requêter.",
-    "crumbs": [
-      "Requêter une api"
-    ]
-  },
-  {
-    "objectID": "5_api.html#exemple-de-requêtage-dapi",
-    "href": "5_api.html#exemple-de-requêtage-dapi",
-    "title": "Requêter une API",
-    "section": "Exemple de requêtage d’API",
-    "text": "Exemple de requêtage d’API\nRecherchons une adresse sur l’API suivante api-adresse.data.gouv.fr (Documentation : https://adresse.data.gouv.fr/api-doc/adresse) :\nLa documentation montre un exemple avec l’utilitaire curl (“équivalent de requests” en ligne de commande) :\ncurl \"https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port\"\nce qui donnerait en Python :\n\nimport requests\nrequete=\"8 bd du port\".replace(\" \",\"+\")\nrequete_final=f\"https://api-adresse.data.gouv.fr/search/?q={requete}\"\npage=requests.get(requete_final)\npage.text\n\nIci le résultat renvoie les résultats en json, qu’il faut parser :\n\nimport json\ndictionnaire_resultat=json.loads(page.text)\nfor feature in dictionnaire_resultat[\"features\"]:\n    print(feature)",
-    "crumbs": [
-      "Requêter une api"
-    ]
-  },
-  {
-    "objectID": "1_intro.html",
-    "href": "1_intro.html",
-    "title": "Introduction au Webscraping",
-    "section": "",
-    "text": "Le Webscraping, ou moissonnage de données, est l’automatisation de la récupération de données à partir des technologies du Web. Il s’agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes. Plutôt que d’effectuer ses opérations manuellement, les langages de programmations permettent de s’affranchir des tâches fastidieuses.",
-    "crumbs": [
-      "Introduction au Webscraping"
-    ]
-  },
-  {
-    "objectID": "1_intro.html#quest-ce-que-le-webscraping",
-    "href": "1_intro.html#quest-ce-que-le-webscraping",
-    "title": "Introduction au Webscraping",
-    "section": "",
-    "text": "Le Webscraping, ou moissonnage de données, est l’automatisation de la récupération de données à partir des technologies du Web. Il s’agit donc de récupérer des informations chez vous, initialement situées autre part, et principalement mise à disposition aux internautes. Plutôt que d’effectuer ses opérations manuellement, les langages de programmations permettent de s’affranchir des tâches fastidieuses.",
-    "crumbs": [
-      "Introduction au Webscraping"
-    ]
-  },
-  {
-    "objectID": "1_intro.html#pourquoi-le-webscraping",
-    "href": "1_intro.html#pourquoi-le-webscraping",
-    "title": "Introduction au Webscraping",
-    "section": "Pourquoi le Webscraping ?",
-    "text": "Pourquoi le Webscraping ?\nSouvent, le Webscraping répond à un besoin de disposer de données soit indisponibles par ailleurs soit de rechercher les données les plus récentes. Selon le champ d’étude, ces données récupérées ne seront pas forcément exhaustives mais pourront constituer un échantillon intéressant à analyser et à exploiter.",
-    "crumbs": [
-      "Introduction au Webscraping"
-    ]
-  },
-  {
-    "objectID": "1_intro.html#comment-faire-du-webscraping",
-    "href": "1_intro.html#comment-faire-du-webscraping",
-    "title": "Introduction au Webscraping",
-    "section": "Comment faire du Webscraping ?",
-    "text": "Comment faire du Webscraping ?\nDans ce cours introductif, vous apprendrez comment faire du Webscraping en bonne intelligence, à en comprendre les bases et à vous constituer un exemple intéressant dans votre portfolio. A la fin de ce cours, vous saurez faire du Webscraping à un niveau basique, souvent suffisant, et à comprendre les tenants et aboutissants.",
-    "crumbs": [
-      "Introduction au Webscraping"
-    ]
-  },
-  {
-    "objectID": "8_ressources.html",
-    "href": "8_ressources.html",
-    "title": "Pour aller plus loin",
-    "section": "",
-    "text": "Quelques ressources pour aller plus loin :\n\nLino Galiana détaille un chapitre pratique dans son cours de Python : https://pythonds.linogaliana.fr/content/manipulation/04a_webscraping_TP.html\nLe SSP Lab de l’Insee propose une formation au web scraping : https://inseefrlab.github.io/formation-webscraping/#/index",
-    "crumbs": [
-      "Pour aller plus loin"
-    ]
-  },
-  {
-    "objectID": "8_ressources.html#dautres-ressources-pour-aller-plus-loin",
-    "href": "8_ressources.html#dautres-ressources-pour-aller-plus-loin",
-    "title": "Pour aller plus loin",
-    "section": "",
-    "text": "Quelques ressources pour aller plus loin :\n\nLino Galiana détaille un chapitre pratique dans son cours de Python : https://pythonds.linogaliana.fr/content/manipulation/04a_webscraping_TP.html\nLe SSP Lab de l’Insee propose une formation au web scraping : https://inseefrlab.github.io/formation-webscraping/#/index",
-    "crumbs": [
-      "Pour aller plus loin"
-    ]
-  },
-  {
-    "objectID": "7_bonnes_pratiques.html",
-    "href": "7_bonnes_pratiques.html",
-    "title": "Les bonnes pratiques pour du Webscraping gentleman",
-    "section": "",
-    "text": "Nous avons vu les limites juridiques et les risques encourues dans la partie juridique. Quelques conseils qui tiennent de la règle d’or de réciprocité et du principe du Lean :\n\nDemander et prevenir en amont\nWebscraper que de besoin\nWebscraper à des horaires creuses\nWebscraper comme un humain, en mettant des temps d’attente similaire aux actions manuelles\nRespecter le droit intellectuel et citer la source si vous pouvez rediffuser\nNe pas paralléliser le Webscraping, notamment avec un système de proxy\nUtiliser les API si elles existent\nVérifier et respecter le fichier robots.txt (e.g. https://www.google.fr/robots.txt)",
-    "crumbs": [
-      "Quelques bonnes pratiques pour le Webscraping"
-    ]
-  },
-  {
-    "objectID": "7_bonnes_pratiques.html#webscraper-avec-élégance",
-    "href": "7_bonnes_pratiques.html#webscraper-avec-élégance",
-    "title": "Les bonnes pratiques pour du Webscraping gentleman",
-    "section": "",
-    "text": "Nous avons vu les limites juridiques et les risques encourues dans la partie juridique. Quelques conseils qui tiennent de la règle d’or de réciprocité et du principe du Lean :\n\nDemander et prevenir en amont\nWebscraper que de besoin\nWebscraper à des horaires creuses\nWebscraper comme un humain, en mettant des temps d’attente similaire aux actions manuelles\nRespecter le droit intellectuel et citer la source si vous pouvez rediffuser\nNe pas paralléliser le Webscraping, notamment avec un système de proxy\nUtiliser les API si elles existent\nVérifier et respecter le fichier robots.txt (e.g. https://www.google.fr/robots.txt)",
-    "crumbs": [
-      "Quelques bonnes pratiques pour le Webscraping"
-    ]
-  },
-  {
-    "objectID": "3_html.html",
-    "href": "3_html.html",
-    "title": "Bases pour le Webscraping",
-    "section": "",
-    "text": "Pour faire du Webscraping, il est primordiable de comprendre les bases du Web. Il s’agit de comprendre les manières d’interagir avec les sites et API, avec notamment le protocole/langage HTTP. et de connaître les formats de données (HTML, XML, formats de fichiers, etc)",
-    "crumbs": [
-      "Internet et le web"
-    ]
-  },
-  {
-    "objectID": "3_html.html#comprendre-les-technologies-dinternet",
-    "href": "3_html.html#comprendre-les-technologies-dinternet",
-    "title": "Bases pour le Webscraping",
-    "section": "",
-    "text": "Pour faire du Webscraping, il est primordiable de comprendre les bases du Web. Il s’agit de comprendre les manières d’interagir avec les sites et API, avec notamment le protocole/langage HTTP. et de connaître les formats de données (HTML, XML, formats de fichiers, etc)",
-    "crumbs": [
-      "Internet et le web"
-    ]
-  },
-  {
-    "objectID": "3_html.html#naviguer-sur-le-web",
-    "href": "3_html.html#naviguer-sur-le-web",
-    "title": "Bases pour le Webscraping",
-    "section": "Naviguer sur le Web",
-    "text": "Naviguer sur le Web\nPour naviguer sur le Web, notre internaute Lambda utilise son navigateur Web préférée (Edge, Chrome, Mozilla, Opéra, etc.) en tapant le nom du site dans la barre de navigation (1). Le navigateur affiche la page d’accueil (2). Lambda clique sur un lien (3) et le navigateur lui affiche la nouvelle page (4).\nDécortiquons ce qui s’est passé (en omettant des parties techniques comme DNS, les IP et le routage des informations) :\n\nEn tapant le nom du site, Lambda dit à son navigateur qu’il souhaite accèder au site (admettons www.insee.fr/) . Le navigateur utilise le langage HTTP au serveur de l’Insee pour demander la page d’accueil, le navigateur envoie la demande “GET /”\nLe serveur de l’Insee répond avec la page HTML d’accueil. Le navigateur affiche à l’utilisateur Lambda la page HTML (qui est juste une suite de caractères comprennant des informations entre des balises standardisées\n\n\n\n\n\n\n)\nLambda clique sur un lien (e.g. &lt;a href=“/concours/”&gt; Ma page Concours), le navigateur comprends qu’il doit refaire une requête HTTP “GET /concours/”\nLe serveur lui répond avec une nouvelle page HTML. (et ainsi de suite…)",
-    "crumbs": [
-      "Internet et le web"
-    ]
-  },
-  {
-    "objectID": "3_html.html#les-urluri-en-pratique",
-    "href": "3_html.html#les-urluri-en-pratique",
-    "title": "Bases pour le Webscraping",
-    "section": "Les URL/URI en pratique",
-    "text": "Les URL/URI en pratique\nLes URL et les URI sont des chaînes de caractères permettant notamment la navigation We (grosso modo ce que vous voyez dans votre barre de navigation en haut de votre navigateur préféré) mais aussi tout échange par Internet, de fichiers et autres informations. Il est important de les observer, de connaître la règle de base suivante :\n\nURI = protocole + :// + [utilisateur @] + “nom de domaine” + [ : port] + requête souhaitée\n\nExemple :\n\nhttps://www.insee.fr/\n\n\nprotocole : https\n\n\n“nom de domaine” : www.insee.fr\n\n\nutilisateur : pas d’utilisateur\n\n\nport : 443 (implicite, port par défaut du procole HTTPS)\n\n\nrequête souhaitée : /\n\nBien souvent, quand vous tapez dans votre navigateur un site, vous faîtes preuve de concision en tapant seulement www.insee.fr. Dès lors, le navigateur est configuré pour naviguer en HTTPS (et mettre le port par défaut, 443 pour HTTPS et 80 pour HTTP) et donc autocomplète le protocole et va par défaut demander la racine /\nPour en savoir plus (ressource en anglais) : Documentation RFC3968",
-    "crumbs": [
-      "Internet et le web"
-    ]
-  },
-  {
-    "objectID": "3_html.html#le-protocole-https-et-api",
-    "href": "3_html.html#le-protocole-https-et-api",
-    "title": "Bases pour le Webscraping",
-    "section": "Le protocole HTTP(S) et API",
-    "text": "Le protocole HTTP(S) et API\nPour interagir avec un site Web (serveur HTTP), il y a un certain nombre de commandes que nous pouvons lui soumettre, aussi appelée verbe HTTP. Voici les plus fréquents :\n\nGET (=récupérer une information, en général une page HTML ou un fichier)\nPOST (=soumettre de la donnée et récupérer éventuellement une information, obligatoirement le cas dans un formulaire sensible)\n\nDans le cas des API, si vous avez les droits sur l’API :\n\nPUT (=mettre à jour une information)\nDELETE (=supprimer une information)\n\nPour le Webscraping, nous allons principalement soumettre des requêtes GET et POST (tout comme dans la navigation Web classique)\nLe protocole HTTPS (SSL en plus de HTTP) est juste l’ajout d’un chiffrement de toutes les communications, notamment obligatoire si vous soumettez un mot de passe ou une information sensible. Sans le chiffrement, tout est public et visible à qui se donne la peine de vouloir espionner. Voyez le chiffrement comme les vitres teintées d’un moyen de locomotion entre deux sites sensibles, dans un bon film d’espionnage !\nLes différents sites sont navigables à travers des pages HTML (section suivante) ou renvoient des informations par des API, service renvoyant de la donnée à qui sait la manipuler.",
-    "crumbs": [
-      "Internet et le web"
-    ]
-  },
-  {
-    "objectID": "3_html.html#la-page-html",
-    "href": "3_html.html#la-page-html",
-    "title": "Bases pour le Webscraping",
-    "section": "La page HTML",
-    "text": "La page HTML\nPour la navigation Web classique, l’information renvoyée par le serveur est structurée au format HTML : il y a notamment un titre principal et un contenu hierarchisé. Le serveur renvoie un ensemble de caractères toujours structurée de la même façon de manière macro :\n\nbalise &lt;html&gt; &lt;/html&gt; pour délimiter tout le périmètre\nà l’intérieur, redecoupage en balise &lt;head&gt;&lt;/head&gt; || &lt;body&gt;&lt;/body&gt;\nles données intéressantes sont généralement dans le body (corps du contenu)\ndans le corps du contenu &lt;body&gt;, utilisation d’un vocabulaire de balise\n\nExemples de balises les plus fréquentes :\n\n&lt;p&gt; : paragraphe\n&lt;h1&gt; &lt;h2&gt; … : titre\n&lt;a&gt; : lien HTTP\n&lt;div&gt; : bloc de contenu (pas de signification sémantique, utilisé pour les scripts ou le CSS)\n&lt;section&gt; : ensemble de contenu (signification sémantique, comme un chapitre d’un livre)\n&lt;button&gt; : bouton\n&lt;form&gt; : formulaire\n\nCette structuration permet de questionner la page (est-ce qu’il y a des liens HTTP présents sur la page ? si oui, renvoie les moi) et récupérer les informations associées.",
-    "crumbs": [
-      "Internet et le web"
-    ]
-  },
-  {
-    "objectID": "3_html.html#au-delà-de-html-css-et-javascript",
-    "href": "3_html.html#au-delà-de-html-css-et-javascript",
-    "title": "Bases pour le Webscraping",
-    "section": "Au delà de HTML : CSS et JavaScript",
-    "text": "Au delà de HTML : CSS et JavaScript\nLa librairie CSS permet d’habiller le site de couleur et de mieux agencer l’information. Le CSS n’est pas utile pour le Webscraping mais seulement agréable à l’oeil des internautes. Cependant, les scripts JavaScript permettent d’ajouter du dynamisme au site, en rajoutant des effets conditionnels, de charger les données a posteriori. Le chargement de données a posteriori par des JavaScript va complexifier les méthodes utilisées pour le Webscraping.",
-    "crumbs": [
-      "Internet et le web"
     ]
   }
 ]

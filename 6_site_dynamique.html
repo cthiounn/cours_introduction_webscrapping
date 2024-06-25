@@ -9,7 +9,7 @@
 <meta name="author" content="cthiounn">
 <meta name="dcterms.date" content="2024-05-20">
 
-<title>Cours introduction au Webscraping - Webscrapping dans le cas d’un site dynamique</title>
+<title>Cours introduction au Webscraping - Webscraping dans le cas d’un site dynamique</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Webscrapping dans le cas d’un site dynamique</h1>
+<h1 class="title">Webscraping dans le cas d’un site dynamique</h1>
 </div>
 
 
@@ -244,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="les-sites-dynamiques" class="level2">
 <h2 class="anchored" data-anchor-id="les-sites-dynamiques">Les sites “dynamiques”</h2>
-<p>Si vous avez suivi les premiers pas du Webscrapping avec <code>requests</code> et <code>BeautifulSoup</code> sur vos sites préférés, vous avez probablement eu le souci de ne pas disposer du code HTML de la page, alors que vous avez requêté correctement le site. Cela apparaît avec le chargement des sites <em>a posteriori</em>. En effet, les sites utilisant les dernières librairies de Javascript vous envoient une première page, assez vide. Puis, dans cette première page, un script s’execute pour bâtir le contenu que vous souhaitez accéder. Avec l’utilisation de deux dernières librairies citées, il est difficile de récupérer l’information <em>a posteriori</em></p>
+<p>Si vous avez suivi les premiers pas du Webscraping avec <code>requests</code> et <code>BeautifulSoup</code> sur vos sites préférés, vous avez probablement eu le souci de ne pas disposer du code HTML de la page, alors que vous avez requêté correctement le site. Cela apparaît avec le chargement des sites <em>a posteriori</em>. En effet, les sites utilisant les dernières librairies de Javascript vous envoient une première page, assez vide. Puis, dans cette première page, un script s’execute pour bâtir le contenu que vous souhaitez accéder. Avec l’utilisation de deux dernières librairies citées, il est difficile de récupérer l’information <em>a posteriori</em></p>
 <p>De même, certains sites spécialisent leur affichage en fonction des navigateurs et des systèmes d’exploitation des visiteurs, par la carte d’identité de votre navigateur qui en dit long sur vous (User-Agent). Ces sites peuvent bloquer tout robot, webcrawler comme webscrapper, considéré comme indésirable.</p>
 </section>
 <section id="simuler-son-propre-comportement" class="level2">
@@ -255,11 +255,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="premier-pas-avec-selenium" class="level2">
 <h2 class="anchored" data-anchor-id="premier-pas-avec-selenium">Premier pas avec <code>Selenium</code></h2>
 <p>Tout d’abord, nous allons installer <code>Selenium</code>, ainsi qu’une librairie qui permet d’installer les pilotes pour votre navigateur préféré !</p>
-<div id="fa458a74" class="cell">
+<div id="98b17c46" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install selenium webdriver<span class="op">-</span>manager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ensuite, nous sommes parés pour visiter notre site préféré :</p>
-<div id="dd4de183" class="cell">
+<div id="2dc7ed80" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium <span class="im">import</span> webdriver</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.edge.service <span class="im">import</span> Service <span class="im">as</span> EdgeService</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> webdriver_manager.microsoft <span class="im">import</span> EdgeChromiumDriverManager</span>
@@ -270,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>navigateur_pilote_auto.get(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Nous souhaitons cliquer sur le bouton de login :</p>
-<div id="3a6d5da0" class="cell">
+<div id="90f5bd18" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.keys <span class="im">import</span> Keys</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.by <span class="im">import</span> By</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.support.select <span class="im">import</span> Select</span>
